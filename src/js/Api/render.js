@@ -22,7 +22,7 @@ export function renderCard(arr) {
        <button class="see-recipe" type="button">See recipe</button>
     </div>  
   </div>`).join('');
-    catInfo.insertAdjacentHTML("beforeend", cardRecipe)
+    galleryRecipes.insertAdjacentHTML("beforeend", cardRecipe)
     
 }
 
