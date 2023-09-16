@@ -1,8 +1,8 @@
 // ------------ Розмітка картки страви -----
 
 export function renderCard(arr) {    
-    const cardRecipe = arr.map(({preview, title, description, rating}) => ` 
-  <div class="card-item">
+    const cardRecipe = arr.map(({_id, preview, title, description, rating}) => ` 
+  <div data-id="${_id}" class="card-item">
     <button class="heart" type="button">
       <svg class="icon-heart" width="22" height="22">
         <use href="./img/icons.svg#heart"></use></svg>
@@ -21,8 +21,7 @@ export function renderCard(arr) {
       </ul>
        <button class="see-recipe" type="button">See recipe</button>
     </div>  
-  </div>`).join('');
-    galleryRecipes.insertAdjacentHTML("beforeend", cardRecipe)
-    
+  </div>`).join(''); 
+    return cardRecipe
 }
 
