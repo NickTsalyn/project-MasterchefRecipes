@@ -7,6 +7,7 @@
 @import url('./list-button.css');
 @import url('./popular.css');
 @import url('./footer.css');
+@import url('./header.css');
 
 
 :root {
@@ -16,6 +17,7 @@
   --background-color:  #F8F8F8;
   --green-color: #9BB537;
   --white-color: #F8F8F8;
+  --dark-theme-background:#161616;
 }
 
 

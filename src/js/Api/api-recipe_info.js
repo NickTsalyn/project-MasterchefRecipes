@@ -1,6 +1,8 @@
 // https://tasty-treats-backend.p.goit.global/api/recipes/
 import axios from 'axios';
 import Notiflix from 'notiflix';
+import axios from 'axios';
+import Notiflix from 'notiflix';
 // ------------Перелік усіх рецептів----------------
 const BASE_URL = `https://tasty-treats-backend.p.goit.global/api`;
 const END_POINT = `/recipes`;

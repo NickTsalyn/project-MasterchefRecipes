@@ -1,0 +1,23 @@
+body.dark-theme {
+  background-color: #161616;
+  color: var(--white-color);
+}
+
+/* ----------- HEADER ----------- */
+
+.dark-theme .logo {
+  color: var(--white-color);
+}
+
+.dark-theme .mobile-menu {
+  background-color: var(--primary-color);
+}
+
+.dark-theme .header-chart-icon {
+  stroke: var(--white-color);
+}
+.dark-theme .mobile-menu-open-icon {
+  stroke: var(--white-color);
+}
+
+/* ----------- HEADER ----------- */
