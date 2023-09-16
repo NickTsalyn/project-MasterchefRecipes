@@ -1,14 +1,14 @@
 import { getRecipesDetail } from './Api/api-recipe_info';
 import * as basicLightbox from 'basiclightbox';
+document.addEventListener('DOMContentLoaded', function () {
+  const seeRecipeButton = document.querySelector('.see-recipe');
 
-const detailBtn = document.querySelector('.see-recipe');
-detailBtn.addEventListener('click', handlerOnClick);
-console.log(itemElement);
+  seeRecipeButton.addEventListener('click', handlerOnClick);
 
-function handlerOnClick() {
-  const _id = detailBtn.dataset.id;
-  getRecipesDetail(_id).then(respInfo => {
-    const instance = basicLightbox.create(`
+  function handlerOnClick() {
+    const _id = seeRecipeButton.dataset.id;
+    getRecipesDetail(_id).then(respInfo => {
+      const instance = basicLightbox.create(`
         <div>
       <button class="btn">
         <svg class="on-close" width="10" height="10">
@@ -69,6 +69,7 @@ function handlerOnClick() {
          <p class="dish-instructions">${respInfo.instructions}</p>
           <button type="button" class="btn">Add to favorite</button>
           <button type="button" class="btn">Give a rating</button>`);
-    instance.show();
-  });
-}
+      instance.show();
+    });
+  }
+});
