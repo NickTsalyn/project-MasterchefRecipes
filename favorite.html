@@ -6,11 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasty Treats</title>
     
-    <script type="module" crossorigin src="/project-MasterchefRecipes/assets/render-recipes-list-39778e53.js"></script>
-    <link rel="stylesheet" href="/project-MasterchefRecipes/assets/render-recipes-list-874e49bf.css">
+    <script type="module" crossorigin src="/project-MasterchefRecipes/assets/render-recipes-list-31d47738.js"></script>
+    <link rel="stylesheet" href="/project-MasterchefRecipes/assets/render-recipes-list-f7b6f86c.css">
   </head>
   <body>
-    
+    <header class="page-header" id="home">
+  <div class="container page-header-container">
+    <nav class="page-nav">
+      <ul class="menu list">
+        <li class="menu-item">
+          <a class="link menu-link" href="#home">Home</a>
+        </li>
+        <li class="menu-item">
+          <a class="link menu-link" href="#favorites">Favorites</a>
+        </li>
+      </ul>
+
+      <a class="link logo" href="./index.html" title="logotype">
+        <span><span class="logo-text">tasty</span>treats.</span>
+      </a>
+    </nav>
+
+    <div class="header-chart-and-switcher-container">
+      <a
+        href=" "
+        target="_blank"
+        rel="noreferrer noopener"
+        class="header-chart-link"
+      >
+        <svg class="header-chart-icon" width="24" height="24">
+          <use href="/project-MasterchefRecipes/assets/icons-e50df526.svg#cart"></use>
+        </svg>
+      </a>
+
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="theme-slider"></span>
+      </label>
+
+      <button type="button" class="mobile-menu-open js-open-menu">
+        <svg class="mobile-menu-open-icon" width="32" height="32">
+          <use href="/project-MasterchefRecipes/assets/icons-e50df526.svg#burger"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+
+  <div class="mobile-menu js-menu-container">
+    <div class="mobile-menu-container">
+      <button class="modal-close-btn js-close-menu hidden">
+        <svg class="mobile-menu-close-icon">
+          <use href="/project-MasterchefRecipes/assets/icons-e50df526.svg#close-icon"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu-list list">
+        <li class="mobile-menu-list-item">
+          <a class="link mobile-menu-link menu-link js-close-menu" href="#home"
+            >Home</a
+          >
+        </li>
+        <li class="mobile-menu-list-item">
+          <a
+            class="link mobile-menu-link menu-link js-close-menu"
+            href="#favorites"
+            >Favorites</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
     <main>
       <section>
         <div class="container">
