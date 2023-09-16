@@ -2,7 +2,7 @@
 
 export function renderCard(arr) {    
     const cardRecipe = arr.map(({_id, preview, title, description, rating}) => ` 
-  <div data-id="${_id}" class="card-item">
+  <div  class="card-item">
     <button class="heart" type="button">
       <svg class="icon-heart" width="22" height="22">
         <use href="./img/icons.svg#heart"></use></svg>
@@ -19,7 +19,7 @@ export function renderCard(arr) {
         <li class="icon-rating"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg/#star"></use></svg></li>
         <li class="icon-rating"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg/#star"></use></svg></li>
       </ul>
-       <button class="see-recipe" type="button">See recipe</button>
+       <button class="see-recipe" type="button" data-id="${_id}">See recipe</button>
     </div>  
   </div>`).join(''); 
     return cardRecipe
