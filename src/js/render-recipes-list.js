@@ -5,7 +5,7 @@ import { renderCard } from "./Api/render"
 const categoriesRefs = {
   allCategoriesBtn: document.querySelector(".categories-btn"),
   categoriesContainer: document.querySelector(".categories-wrapper"),
-  recipesContainer: document.querySelector(".container")
+  recipesContainer: document.querySelector(".render-conatiner")
 }
 
 const tempValues = {
@@ -14,11 +14,12 @@ const tempValues = {
   limit: 9,
   activeCategory: "",
 }
-
+rendersAllRecipes()
 categoriesRefs.allCategoriesBtn.addEventListener("click", allCategoriesBtnHandler)
 
 function allCategoriesBtnHandler () {
-  renderAllRecipes()
+  
+  rendersAllRecipes()
 }
 
 categoriesRefs.categoriesContainer.addEventListener("click", categoriesContainerHandler)
@@ -26,6 +27,7 @@ categoriesRefs.categoriesContainer.addEventListener("click", categoriesContainer
 function categoriesContainerHandler (e) {
   e.preventDefault()
   if (e.target.closest(".category-link")) {
+    
     if (categoriesRefs.allCategoriesBtn.classList.contains("active")) {
       categoriesRefs.allCategoriesBtn.classList.remove("active")
     }
@@ -39,6 +41,7 @@ function categoriesContainerHandler (e) {
     tempValues.category =  e.target.closest(".category-link").dataset.name
 
     getRecipeByCategory(tempValues.category, tempValues.page, tempValues.limit).then((response) => { 
+      categoriesRefs.recipesContainer.innerHTML = ""
       categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
     })
   }
@@ -47,7 +50,7 @@ function categoriesContainerHandler (e) {
 }
 
 // //////////////
-function renderAllRecipes () {
+function rendersAllRecipes () {
   const btn = categoriesRefs.allCategoriesBtn
   if (!btn.classList.contains("active")) {
     btn.classList.add("active")
@@ -57,6 +60,7 @@ function renderAllRecipes () {
     tempValues.activeCategory.classList.remove("active")
   }
   getAllRecipes(tempValues.page, tempValues.limit).then((response) => { 
+    categoriesRefs.recipesContainer.innerHTML = ""
     categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
   })
 }
