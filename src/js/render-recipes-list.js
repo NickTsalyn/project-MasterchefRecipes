@@ -1,6 +1,6 @@
 import { getRecipeByCategory } from "./Api/api-fetch-recipes"
 import { getAllRecipes } from "./Api/api-fetch-recipes"
-import { renderCard } from "./Api/render"
+import { renderCard } from "./render"
 
 const categoriesRefs = {
   allCategoriesBtn: document.querySelector(".categories-btn"),
