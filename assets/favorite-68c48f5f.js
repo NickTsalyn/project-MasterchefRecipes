@@ -1,4 +1,4 @@
-import"./pagination-caad5603.js";const i=document.querySelector(".fav-list-recipes"),s=document.querySelector(".nothing"),a=document.querySelector(".fav-recipes"),c=document.querySelector(".fav-categories");let t="";const l=[];for(const e of l)console.log("t",e.title),t+=`            <li class="fav-recipe-card">
+import"./registration-3f0f1778.js";const i=document.querySelector(".fav-list-recipes"),s=document.querySelector(".nothing"),a=document.querySelector(".fav-recipes"),c=document.querySelector(".fav-categories");let t="";const l=[];for(const e of l)console.log("t",e.title),t+=`            <li class="fav-recipe-card">
     <img class="fav-card-img" src="${e.preview}" alt="${e.title}">
     <button class="fav-button-heart">
       <svg class="fav-heart" width="22" height="22">
