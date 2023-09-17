@@ -9,7 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -23,13 +26,20 @@
     <main>
       <section>
         <div class="container">
-          <load ="partials/list-button.html" />
-          <load ="partials/form.html" />
-          <load ="partials/popular.html" />
+          <div class="left-container">
+            <load ="partials/list-button.html" />
+            <load ="partials/popular.html" />
+          </div>
+          <div class="right-container">
+            <load ="partials/form.html" />
+            <div class="gallery-recipes"></div>
+          </div>
         </div>
+        <div class="pagination-container"><load ="partials/pagination.html" /></div>
       </section>
     </main>
-    
+
+    <load ="partials/footer.html" />
 
     <script type="module" src="/main.js"></script>
   </body>
