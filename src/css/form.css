@@ -1,0 +1,171 @@
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.label-form {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: rgba(5, 5, 5, 0.50);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.17;
+    gap: 8px;
+}
+
+.input-form {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    outline: transparent;
+    border-radius: 15px;
+    border: 1px solid rgba(5, 5, 5, 0.20);
+}
+
+/* Пошук за назвою рецепта */
+.search-overlay {
+    position: relative;
+}
+
+.icon-search {
+    position: absolute;
+    left: 18px;
+    top: 14px;
+    transition: fill 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-search {
+    width: 335px;
+    height: 46px;
+    padding: 14px 122px 14px 48px;
+
+}
+
+.label-form:hover .icon-search,
+.label-form:focus .icon-search {
+    fill: var(--green-color);
+}
+
+.btn-close-search {
+    width: 18px;
+    height: 18px;
+    display: none;
+    position: absolute;
+    top: 14px;
+    right: 18px;    
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: var(--background-color);
+}
+
+.icon-close-search {
+    stroke: rgba(5, 5, 5, 0.8);
+}
+
+
+/* Пошук за часом приготування */
+.input-time,
+.input-area,
+.input-ingredients {
+    width: 160px;
+    height: 46px;
+    padding: 14px 18px;
+
+}
+
+.btn-chevron-down {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: var(--background-color);
+}
+
+.icon-chevron-down {
+    stroke: var(--secondary-color);
+}
+
+.form-select {
+    position: absolute;
+    margin: 0;
+    padding: 14px 0 0 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    outline: transparent;
+    border: none;
+    border-radius: 14px;
+    background-color: var(--background-color);
+    box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+    overflow-y: scroll;
+}
+
+.select-time {
+    width: 160px;
+    height: 124px;
+    display: none;
+    z-index: 100;
+}
+
+/* Пошук за країною походження */
+.select-area {
+    width: 161px;
+    height: 176px;
+    display: none;
+}
+
+/* Пошук за інгридієнтами */
+
+.select-ingredients {
+    width: 188px;
+    height: 176px;
+    display: none;
+}
+
+.option-form {
+    color: rgba(5, 5, 5, 0.30);
+    font-weight: 500;
+    transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    ;
+}
+
+.option-form:active {
+    color: var(--primary-color);
+}
+
+/* Блок скидання пошуку */
+.reset-block {
+    margin: 14px 0 20px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+}
+
+.btn-reset-filter {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: var(--background-color);
+}
+
+.icon-reset-search {
+    stroke: var(--green-color);
+}
+
+.reset-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
