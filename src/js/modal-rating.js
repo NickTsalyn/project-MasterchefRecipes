@@ -1,12 +1,12 @@
 // import SimpleLightbox from "simplelightbox";
 // const lightbox = new SimpleLightbox('.gallery a');
 // document.addEventListener("DOMContentLoaded", function() {
-    import axios from "axios";
-    import { getRecipesDetail } from './Api/api-recipe_info';
-    import * as basicLightbox from 'basiclightbox';
-    import 'basiclightbox/dist/basicLightbox.min.css';
+import axios from 'axios';
+import { getRecipesDetail } from './Api/api-recipe_info';
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css';
 import './modal-first';
-    // const seeFullRecipec = document.querySelector('.gallery-recipes');
+// const seeFullRecipec = document.querySelector('.gallery-recipes');
 
 // if (seeFullRecipec) { // Перевірка на наявність елементу
 //   seeFullRecipec.addEventListener('click', handlerOnClick);
@@ -19,8 +19,8 @@ import './modal-first';
 //   }
 // const addRatingBtn = document.querySelector('.give-rating-btn');
 // if(addRatingBtn) {
-   export function openRatingModal () {
-    const modalRatingForm =`<form class="modal-rating-form" action="">
+export function openRatingModal() {
+  const modalRatingForm = `<form class="modal-rating-form" action="">
    <div class="modal-rating-display"> <h2 class = "modal-rating-head">Rating</h2>
    <div class="modal-rating-container">
     <span class="modal-rating-counter">0.0</span>
@@ -83,67 +83,61 @@ import './modal-first';
     </div>
   </form>`;
 
-// function handlerClick (evt){
- const openModalForm = basicLightbox.create(modalRatingForm
-    );
-   
- openModalForm.show();
-// }
-const elements = {
-    counter:document.querySelector('.modal-rating-counter'),
+  // function handlerClick (evt){
+  const openModalForm = basicLightbox.create(modalRatingForm);
+
+  openModalForm.show();
+  // }
+  const elements = {
+    counter: document.querySelector('.modal-rating-counter'),
     form: document.querySelector('.modal-rating-form'),
     container: document.querySelector('.modal-rating-container'),
-    input:document.querySelectorAll('input[name=rating-star]'),
+    input: document.querySelectorAll('input[name=rating-star]'),
     star: document.querySelectorAll('.modal-rating-star'),
-    email:document.querySelector('.modal-rating-email-input'),
-    btn:document.querySelector('.modal-rating-btn'),
-    card:document.querySelector('.card-item'),
+    email: document.querySelector('.modal-rating-email-input'),
+    btn: document.querySelector('.modal-rating-btn'),
+    card: document.querySelector('.card-item'),
+  };
+  // console.dir(elements.star);
+  elements.container.addEventListener('click', handlerGiveRating);
+  // elements.email.addEventListener('input',handlerInput);
+  // elements.btn.addEventListener('submit',handlerSubmit)
 
-   }
-// console.dir(elements.star);
-elements.container.addEventListener('click',handlerGiveRating);
-    // elements.email.addEventListener('input',handlerInput);
-    // elements.btn.addEventListener('submit',handlerSubmit)
-
-
-function handlerGiveRating(evt){
-    evt.preventDefault()
-    if(evt.currentTarget === evt.target){
-        return;
+  function handlerGiveRating(evt) {
+    evt.preventDefault();
+    if (evt.currentTarget === evt.target) {
+      return;
     }
     replaceStar();
     const modalInput = [...elements.input];
     const modalStar = [...elements.star];
     // console.log(modalStar);
-    for(let i=0; i<modalInput.length; i+=1){
-if(evt.target !== modalInput[i] ){
-modalStar[i].classList.replace('modal-rating-star','modal-rating-star-active');
+    for (let i = 0; i < modalInput.length; i += 1) {
+      if (evt.target !== modalInput[i]) {
+        modalStar[i].classList.replace(
+          'modal-rating-star',
+          'modal-rating-star-active'
+        );
+      } else {
+        modalStar[i].classList.replace(
+          'modal-rating-star',
+          'modal-rating-star-active'
+        );
+        elements.counter.textContent = `${modalInput[i].value}.0`;
+        return;
+      }
+    }
 
-}
-
-else{
-modalStar[i].classList.replace('modal-rating-star','modal-rating-star-active');
-elements.counter.textContent = `${modalInput[i].value}.0`;
-return;
-}
-    };
-
- console.dir( evt.currentTarget)
- console.dir( evt.target.value)
-}
-
-function replaceStar() {
-elements.star.forEach(star => {
-    star.classList.replace('modal-rating-star-active','modal-rating-star');
-    
-});
-}
+    console.dir(evt.currentTarget);
+    console.dir(evt.target.value);
   }
 
-
-
-
-
+  function replaceStar() {
+    elements.star.forEach(star => {
+      star.classList.replace('modal-rating-star-active', 'modal-rating-star');
+    });
+  }
+}
 
 //     const elements = {
 //         counter:document.querySelector('.modal-rating-counter'),
@@ -160,8 +154,7 @@ elements.star.forEach(star => {
 //     elements.container.addEventListener('click',handlerGiveRating);
 //         // elements.email.addEventListener('input',handlerInput);
 //         elements.btn.addEventListener('submit',handlerSubmit)
-    
-    
+
 //     function handlerGiveRating(evt){
 //         evt.preventDefault()
 //         if(evt.currentTarget === evt.target){
@@ -191,7 +184,7 @@ elements.star.forEach(star => {
 // function replaceStar() {
 //     elements.star.forEach(star => {
 //         star.classList.replace('modal-rating-star-active','modal-rating-star');
-        
+
 //     });
 // }
 // function handlerInput(evt){
@@ -211,7 +204,7 @@ elements.star.forEach(star => {
 //     //       <svg class="modal-rating-star" width="24" height="24">
 //     //         <use href="./img/icons.svg#star"></use>
 //     //       </svg>
-      
+
 //     //       <input
 //     //         class="modal-rating-input"
 //     //         type="radio"
@@ -221,7 +214,7 @@ elements.star.forEach(star => {
 //     //       <svg class="modal-rating-star" width="24" height="24">
 //     //         <use href="./img/icons.svg#star"></use>
 //     //       </svg>
-      
+
 //     //       <input
 //     //         class="modal-rating-input"
 //     //         type="radio"
@@ -231,7 +224,7 @@ elements.star.forEach(star => {
 //     //       <svg class="modal-rating-star" width="24" height="24">
 //     //         <use href="./img/icons.svg#star"></use>
 //     //       </svg>
-      
+
 //     //       <input
 //     //         class="modal-rating-input"
 //     //         type="radio"
@@ -241,7 +234,7 @@ elements.star.forEach(star => {
 //     //       <svg class="modal-rating-star" width="24" height="24">
 //     //         <use href="./img/icons.svg#star"></use>
 //     //       </svg>
-      
+
 //     //       <input
 //     //         class="modal-rating-input"
 //     //         type="radio"
@@ -274,7 +267,7 @@ elements.star.forEach(star => {
 //         replaceStar();
 //         const modalInput = [...elements.input];
 //         const modalStar = [...elements.star];
-        
+
 //         for(let i=0; i<modalInput.length; i+=1){
 //             if(evt.target !== modalInput[i] ){
 //                 modalStar[i].classList.replace('modal-rating-star','modal-rating-star-active');
