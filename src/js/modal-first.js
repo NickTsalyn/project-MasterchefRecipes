@@ -1,7 +1,7 @@
 import { getRecipesDetail } from './Api/api-recipe_info';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import Player from '@vimeo/player';
+import YouTubePlayer from 'youtube-player';
 
 const seeFullRecipec = document.querySelector('.gallery-recipes');
 
@@ -26,11 +26,11 @@ function handlerOnClick(evt) {
         </svg>
         </button>
 
-
+<div class="swap-container-top">
        <div class="iframeContainer"></div>
-
-        <h2 class="dish-title">${respInfo.title}</h2>
-
+<div>
+        <h2 class="dish-title">${respInfo.title}</h2></div>
+</div>
         <div class="swap-container">
 
         <div class="rait-container">
@@ -87,7 +87,9 @@ function handlerOnClick(evt) {
           <p class="dish-instructions">${respInfo.instructions}</p>
           <div class="btn-container">
             <button type="button" class="btn-modal-general btn-modal-first">Add to favorite</button>
-            <button type="button" class="btn-modal-general btn-modal-secont">Give a rating</button>
+            <button type="button" data-id="${
+              respInfo._id
+            }" class="btn-modal-general btn-modal-secont give-rating-btn ">Give a rating</button>
             </div>
              </div> `);
 
@@ -101,17 +103,22 @@ function handlerOnClick(evt) {
         tagContainer.appendChild(tagSpan);
       });
     }
+
     const iframeContainer = instance
       .element()
       .querySelector('.iframeContainer');
+
     if (respInfo.youtube !== '') {
-      const iframe = document.createElement('iframe');
-      iframe.id = 'vimeo-player';
-      iframe.src = respInfo.youtube;
-      iframe.frameborder = '0';
-      iframe.allowfullscreen = true;
-      iframe.allow = 'autoplay; encrypted-media';
-      iframeContainer.appendChild(iframe);
+      const player = YouTubePlayer(iframeContainer, {
+        videoId: respInfo.youtube,
+      });
+      player
+        .playVideo()
+        .then(() =>
+          console.log(
+            'Starting to play player1. It will take some time to buffer video before it starts playing.'
+          )
+        );
     } else {
       const image = document.createElement('img');
       image.src = respInfo.thumb;
@@ -119,5 +126,7 @@ function handlerOnClick(evt) {
     }
 
     instance.show();
+    const addRatingBtn = document.querySelector('.give-rating-btn');
+    addRatingBtn.addEventListener('click', openRatingModal);
   });
 }
