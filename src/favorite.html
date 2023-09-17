@@ -17,27 +17,28 @@
         
         </div>
       </section>
-      <section class="nothing">
-        <div class="container nothing-container">
-         
-<img class="hat" src="/img/hat.jpg" alt="hat">
-<p class="nothing-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
-        </div>
-      </section>
 
       <section class="fav-categories-sec">
+       
         <div class="container fav-categories">
  <button class="fav-category">All categories </button>
         </div>
       </section>
 
-      <section>
+      <section class="fav-sec-recipes">
+        <div class="container nothing">  
+          <img class="hat" src="/img/hat.jpg" alt="hat">
+          <p class="nothing-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
+                  </div>
         <div class="container fav-recipes">
           <ul class="fav-list-recipes">
             <li class="fav-recipe-card">
-              <svg class="fav-heart" width="22" height="22">
-                <use href="/img/icons.svg#heart"></use>
-              </svg>
+             <img class="fav-card-img" src="/img/cards.jpg" alt="card">
+              <button class="fav-button-heart">
+                <svg class="fav-heart" width="22" height="22">
+                  <use href="/img/icons.svg#heart"></use>
+                </svg>
+              </button>
                 <h3 class="fav-card-title">BANANA PANCAKES</h3>
                 <p class="fav-cart-text">Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice.</p>
                 <div class="fav-cart-footer">
@@ -54,49 +55,12 @@
         </div>
       </section>
 
-      <section class="fav-sec-pagination">
-        <div class="container fav-cont-pagination">
-          
-            <ul class="fav-pag-left">
-              <li class="fav-pag-number fav-end-begin">
-                <svg class="fav-pag-arrow" width="22" height="22">
-                  <use href="/img/icons.svg#left-pag-two"></use>
-                </svg>
-              </li>
-              <li class="fav-pag-number">
-                <svg class="fav-pag-arrow" width="22" height="22">
-                  <use href="/img/icons.svg#left-pag-one"></use>
-                </svg>
-              </li>
-            </ul>
-          
-          <div>
-            <ul class="fav-pag-numbers" >
-              <li class="fav-pag-number fav-current">1</li>
-              <li class="fav-pag-number">2</li>
-              <li class="fav-pag-number">3</li>
-            </ul>
-          </div> 
-         
-            <ul class="fav-pag-right">
-              <li class="fav-pag-number fav-end-begin">
-                <svg class="fav-pag-arrow" width="22" height="22">
-                  <use href="/img/icons.svg#right-pag-one"></use>
-                </svg>
-              </li>
-              <li class="fav-pag-number">
-                <svg class="fav-pag-arrow" width="22" height="22">
-                  <use href="/img/icons.svg#right-pag-two"></use>
-                </svg>
-              </li>
-            </ul>
-         
-        </div>
-      </section>
+      
     </main>
 
 
 
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/favorite.js"></script>
   </body>
 </html>

@@ -107,10 +107,12 @@ margin-right: auto;
 /* ============================================================ */
 /*                 recipes */
 .fav-list-recipes{
+    display: flex;
+    flex-wrap: wrap;
     gap: 24px;
 }
 @media only screen and (min-width: 768px) {
-    fav-list-recipes{
+    .fav-list-recipes{
         gap: 16px;    
     }
 }
@@ -122,11 +124,12 @@ margin-right: auto;
 }
 
 .fav-recipe-card{
-    background-image: url("/img/cards.jpg");
+    /* background-image: url("/img/cards.jpg"); */
+    position: relative;
     width: 335px;
     height: 335px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    /* background-size: contain;
+    background-repeat: no-repeat; */
     padding: 16px;
     text-align: left;
     border-radius: 15px;
@@ -140,19 +143,35 @@ margin-right: auto;
 }
 @media only screen and (min-width: 1158px) {
 .fav-recipe-card{
-    /* width: 258px;
-    height: 287px; */
+   
     width: 258px;
     height: 287px;
+    position: relative;
 }
 }
-
-.fav-heart{
-    fill: #f4f4fd;
+.fav-card-img{
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+.fav-button-heart{
+    float: right;
     width: 22px;
     height: 22px;
-    padding: 2.75px, 1.83px, 2.9px, 1.83px;
-    float:right;
+    /* padding: 2.75px, 1.83px, 2.9px, 1.83px; */
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+}
+.fav-heart{
+    fill: #f4f4fd;
+    /* width: 22px;
+    height: 22px; */
+    
     
 }
 .fav-card-title{
