@@ -55,3 +55,7 @@
 .basicLightbox--visible .basicLightbox__placeholder {
   transform: scale(1);
 }
+
+.on-close {
+  fill: black;
+}
