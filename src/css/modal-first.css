@@ -79,6 +79,11 @@
   margin-right: 16px;
   align-items: center;
 }
+@media only screen and (min-width: 768px) {
+  .icon-list {
+    margin-right: 8px;
+  }
+}
 .icon-rating {
   display: flex;
   justify-content: center;
@@ -186,6 +191,11 @@
 }
 .dish-instructions {
   margin-top: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .dish-instructions {
+    margin-top: 40px;
+  }
 }
 .btn-container {
   display: flex;

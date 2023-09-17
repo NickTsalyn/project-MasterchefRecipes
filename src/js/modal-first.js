@@ -1,7 +1,6 @@
 import { getRecipesDetail } from './Api/api-recipe_info';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import Player from '@vimeo/player';
 
 const seeFullRecipec = document.querySelector('.gallery-recipes');
 
