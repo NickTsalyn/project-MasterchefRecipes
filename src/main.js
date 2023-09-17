@@ -1,4 +1,7 @@
 import './swiper'
 import './js/Api/MainAPI'
 import './js/render-categories'
-import './js/hero/masters'
+import './js/search-form'
+import './js/render-recipes-list'
+import './js/header/mobile-menu'
+import './js/header/theme-switcher'

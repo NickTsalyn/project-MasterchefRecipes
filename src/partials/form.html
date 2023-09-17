@@ -1,3 +1,78 @@
 <div class="form-container">
+    <form class="search-form" name="search-form">
+        <label for="input-search" class="label-form"> Search
+            <div class="search-overlay">
+                <input class="input-form input-search" id="input-search" type="text" placeholder="Enter Text">
+                <svg class="icon-search" width="18" height="18">
+                    <use href="../img/icons.svg#search"></use>
+                </svg>
+                <button class="btn-close-search" type="button">
+                    <svg class="icon-close-search" width="18" height="18">
+                        <use href="../img/icons.svg#close-icon"></use>
+                    </svg>
+                </button>
+            </div>
+        </label>
+        <!-- Вибір по часу приготування  -->
+        <label for="input-time" class="label-form">Time
+            <div class="search-overlay">
+                <input class="input-form input-time" type="text" id="input-time" placeholder="0 min" disabled>
+                <button class="btn-chevron-down" type="button">
+                    <svg class="icon-chevron-down" width="18" height="18">
+                        <use href="../img/icons.svg#icon-chevron-down">
+                    </svg>
+                </button>
+                <select class="form-select select-time" size="3">
+                    <option class="option-form" value="">10 min</option>
+                    <option class="option-form" value="">20 min</option>
+                    <option class="option-form" value="">30 min</option>
+                    <option class="option-form" value="">40 min</option>
+                    <option class="option-form" value="">50 min</option>
+                    <option class="option-form" value="">60 min</option>
+                    <option class="option-form" value="">70 min</option>
+                    <option class="option-form" value="">80 min</option>
+                    <option class="option-form" value="">90 min</option>
+                    <option class="option-form" value="">100 min</option>
+                    <option class="option-form" value="">110 min</option>
+                    <option class="option-form" value="">120 min</option>
+                </select>
+            </div>
+        </label>
+        <!-- Пошук за країною походження -->
 
+        <label for="input-area" class="label-form">Area
+            <input class="input-form input-area" type="text" id="input-area" placeholder="Region" disabled>
+            <button class="btn-chevron-down" type="button">
+                <svg class="icon-chevron-down" width="18" height="18">
+                    <use href="../img/icons.svg#icon-chevron-down">
+                </svg>
+            </button>
+            <select class="form-select select-area" size="6">
+                <!-- <option class="option-form">Region</option> -->
+            </select>
+        </label>
+        <!-- Пошук за інгридієнтами -->
+
+        <label for="input-ingredients" class="label-form">Ingredients
+            <input class="input-form input-ingredients" type="text" id="input-ingredients" placeholder="Ingredients"
+                disabled>
+            <button class="btn-chevron-down" type="button">
+                <svg class="icon-chevron-down" width="18" height="18">
+                    <use href="../img/icons.svg#icon-chevron-down">
+                </svg>
+            </button>
+            <select class="form-select select-ingredients" size="6">
+                <!-- <option class="option-form">Region</option> -->
+            </select>
+        </label>
+    </form>
+    <div class="reset-block">
+        <button class="reset-search" type="button">Reset the filter
+            <svg class="icon-reset-search" width="18" height="18">
+                <use href="../img/icons.svg#close-icon"></use>
+            </svg>
+        </button>
+    </div>
+
+    <div class="gallery-recipes"></div>
 </div>
