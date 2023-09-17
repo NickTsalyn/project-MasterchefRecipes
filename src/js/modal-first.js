@@ -1,6 +1,7 @@
 import { getRecipesDetail } from './Api/api-recipe_info';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import Player from '@vimeo/player';
 
 const seeFullRecipec = document.querySelector('.gallery-recipes');
 
@@ -17,146 +18,95 @@ function handlerOnClick(evt) {
   getRecipesDetail(value).then(respInfo => {
     console.log(respInfo);
     const instance = basicLightbox.create(`
-        <div>
-      <button class="btn">
-        <svg class="on-close" width="10" height="10">
+    <div class="modal-frame">
+          
+        <button class="modal-close-button">
+          <svg class="modal-close-icon" width="20" height="20">
           <use href="./img/icons.svg#close-icon"></use>
         </svg>
-      </button>
-      <iframe
-        min-width="295"
-        min-height="295"
+        </button>
+
+
+        
+          <iframe
+        id="vimeo-player"
         src="${respInfo.youtube ? respInfo.youtube : respInfo.thumb}"
+        frameborder="0"
+        allowfullscreen
+        allow="autoplay encrypted-media"
       ></iframe>
-      <h2 class="dish-title">${respInfo.title}</h2>
-      <p class="recipe-rating">${respInfo.rating}</p>
-      <ul class="icon-list">
-        <li class="icon-rating">
-          <svg class="icon-star" width="18" height="18">
-            <use href="./img/icons.svg#star"></use>
-          </svg>
-        </li>
-        <li class="icon-rating">
-          <svg class="icon-star" width="18" height="18">
-            <use href="./img/icons.svg#star"></use>
-          </svg>
-        </li>
-        <li class="icon-rating">
-          <svg class="icon-star" width="18" height="18">
-            <use href="./img/icons.svg#star"></use>
-          </svg>
-        </li>
-        <li class="icon-rating">
-          <svg class="icon-star" width="18" height="18">
-            <use href="./img/icons.svg#star"></use>
-          </svg>
-        </li>
-        <li class="icon-rating">
-          <svg class="icon-star" width="18" height="18">
-            <use href="./img/icons.svg#star"></use>
-          </svg>
-        </li>
-      </ul>
-      <div><p class="preparing-time">${respInfo.time} min</p></div>
-    </div>
-    <div class="ingredients-container">
-          <h3>Інгредієнти:</h3>
-          <ul>
-            ${respInfo.ingredients
-              .map(
-                ingredient => `
-              <li>
-                <span class="ingredient-name">${ingredient.name}</span>
-                <span class="ingredient-measure">${ingredient.measure}</span>
-              </li>
-            `
-              )
-              .join('')}
-          </ul>
-        </div>
-         <p class="dish-instructions">${respInfo.instructions}</p>
-          <button type="button" class="btn">Add to favorite</button>
-          <button type="button" class="btn">Give a rating</button>`);
-    console.log(respInfo);
+
+        <h2 class="dish-title">${respInfo.title}</h2>
+
+        <div class="swap-container">
+
+        <div class="rait-container">
+
+        <p class="recipe-rating recipe-box-text">${respInfo.rating}</p>
+        <ul class="icon-list">
+          <li class="icon-rating">
+            <svg class="icon-star" width="14" height="14">
+              <use href="./img/icons.svg#star"></use>
+            </svg>
+          </li>
+          <li class="icon-rating">
+            <svg class="icon-star" width="14" height="14">
+              <use href="./img/icons.svg#star"></use>
+            </svg>
+          </li>
+          <li class="icon-rating">
+            <svg class="icon-star" width="14" height="14">
+              <use href="./img/icons.svg#star"></use>
+            </svg>
+          </li>
+          <li class="icon-rating">
+            <svg class="icon-star" width="14" height="14">
+              <use href="./img/icons.svg#star"></use>
+            </svg>
+          </li>
+          <li class="icon-rating">
+            <svg class="icon-star" width="14" height="14">
+              <use href="./img/icons.svg#star"></use>
+            </svg>
+          </li>
+        </ul>
+        
+        <p class="preparing-time recipe-box-text">${respInfo.time} min</p>
+        
+      </div>
+      
+      <div class="ingredients-container">
+            <ul>
+              ${respInfo.ingredients
+                .map(
+                  ingredient => `
+                <li class="ingredients-container-box">
+                  <span class="ingredient-name">${ingredient.name}</span>
+                  <span class="ingredient-measure">${ingredient.measure}</span>
+                </li>
+              `
+                )
+                .join('')}
+            </ul>
+          </div>
+          <div class="tag-container"></div>
+          </div>
+          <p class="dish-instructions">${respInfo.instructions}</p>
+          <div class="btn-container">
+            <button type="button" class="btn-modal-general btn-modal-first">Add to favorite</button>
+            <button type="button" class="btn-modal-general btn-modal-secont">Give a rating</button>
+            </div>
+             </div> `);
+    const tagContainer = instance.element().querySelector('.tag-container');
+    if (respInfo.tags && respInfo.tags.length > 0) {
+      respInfo.tags.forEach(tag => {
+        const tagSpan = document.createElement('span');
+        tagSpan.textContent = `#${tag}`;
+        tagSpan.className = 'tag';
+
+        tagContainer.appendChild(tagSpan);
+      });
+    }
     instance.show();
   });
 }
-
-// import { getRecipesDetail } from './Api/api-recipe_info';
-// import * as basicLightbox from 'basiclightbox';
-// document.addEventListener('DOMContentLoaded', function () {
-//   const seeFullRecipec = document.querySelector('.see-recipe');
-
-//   seeFullRecipec.addEventListener('click', handlerOnClick);
-
-//   function handlerOnClick(evt) {
-//     evt.preventDefault();
-//     if (!evt.target.classList.contains('card-img' || 'see-recipe')) {
-//       return;
-//     }
-//     getRecipesDetail(_id).then(respInfo => {
-//       const instance = basicLightbox.create(`
-//         <div>
-//       <button class="btn">
-//         <svg class="on-close" width="10" height="10">
-//           <use href="./img/icons.svg/#close-icon"></use>
-//         </svg>
-//       </button>
-//       <iframe
-//         min-width="295"
-//         min-height="295"
-//         src="${respInfo.youtube ? respInfo.youtube : respInfo.thumb}"
-//       ></iframe>
-//       <h2 class="dish-title">${respInfo.title}</h2>
-//       <p class="recipe-rating">${respInfo.rating}</p>
-//       <ul class="icon-list">
-//         <li class="icon-rating">
-//           <svg class="icon-star" width="18" height="18">
-//             <use href="./img/icons.svg/#star"></use>
-//           </svg>
-//         </li>
-//         <li class="icon-rating">
-//           <svg class="icon-star" width="18" height="18">
-//             <use href="./img/icons.svg/#star"></use>
-//           </svg>
-//         </li>
-//         <li class="icon-rating">
-//           <svg class="icon-star" width="18" height="18">
-//             <use href="./img/icons.svg/#star"></use>
-//           </svg>
-//         </li>
-//         <li class="icon-rating">
-//           <svg class="icon-star" width="18" height="18">
-//             <use href="./img/icons.svg/#star"></use>
-//           </svg>
-//         </li>
-//         <li class="icon-rating">
-//           <svg class="icon-star" width="18" height="18">
-//             <use href="./img/icons.svg/#star"></use>
-//           </svg>
-//         </li>
-//       </ul>
-//       <div><p class="preparing-time">${respInfo.time} min</p></div>
-//     </div>
-//     <div class="ingredients-container">
-//           <h3>Інгредієнти:</h3>
-//           <ul>
-//             ${respInfo.ingredients
-//               .map(
-//                 ingredient => `
-//               <li>
-//                 <span class="ingredient-name">${ingredient.name}</span>
-//                 <span class="ingredient-measure">${ingredient.measure}</span>
-//               </li>
-//             `
-//               )
-//               .join('')}
-//           </ul>
-//         </div>
-//          <p class="dish-instructions">${respInfo.instructions}</p>
-//           <button type="button" class="btn">Add to favorite</button>
-//           <button type="button" class="btn">Give a rating</button>`);
-//       instance.show();
-//     });
-//   }
-// });
