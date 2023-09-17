@@ -18,6 +18,7 @@
   --green-color: #9BB537;
   --white-color: #F8F8F8;
   --dark-theme-background:#161616;
+  --transition-dur-timing-func: 300ms ease-out;
 }
 
 
