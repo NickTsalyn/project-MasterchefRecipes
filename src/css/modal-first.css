@@ -74,17 +74,17 @@
 .on-close {
   fill: black;
 }
-.icon-list {
+.icon-list-modal {
   display: flex;
   margin-right: 16px;
   align-items: center;
 }
 @media only screen and (min-width: 768px) {
-  .icon-list {
+  .icon-list-modal {
     margin-right: 8px;
   }
 }
-.icon-rating {
+.icon-rating-modal {
   display: flex;
   justify-content: center;
   align-items: center;
