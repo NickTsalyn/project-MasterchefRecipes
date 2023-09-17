@@ -2,13 +2,12 @@
   width: 500px;
   height: 500px;
   background: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  border-radius: 15px;
+  padding: 40px;
 }
 
 .alert {
-    border-color: red;
+  border-color: red;
 }
 
 .basicLightbox {
@@ -69,21 +68,42 @@
   transform: scale(1);
 }
 
-
 .registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .label {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sign-password {
+  display: flex;
+  width: 360px;
+  height: 48px;
+  padding: 14px 169px 14px 18px;
+  align-items: flex-start;
+  gap: 32px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+
+.sign-name {
+  display: flex;
+  width: 360px;
+  height: 48px;
+  padding: 14px 169px 14px 18px;
+  align-items: flex-start;
+  gap: 32px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
 }
