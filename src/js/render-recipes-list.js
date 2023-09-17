@@ -5,7 +5,7 @@ import { renderCard } from "./render"
 const categoriesRefs = {
   allCategoriesBtn: document.querySelector(".categories-btn"),
   categoriesContainer: document.querySelector(".categories-wrapper"),
-  recipesContainer: document.querySelector(".render-conatiner")
+  recipesContainer: document.querySelector(".gallery-recipes")
 }
 
 const tempValues = {
@@ -41,6 +41,8 @@ function categoriesContainerHandler (e) {
     tempValues.category =  e.target.closest(".category-link").dataset.name
 
     getRecipeByCategory(tempValues.category, tempValues.page, tempValues.limit).then((response) => { 
+      console.log(response)
+      console.log(categoriesRefs.recipesContainer)
       categoriesRefs.recipesContainer.innerHTML = ""
       categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
     })
