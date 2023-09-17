@@ -64,12 +64,25 @@
   color: var(--green-color);
 }
 @media (hover: hover) {
-  .categories-btn:hover {
+  .categories-btn:hover,
+  .categories-btn:focus{
     background-color: var(--green-color);
     border-color: var(--green-color);
     color: var(--white-color);
   }
-  .category-item:hover {
+  .category-item:hover,
+  .category-item:focus {
+    color: var(--green-color);
+  }
+}
+
+@media not (hover: hover) {
+  .categories-btn:active{
+    background-color: var(--green-color);
+    border-color: var(--green-color);
+    color: var(--white-color);
+  }
+  .category-item:active{
     color: var(--green-color);
   }
 }

@@ -78,7 +78,15 @@ button.heart {
 }
 
 @media (hover: hover) {
-  .card-item .icon-heart:hover {
+  .card-item .icon-heart:hover, 
+  .card-item .icon-heart:focus{
+    fill: var(--background-color);
+    opacity: 1;
+  }
+}
+
+@media not (hover: hover) {
+  .card-item .icon-heart:active {
     fill: var(--background-color);
     opacity: 1;
   }
@@ -147,6 +155,21 @@ button.heart {
   font-size: 12px;
   font-weight: 500;
   line-height: normal;
+
+  transition: color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@media (hover: hover) {
+  .see-recipe:hover, 
+  .see-recipe:focus{
+    color: var(--primary-color);
+  }
+}
+
+@media not (hover: hover) {
+  .see-recipe {
+   color: var(--primary-color);
+  }
 }
 .rating-container {
   display: flex;
