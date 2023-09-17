@@ -94,7 +94,7 @@ button.heart {
   margin-bottom: 8px;
 
   color: var(--background-color);
-  text-align: center;
+  text-align:left;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28;

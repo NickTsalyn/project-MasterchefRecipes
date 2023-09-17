@@ -18,7 +18,6 @@ rendersAllRecipes()
 categoriesRefs.allCategoriesBtn.addEventListener("click", allCategoriesBtnHandler)
 
 function allCategoriesBtnHandler () {
-  
   rendersAllRecipes()
 }
 
@@ -40,9 +39,8 @@ function categoriesContainerHandler (e) {
 
     tempValues.category =  e.target.closest(".category-link").dataset.name
 
+    changeLimitByViewportWidth ()
     getRecipeByCategory(tempValues.category, tempValues.page, tempValues.limit).then((response) => { 
-      console.log(response)
-      console.log(categoriesRefs.recipesContainer)
       categoriesRefs.recipesContainer.innerHTML = ""
       categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
     })
@@ -61,8 +59,24 @@ function rendersAllRecipes () {
   if (tempValues.activeCategory) {
     tempValues.activeCategory.classList.remove("active")
   }
+  changeLimitByViewportWidth ()
   getAllRecipes(tempValues.page, tempValues.limit).then((response) => { 
+    
     categoriesRefs.recipesContainer.innerHTML = ""
     categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
   })
+}
+
+
+
+function changeLimitByViewportWidth () {
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+
+  if (vw >= 1200) {
+    tempValues.limit = 9;
+  } else if (vw < 1200 && vw >= 768) {
+    tempValues.limit = 8;
+  } else {
+    tempValues.limit = 6;
+  }
 }
