@@ -36,28 +36,28 @@ function handlerOnClick(evt) {
         <div class="rait-container">
 
         <p class="recipe-rating recipe-box-text">${respInfo.rating}</p>
-        <ul class="icon-list">
-          <li class="icon-rating">
+        <ul class="icon-list-modal">
+          <li class="icon-rating-modal">
             <svg class="icon-star" width="14" height="14">
               <use href="./img/icons.svg#star"></use>
             </svg>
           </li>
-          <li class="icon-rating">
+          <li class="icon-rating-modal">
             <svg class="icon-star" width="14" height="14">
               <use href="./img/icons.svg#star"></use>
             </svg>
           </li>
-          <li class="icon-rating">
+          <li class="icon-rating-modal">
             <svg class="icon-star" width="14" height="14">
               <use href="./img/icons.svg#star"></use>
             </svg>
           </li>
-          <li class="icon-rating">
+          <li class="icon-rating-modal">
             <svg class="icon-star" width="14" height="14">
               <use href="./img/icons.svg#star"></use>
             </svg>
           </li>
-          <li class="icon-rating">
+          <li class="icon-rating-modal">
             <svg class="icon-star" width="14" height="14">
               <use href="./img/icons.svg#star"></use>
             </svg>
