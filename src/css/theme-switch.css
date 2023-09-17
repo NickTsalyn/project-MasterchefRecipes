@@ -1,5 +1,5 @@
 body.dark-theme {
-  background-color: #161616;
+  background-color: var(--dark-theme-background);
   color: var(--white-color);
 }
 
