@@ -1,5 +1,6 @@
 import './swiper'
 import './js/Api/MainAPI'
+
 import './js/render-categories'
 import './js/search-form'
 import './js/render-recipes-list'
@@ -8,3 +9,6 @@ import './js/header/theme-switcher'
 import './js/modal-first'
 import './js/popular'
 import './js/pagination'
+
+import './js/modal-rating'
+

@@ -2,6 +2,8 @@ import { getRecipesDetail } from './Api/api-recipe_info';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import Player from '@vimeo/player';
+import './modal-rating';
+import { openRatingModal } from './modal-rating';
 
 const seeFullRecipec = document.querySelector('.gallery-recipes');
 
@@ -87,9 +89,14 @@ function handlerOnClick(evt) {
           <p class="dish-instructions">${respInfo.instructions}</p>
           <div class="btn-container">
             <button type="button" class="btn-modal-general btn-modal-first">Add to favorite</button>
-            <button type="button" class="btn-modal-general btn-modal-secont">Give a rating</button>
+            <button type="button" class="btn-modal-general btn-modal-secont give-rating-btn">Give a rating</button>
             </div>
-             </div> `);
+             </div> `
+            
+ 
+           
+    )
+    
 
     const tagContainer = instance.element().querySelector('.tag-container');
     if (respInfo.tags && respInfo.tags.length > 0) {
@@ -119,5 +126,7 @@ function handlerOnClick(evt) {
     }
 
     instance.show();
+    // const addRatingBtn = document.querySelector('.give-rating-btn');
+    // addRatingBtn.addEventListener('click',openRatingModal);
   });
 }
