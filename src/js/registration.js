@@ -9,8 +9,8 @@ const emailPattertn =
 button.addEventListener('click', () => {
   const content = `
     <div class="modal">
+    <h4 class="reg-title">Registration</h4>
       <form class="registration-form">
-        Registration
         <label for="text" class="label">Sign Up
           <input type="text" class="sign-name" name="sign up" />
         </label>
@@ -46,6 +46,10 @@ button.addEventListener('click', () => {
     });
     })
 
+    if(signName === "" && showPassword.value === "") {
+        Notiflix.Notify.warning('Please insert a valid email address')
+        return
+    }
 
     // if(signName !== emailPattertn) {
     //     Notiflix.Notify.warning('Please insert a valid email address');
@@ -78,8 +82,8 @@ button.addEventListener('click', () => {
   function openLoginModal() {
     const logForm = `
       <div class="modal">
+      <h4 class="reg-title">Login</h4>
         <form class="login-form">
-          Login
           <label for="text" class="label">Email
             <input type="email" class="login-name" name="login" />
           </label>
