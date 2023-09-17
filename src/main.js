@@ -1,3 +1,4 @@
 import './swiper'
 import './js/Api/MainAPI'
-import './js/Api/pagination'
+import './js/popular.js'
+import './js/pagination.js'
