@@ -100,6 +100,12 @@
   line-height: 24px;
   text-transform: uppercase;
 }
+@media only screen and (min-width: 768px) {
+  .dish-title {
+    margin-top: 0;
+    justify-content: left;
+  }
+}
 .rait-container {
   display: flex;
   margin-top: 14px;
@@ -235,5 +241,39 @@
 
   .swap-container > div:last-child {
     order: -1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .swap-container-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 32px;
+  }
+
+  .swap-container-top > div {
+    flex: 1;
+  }
+
+  .swap-container-top > div:last-child {
+    order: -1;
+  }
+}
+.iframeContainer {
+  width: 295px;
+  height: 295px;
+  border-radius: 8px;
+  background: linear-gradient(
+    0deg,
+    rgba(5, 5, 5, 0.4) 0%,
+    rgba(5, 5, 5, 0.4) 100%
+  );
+}
+
+@media only screen and (min-width: 768px) {
+  .iframeContainer {
+    width: 467px;
+    height: 250px;
+    margin-top: 16px;
   }
 }
