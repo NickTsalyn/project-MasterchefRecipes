@@ -1,4 +1,5 @@
 import Pagination from 'tui-pagination';  
+import {renderCard} from './render.js'
 
 const container = document.querySelector('.tui-pagination');
 
@@ -29,8 +30,3 @@ const options = {
 };
 
 const pagination = new Pagination(container, options);
-
-pagination.on('beforeMove', (eventData) => {
-    const currentPage = eventData.page;
-    
-  });
