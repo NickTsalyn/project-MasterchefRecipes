@@ -1,6 +1,6 @@
 
 import { getMasters } from "./Api/api-masters"
-import {eventCards} from "./fn-masters-card"
+import { eventCards } from "./fn-masters-card"
 
 // const masters = document.querySelector(".hero-event")
 
