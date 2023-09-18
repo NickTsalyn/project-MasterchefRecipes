@@ -55,7 +55,7 @@
     display: none;
     position: absolute;
     top: 14px;
-    right: 18px;    
+    right: 18px;  
     align-items: center;
     padding: 0;
     border: none;
@@ -68,9 +68,7 @@
 
 
 /* Пошук за часом приготування */
-.input-time,
-.input-area,
-.input-ingredients {
+.input-time {
     width: 160px;
     height: 46px;
     padding: 14px 18px;
@@ -107,16 +105,21 @@
     background-color: var(--background-color);
     box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
     overflow-y: scroll;
+    z-index: 100;
 }
 
 .select-time {
     width: 160px;
     height: 124px;
-    display: none;
-    z-index: 100;
+    display: none;    
 }
 
 /* Пошук за країною походження */
+.input-area{
+    width: 161px;
+    height: 46px;
+    padding: 14px 18px;
+}
 .select-area {
     width: 161px;
     height: 176px;
@@ -124,6 +127,11 @@
 }
 
 /* Пошук за інгридієнтами */
+.input-ingredients{
+    width: 188px;
+    height: 46px;
+    padding: 14px 18px;
+}
 
 .select-ingredients {
     width: 188px;
@@ -135,10 +143,14 @@
     color: rgba(5, 5, 5, 0.30);
     font-weight: 500;
     transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    ;
-}
 
+    
+}
+.active {
+    color: var(--primary-color);
+}
 .option-form:active {
+
     color: var(--primary-color);
 }
 
