@@ -10,6 +10,7 @@
 @import url('./recipes-gallery.css');
 @import url('./modal-first.css');
 @import url('./registration.css');
+@import url('./pagination.css');
 
 :root {
   --primary-color: #050505;
