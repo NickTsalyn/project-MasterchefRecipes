@@ -15,6 +15,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@vimeo/player": "^2.20.1",
     "axios": "^1.5.0",
     "basiclightbox": "^5.0.4",
     "iframe": "^1.0.0",
@@ -25,6 +26,7 @@
     "swiper": "^10.2.0",
     "tui-pagination": "^3.4.1",
     "vite-plugin-full-reload": "^1.0.5",
-    "vite-plugin-html-inject": "^1.0.1"
+    "vite-plugin-html-inject": "^1.0.1",
+    "youtube-player": "^5.6.0"
   }
 }

@@ -120,7 +120,7 @@
   width: 18.5px;
   left: 0.7px;
   bottom: 0.7px;
-  background-color: white;
+  background-color: var(--white-color);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 50%;
