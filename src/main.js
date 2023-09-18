@@ -12,3 +12,4 @@ import './js/modal-rating';
 import './js/registration';
 import './js/favorite'
 import './js/masters'
+import './js/scroll'
