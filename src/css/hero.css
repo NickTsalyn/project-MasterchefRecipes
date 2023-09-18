@@ -2,3 +2,24 @@
   display: flex;
   gap: 16px;
 }
+/* .swiper-pagination-bullet {
+  width: 13px;
+  height: 13px;
+}
+.swiper-pagination-bullet-active {
+  width: 28px;
+  height: 13px;
+  border-radius: 100px 100px;
+  background: var(--secondary-color);
+}
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 80px;
+} */

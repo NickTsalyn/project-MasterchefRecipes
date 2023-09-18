@@ -1,4 +1,4 @@
-import './swiper';
+import './js/swiper';
 import './js/Api/MainAPI';
 import './js/render-categories';
 import './js/search-form';

@@ -7,7 +7,6 @@ async function getMasters() {
   try {
     const response = await axios.get(`${BASE_URL}`);
       return response.data;
-      // console.log(response);
   } catch (error) {
     console.error(error);
   }
