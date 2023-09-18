@@ -2,8 +2,6 @@ import {getPopularRecipes} from './Api/api-popular_recipes';
 
 const list = document.querySelector('.popular-list');
 
-getPopularRecipes().then(data => {console.dir(data)})
-
 function renderItems(data) {
   const card = data.map(({ title, description, preview, _id }) => `
     <li class="list-item" id="${_id}">
