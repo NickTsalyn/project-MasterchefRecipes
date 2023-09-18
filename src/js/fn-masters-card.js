@@ -8,14 +8,14 @@ export function eventCards(arr) {
     <li class="chef-photo">
       <picture>
         <source
-          media="(min-width: 1280px)"
+          // media="(min-width: 1280px)"
           srcset="
            ${chefImgWebpUrl}
           "
           type="image/webp"
         />
         <source
-          media="(min-width: 1280px)"
+          // media="(min-width: 1280px)"
           srcset="
             ${chefImgUrl}
           "

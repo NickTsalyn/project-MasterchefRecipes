@@ -1,5 +1,5 @@
 
-// import { getMasters } from "./js/Api/api-masters"
+import { getMasters } from "./Api/api-masters"
 import {eventCards} from "./fn-masters-card"
 
 // const masters = document.querySelector(".hero-event")
@@ -15,4 +15,5 @@ async function mastersEvt() {
     console.error(error);
   }
 }
-console.log(mastersEvt);
+mastersEvt()
+// console.log(mastersEvt);
