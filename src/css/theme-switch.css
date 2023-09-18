@@ -20,4 +20,8 @@ body.dark-theme {
   stroke: var(--white-color);
 }
 
+.dark-theme .mregistration-btn-icon {
+  stroke: var(--white-color);
+}
+
 /* ----------- HEADER ----------- */
