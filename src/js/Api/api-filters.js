@@ -39,33 +39,3 @@ export async function getRecipesByArea(value) {
         throw new Error(Notiflix.Notify.failure(`Failed to fetch pecipes`));
     }
 };
-
-export async function getRecipesByIngredient(value) {
-    const END_POINT = `/recipes`;
-    const params = new URLSearchParams({         
-        "ingredients": value,
-    })   
-    try {
-           
-        const response = await axios
-            .get(`${BASE_URL}${END_POINT}?${params}`)    
-        console.log(response.data);
-        return response.data;
-    }
-    catch (error) {
-        throw new Error(Notiflix.Notify.failure(`Failed to fetch pecipes`));
-    }
-}
-
-// export async function getAllTags(value) {
-//     const END_POINT = `/recipes`;
-//     const params = new URLSearchParams({         
-//         "tags": value,
-//     }) 
-//    try {
-//        const response = await axios
-//        .get(`${BASE_URL}${END_POINT}?${params}`)
-//    } catch (error) {
-    
-//    }
-// }

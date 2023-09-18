@@ -1,11 +1,11 @@
 import Notiflix from "notiflix";
-import { debounce, set } from 'lodash';
-
+import { debounce } from 'lodash';
 import { getAllRecipes } from "./Api/api-recipe_info"
 import { getAllAreas } from "./Api/api-areas"
 import { getAllIngredients } from "./Api/api-ingredients"
 import { renderCard } from "./render.js"
-import {  getRecipesByTime, getRecipesByArea, getRecipesByIngredient } from "./Api/api-filters"
+import {  getRecipesByTime, getRecipesByArea } from "./Api/api-filters"
+import {rendersAllRecipes} from "./render-recipes-list"
 
 const elements = {
     form: document.querySelector('.search-form'),
@@ -25,14 +25,14 @@ const elements = {
     btnSelectIngredients: document.querySelector('.btn-select-ingredients'),
     selectIngredients: document.querySelector('.select-ingredients'),
 
-    btnReset: document.querySelector('.reset-search'),
+    btnReset: document.querySelector('.btn-reset-filter'),
 
     galleryRecipes: document.querySelector('.gallery-recipes'),
     btnHeart: document.querySelector('.heart')
 }
-console.log(elements.form);
-// -----Заповнення випадаючих списків форми
+console.log(elements.btnCloseSearch);
 
+// -----Заповнення випадаючих списків форми
      getAllRecipes()
     .then((data) => {        
         elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data.results))
@@ -40,7 +40,7 @@ console.log(elements.form);
     .catch ((error) => {
         Notiflix.Notify.failure("Sorry, no pecipes were found for your request. Please try again.")
     }) 
-    
+        
     getAllAreas()
     .then((data) => {        
         let li = data.map(({ id, name }) => `<li class="option-area" value="${id}">${name}</li>`).join('');
@@ -52,107 +52,143 @@ console.log(elements.form);
 
     getAllIngredients() 
      .then((data) => {         
-         let li = data.map(({ name }) => `<li class="option-ingredient" data-value="${name}">${name}</li>`).join('');
+         let li = data.map(({ _id, name }) => `<li class="option-ingredient" value="${_id}">${name}</li>`).join('');
          
         elements.selectIngredients.insertAdjacentHTML("beforeend", li);    
     })
     .catch ((error) => {
-        Notiflix.Notify.failure("Sorry, no areas were found for your request. Please try again.")
+        Notiflix.Notify.failure("Sorry, no ingredients were found for your request. Please try again.")
     }) 
-// -------------------------------------------
 
-elements.searchInput.addEventListener('change', debounce((evt) => {
-    const value = elements.searchInput.value.trim().toLowerCase();
+// --------------------------Пошук та рендер рецептів по тегу ----------------
+elements.searchInput.addEventListener('change', debounce(handlerSearchInput, 300));
 
-    //   getAllRecipes()
-    //     .then((data) => {  
-    //         const tags = data.results.map(({ tags }) => console.log(tags)).join('')
-    //         const selectedTag = tags.filter(tag => {
-    //             if (tag === value) {                           
-    //                 elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data))
-    //             }
-                
-    //         })
-    //         // tags.filter(tag => {
-    //         //     if (tag === value) {
-    //         //         recipesByTag.push()
-    //         //     }
-    //         // })
-    //         // console.log(recipesByTag);
-    //     })
-    //  .catch ((error) => {
-    //     Notiflix.Notify.failure("Sorry, no tags were found for your request. Please try again.")
-    // })    
-    
-}, 300))
+function handlerSearchInput() {
+    const inputValue = elements.searchInput.value.trim().toLowerCase();     
+    elements.btnCloseSearch.style.display = "flex";
+    console.log(elements.btnCloseSearch);
+    getAllRecipes()
+        .then((data) => {
+            const recipes = data.results;
+            const filteredRecipesbyTag = recipes.filter((recipe) => {
+                const lowerCaseTags = recipe.tags.map(tag => tag.toLowerCase());
+                return lowerCaseTags.includes(inputValue);
+            })
+            if (inputValue !== '' && filteredRecipesbyTag.length === 0) {
+                Notiflix.Notify.info("No recipes found for the specified tag.");
+            }
+            elements.searchInput.value = inputValue;
+            elements.galleryRecipes.innerHTML = renderCard(filteredRecipesbyTag);         
+        })
+        .catch((error) => {
+            Notiflix.Notify.failure("Sorry, no recipes were found for your request. Please try again.");
+        });
+        
+}
 
-elements.btnSelectTime.addEventListener('click', () => {    
-    elements.selectTime.style.display = "flex"    
-})
+elements.btnCloseSearch.addEventListener('click', () => {
+    elements.searchInput.value = '';
+    elements.btnCloseSearch.style.display = 'none'; 
+});
+ 
+// -------------------Пошук та рендер рецептів за часом приготування---------------
+elements.btnSelectTime.addEventListener('click', () => elements.selectTime.style.display = "flex")
 
 elements.selectTime.addEventListener('click', handlerTimeSelect)
-function handlerTimeSelect(evt) {
+let selectedTimeElement;
 
-    evt.target.classList.add('active')     
-    elements.inputTime.value = evt.target.textContent
-    const selectedTime = Number.parseInt(elements.inputTime.value)
-    console.log(selectedTime);
-    elements.selectTime.style.display = "none" 
-    getRecipesByTime(selectedTime)
-        .then((data) => {            
-            elements.galleryRecipes.innerHTML = ""
-            elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data.results))         
-        })
-        .catch ((error) => {
-            Notiflix.Notify.failure("Sorry, no recipes were found for your request. Please try again.")
-        })           
+function handlerTimeSelect(evt) {
+   
+    if (!evt.target.classList.contains('active')) {       
+        if (selectedTimeElement) {
+            selectedTimeElement.classList.remove('active');
+        }       
+        evt.target.classList.add('active');        
+        selectedTimeElement = evt.target;
+        elements.inputTime.value = evt.target.textContent
+        const selectedTime = Number.parseInt(elements.inputTime.value)  
+        elements.selectTime.style.display = "none" 
+          
+            getRecipesByTime(selectedTime)
+                .then((data) => {            
+                    elements.galleryRecipes.innerHTML = ""
+                    elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data.results))         
+                })
+                .catch ((error) => {
+                    Notiflix.Notify.failure("Sorry, no recipes were found for your request. Please try again.")
+                });
+    }        
+    
 }
 
-elements.btnSelectArea.addEventListener('click', () => {    
-    elements.selectArea.style.display = "flex"    
-})
+// -------------------Пошук та рендер рецептів за країною походження---------------
 
+elements.btnSelectArea.addEventListener('click', () => elements.selectArea.style.display = "flex")
+let selectedAreaElement;
 elements.selectArea.addEventListener('click', handlerAreaSelect)
 function handlerAreaSelect(evt) {
-
-    evt.target.classList.add('active')     
-    elements.inputArea.value = evt.target.textContent
-    const selectedArea = elements.inputArea.value
-    console.log(selectedArea);
-    elements.selectArea.style.display = "none" 
-    getRecipesByArea(selectedArea)
-        .then((data) => {    
-            console.log(data.results);
-            elements.galleryRecipes.innerHTML = ""
-            elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data.results))         
-        })
-        .catch ((error) => {
-            Notiflix.Notify.failure("Sorry, no recipes were found for your request. Please try again.")
-        })             
+    if (!evt.target.classList.contains('active')) {       
+        if (selectedAreaElement) {
+            selectedAreaElement.classList.remove('active');
+        }
+        evt.target.classList.add('active');
+        selectedAreaElement = evt.target;        
+        elements.inputArea.value = evt.target.textContent
+        const selectedArea = elements.inputArea.value  
+        elements.selectArea.style.display = "none"
+       
+        getRecipesByArea(selectedArea)
+            .then((data) => {
+                if (data.results.length !== 0) {
+                    elements.galleryRecipes.innerHTML = ""
+                    elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data.results))
+                }
+            })
+            .catch((error) => {
+                Notiflix.Notify.failure("Sorry, no recipes were found for your request. Please try again.")
+            })
+    }
 }
+// -------------------Пошук та рендер рецептів за інгридієнтами---------------
 
-elements.btnSelectIngredients.addEventListener('click', () => {    
-    elements.selectIngredients.style.display = "flex"    
-})
+elements.btnSelectIngredients.addEventListener('click', () => elements.selectIngredients.style.display = "flex");
+let selectedIngredientElement; 
 
-elements.selectIngredients.addEventListener('click', handlerIngredientSelect)
+elements.selectIngredients.addEventListener('click', handlerIngredientSelect);
+
 function handlerIngredientSelect(evt) {
+    if (!evt.target.classList.contains('active')) {
+        if (selectedIngredientElement) {
+            selectedIngredientElement.classList.remove('active');
+        }
+        evt.target.classList.add('active');
+        selectedIngredientElement = evt.target;
+        console.log(evt.target);
+        elements.inputIngredients.value = selectedIngredientElement.textContent;
+        const ingredientId = selectedIngredientElement.getAttribute('value'); 
+        elements.selectIngredients.style.display = "none";
+        // Отримати рецепти за інгредієнтом
+        getAllRecipes()
+            .then((data) => {
+                const recipes = data.results;
+                const filteredRecipesbyIngredient = recipes.filter((recipe) => {
+                    const ingredientIds = recipe.ingredients.map(ingredient => ingredient.id);
+                    return ingredientIds.includes(ingredientId);
+                })
 
-    evt.target.classList.add('active')     
-    elements.inputIngredients.value = evt.target
-    console.log(evt.target);
-    const selectIngredient = elements.inputIngredients.value
-    console.log(selectIngredient);
-    elements.selectIngredients.style.display = "none" 
-    getRecipesByIngredient(selectIngredient)
-        .then((data) => {  
-            console.log(data.results);
-            elements.galleryRecipes.innerHTML = ""
-            elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data.results))         
-        })
-        .catch ((error) => {
-            Notiflix.Notify.failure("Sorry, no recipes were found for your request. Please try again.")
-        })             
+                if (filteredRecipesbyIngredient.length === 0) {
+                    Notiflix.Notify.info("No recipes found for the specified ingredient.");
+                }
+
+                elements.galleryRecipes.innerHTML = renderCard(filteredRecipesbyIngredient);
+            })
+            .catch((error) => {
+                Notiflix.Notify.failure("Sorry, no recipes were found for your request. Please try again.");
+            });
+    }
 }
-
-
+// ------------Очищення форми кнопкою reset--------
+elements.btnReset.addEventListener('click', () => {
+    elements.form.reset();
+    rendersAllRecipes() 
+})    
