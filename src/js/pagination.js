@@ -29,3 +29,8 @@ const options = {
 };
 
 const pagination = new Pagination(container, options);
+
+pagination.on('beforeMove', (eventData) => {
+    const currentPage = eventData.page;
+    
+  });
