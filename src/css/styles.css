@@ -59,6 +59,8 @@ body {
   .container {
     width: 375px;
     margin: 0 auto;
+
+    flex-direction: column;
   }
 }
 
@@ -67,6 +69,8 @@ body {
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+
+    flex-direction: row;
   }
 }
 
@@ -76,4 +80,23 @@ body {
     padding-left: 100px;
     padding-right: 100px;
   }
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+@media only screen and (min-width: 375px) {
+  
+}
+
+@media only screen and (min-width: 768px) {
+  
+}
+
+@media only screen and (min-width: 1200px) {
+ 
 }
