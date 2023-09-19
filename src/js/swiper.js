@@ -6,7 +6,7 @@ import 'swiper/css';
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     loop: false,
-    spaceBetween: 12,
+    spaceBetween: 20,
     slidesPerView: 'auto',
   // If we need pagination
     // modules: [Pagination]

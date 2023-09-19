@@ -1,12 +1,14 @@
 body.dark-theme {
   background-color: var(--dark-theme-background);
   color: var(--white-color);
+  transition: color var(--transition-dur-timing-func);
 }
 
 /* ----------- HEADER ----------- */
 
 .dark-theme .logo {
   color: var(--white-color);
+  transition: color var(--transition-dur-timing-func);
 }
 
 .dark-theme .mobile-menu {
@@ -15,13 +17,16 @@ body.dark-theme {
 
 .dark-theme .header-chart-icon {
   stroke: var(--white-color);
+  transition: stroke var(--transition-dur-timing-func);
 }
 .dark-theme .mobile-menu-open-icon {
   stroke: var(--white-color);
+  transition: stroke var(--transition-dur-timing-func);
 }
 
 .dark-theme .registration-btn-icon {
   stroke: var(--white-color);
+  transition: stroke var(--transition-dur-timing-func);
 }
 
 /* ----------- HEADER ----------- */
@@ -61,15 +66,61 @@ body.dark-theme {
 }
 
 .dark-theme .send-button {
-  color: #FFF;
+  color: var(--primary-color);
+}
+
+.dark-theme .ord-close-icon {
+  stroke: var(--white-color);
+}
+
+.dark-theme .input {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.dark-theme .comment {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
 }
 
 /* ----------- ORDER MODAL ----------- */
+
+/* ----------- REGISTRATION MODAL ----------- */
+
+.dark-theme .modal {
+  background: var(--primary-color)
+}
+
+.dark-theme .reg-title {
+  color: #FFF;
+}
+
+.dark-theme .label {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.dark-theme .sign-name {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.dark-theme .sign-password {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.dark-theme .reg-close-icon {
+  stroke: var(--white-color);
+}
+
+/* ----------- REGISTRATION MODAL ----------- */
+
 
 /* ----------- FOOTER ----------- */
 
 .dark-theme .social-icon {
   stroke: var(--white-color);
+  transition: stroke var(--transition-dur-timing-func);
 }
 
 /* ----------- FOOTER ----------- */

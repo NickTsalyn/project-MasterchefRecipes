@@ -1,3 +1,8 @@
+.popular-recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .popular-title {
   font-family: Inter;
   color: var(--primary-color);
@@ -5,12 +10,11 @@
   font-weight: 600;
   line-height: 1.33;
   text-transform: uppercase;
-  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 768px) {
-  .popular-title {
-    margin-bottom: 32px;
+  .popular-recipes {
+    gap: 32px;
   }
 }
 
@@ -28,9 +32,19 @@
   gap: 24px;
 }
 
+.list-item {
+  display: flex;
+  gap: 16px;
+}
+
 @media only screen and (min-width: 768px) {
   .popular-list {
+    width: 176px;
     gap: 16px;
+  }
+  .list-item {
+    width: 176px;
+    gap: 8px;
   }
 }
 
@@ -38,15 +52,17 @@
   .popular-list {
     gap: 32px;
   }
-}
-
-.list-item {
-  display: flex;
-  gap: 16px;
+  .list-item {
+    width: 235px;
+    gap: 16px;
+  }
 }
 
 .item-img {
+  width: 64px;
+  height: 64px;
   border-radius: 20%;
+  object-fit: cover;
 }
 
 .item-title {
@@ -56,8 +72,8 @@
   font-weight: 600;
   line-height: 1.28;
   text-transform: uppercase;
-  margin-bottom: 8px;
-  width: 120px;
+  /* margin-bottom: 8px; */
+  /* width: 120px; */
   height: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,6 +81,10 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .item-img {
+    width: 48px;
+    height: 48px;
+  }
   .item-title {
   }
 }
@@ -97,6 +117,14 @@
 }
 
 .text-wrap {
+  width: 252px;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .text-wrap {
+    width: 120px;
+  }
 }

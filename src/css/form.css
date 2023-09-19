@@ -1,11 +1,11 @@
 .search-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;    
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 @media only screen and (min-width: 768px) {
-   .search-form{
-    gap: 16px;    
+  .search-form {
+    gap: 16px;
   }
 }
 .label-form {
@@ -33,13 +33,13 @@
     
 }
 @media only screen and (min-width: 768px) {
-    .label-form{
-     font-size: 14px;
-     line-height: 1.3;
-   } 
-   .input-form{
-    font-size: 16px;    
-   }  
+  .label-form {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .input-form {
+    font-size: 16px;
+  }
 }
 .dark-theme .input-form{
     color: #fff;
@@ -50,26 +50,33 @@
 /* Пошук за назвою рецепта */
 
 .search-overlay {
-    position: relative;
+  position: relative;
 }
 
 .icon-search {
-    position: absolute;
-    left: 18px;
-    top: 14px;
-    transition: fill var(---transition-dur-timing-func);
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  transition: fill var(---transition-dur-timing-func);
 }
 .dark-theme .icon-search{
     fill: rgba(255, 255, 255, 0.2);
 }
 .input-search {
+  width: 100%;
+  height: 46px;
+  padding: 14px 122px 14px 48px;
+}
+@media only screen and (min-width: 375px) {
+  .input-search {
     width: 335px;
     height: 46px;
     padding: 14px 122px 14px 48px;   
+  }
 }
 
 @media only screen and (min-width: 768px) {
-   .input-search{
+  .input-search {
     width: 278px;
     height: 48px;
   }
@@ -79,41 +86,44 @@
 }
 .dark-theme .input-search:not(:placeholder-shown) + .icon-search {
     fill: var(--green-color);
+
+.label-form:hover .icon-search,
+.label-form:focus .icon-search {
+  fill: var(--green-color);
 }
 
 .btn-close-search {
-    width: 18px;
-    height: 18px;
-    display: none;
-    position: absolute;
-    top: 14px;
-    right: 18px;  
-    align-items: center;
-    padding: 0;
-    border: none;
-    background-color: var(--background-color);
+  width: 18px;
+  height: 18px;
+  display: none;
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: var(--background-color);
 }
 .dark-theme .btn-close-search{
     background-color: rgb(22, 22, 22);
 }
 
 .icon-close-search {
-    stroke: rgba(5, 5, 5, 0.8);
+  stroke: rgba(5, 5, 5, 0.8);
 }
 
 /* Пошук за часом приготування */
 
 .input-time {
-    width: 160px;
-    height: 46px;
-    padding: 14px 18px;
-
+  width: 160px;
+  height: 46px;
+  padding: 14px 18px;
 }
 @media only screen and (min-width: 768px) {
-    .input-time{
-     width: 125px;
-     height: 48px;
-   }
+  .input-time {
+    width: 125px;
+    height: 48px;
+  }
 }
 
 .btn-chevron-down {
@@ -133,7 +143,7 @@
 }
 
 .icon-chevron-down {
-    stroke: var(--secondary-color);
+  stroke: var(--secondary-color);
 }
 .dark-theme .icon-chevron-down,
 .dark-theme .icon-close-search{
@@ -179,9 +189,9 @@
 }
 
 .select-time {
-    width: 160px;
-    height: 124px;
-    display: none;    
+  width: 160px;
+  height: 124px;
+  display: none;
 }
 @media only screen and (min-width: 768px) {
    .select-time{
@@ -191,22 +201,21 @@
 }
 
 /* Пошук за країною походження */
-
-.input-area{
-    width: 161px;
-    height: 46px;
-    padding: 14px 18px;
+.input-area {
+  width: 161px;
+  height: 46px;
+  padding: 14px 18px;
 }
 @media only screen and (min-width: 768px) {
-    .input-area{
-     width: 141px;
-     height: 48px;
-   }
+  .input-area {
+    width: 141px;
+    height: 48px;
+  }
 }
 .select-area {
-    width: 161px;
-    height: 176px;
-    display: none;
+  width: 161px;
+  height: 176px;
+  display: none;
 }
 @media only screen and (min-width: 768px) {
    .select-area{
@@ -216,65 +225,67 @@
 }
 
 /* Пошук за інгридієнтами */
-.input-ingredients{
-    width: 188px;
-    height: 46px;
-    padding: 14px 18px;
+.input-ingredients {
+  width: 188px;
+  height: 46px;
+  padding: 14px 18px;
 }
 @media only screen and (min-width: 768px) {
-    .input-ingredients{
-     width: 188px;
-     height: 48px;
-   }
- }
+  .input-ingredients {
+    width: 188px;
+    height: 48px;
+  }
+}
 
 .select-ingredients {
-    width: 188px;
-    height: 176px;
-    display: none;
+  width: 188px;
+  height: 176px;
+  display: none;
 }
 @media only screen and (min-width: 768px) {
-   .select-ingredients{
+  .select-ingredients {
     height: 188px;
   }
 }
 
 .active {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .dark-theme .active {
     color: #fff;
+.option-form:active {
+  color: var(--primary-color);
 }
 
 /* Блок скидання пошуку */
 .reset-block {
-    margin: 14px 0 20px 0;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 4px;
+  margin: 14px 0 20px 0;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4px;
 }
 @media only screen and (min-width: 768px) {
-   .reset-block{
+  .reset-block {
     margin-bottom: 14px;
   }
 }
 
 .btn-reset-filter {
-    width: 16px;
-    height: 16px;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    border: none;
-    background-color: var(--background-color);
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: var(--background-color);
 }
 .dark-theme .btn-reset-filter{
     background-color: transparent;
 }
 
 .icon-reset-search {
-    stroke: var(--green-color);
+  stroke: var(--green-color);
 }
 
 .reset-text {
