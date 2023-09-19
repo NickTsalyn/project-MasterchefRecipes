@@ -14,7 +14,7 @@ export function openRatingModal(indeficator) {
    <div class="modal-rating-display"> <h2 class = "modal-rating-head">Rating</h2>
    <div class="modal-rating-container">
     <span class="modal-rating-counter">0.0</span>
-    <div>
+    <div class="modal-rating-stars-container">
       <input
         class="modal-rating-input"
         type="radio"

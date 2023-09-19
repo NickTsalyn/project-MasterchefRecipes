@@ -66,6 +66,37 @@ body.dark-theme {
 
 /* ----------- ORDER MODAL ----------- */
 
+
+
+/* -----------  MODAL RATING   ----------- */
+.dark-theme .modal-rating-form{
+  background-color: var(--primary-color);
+ 
+}
+.dark-theme .modal-rating-head{
+  color:var(--white-color); 
+  
+}
+.dark-theme .modal-rating-counter{
+  color:var(--white-color); 
+}
+.dark-theme .modal-rating-close-btn{
+  stroke:var(--white-color);
+}
+.dark-theme .modal-rating-email-in-input{
+  color: rgba(255, 255, 255, 0.50);
+
+}
+.dark-theme .modal-rating-btn{
+  background-color: var(--primary-color);
+  color: #FFF;
+}
+.dark-theme .modal-rating-btn:hover{
+  color:var(--white-color);
+}
+
+/* -----------  MODAL RATING   ----------- */
+
 /* ----------- FOOTER ----------- */
 
 .dark-theme .social-icon {
