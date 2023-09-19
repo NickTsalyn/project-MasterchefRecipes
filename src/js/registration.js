@@ -12,15 +12,15 @@ button.addEventListener('click', () => {
     <h4 class="reg-title">Registration</h4>
       <form class="registration-form">
         <label for="text" class="label">Sign Up
-          <input type="email" class="sign-name" email="sign up" />
+          <input type="email" class="input" email="sign up" />
         </label>
         <label for="password" class="label">Password
-          <input type="password" class="sign-password" name="password" />
+          <input type="password" class="input" name="password" />
           <button class="show-password">Show/Hide password</button>
         </label>
         <button type="submit" class="sign-button">Sign up</button>
       </form>
-      <button class="log-account">already have an account</button>
+      <button class="log-account">Already have an account</button>
       <button class="reg-close-btn">
         <svg class="reg-close-icon">
           <use href="./img/icons.svg#close-icon"></use>
@@ -32,6 +32,11 @@ button.addEventListener('click', () => {
   const signModal = basicLightbox.create(content);
   signModal.show();
 
+  const closeRegistrationBtn = document.querySelector('.reg-close-icon')
+  closeRegistrationBtn.addEventListener('click', () => {
+      signModal.close();
+    })
+  
   const registrationForm = document.querySelector('.registration-form');
 
   registrationForm.addEventListener('submit', evt => {
@@ -87,21 +92,22 @@ button.addEventListener('click', () => {
       <h4 class="reg-title">Login</h4>
         <form class="login-form">
           <label for="text" class="label">Email
-            <input type="email" class="login-name" name="login" />
+            <input type="email" class="input" name="login" />
           </label>
           <label for="password" class="label">Password
-            <input type="password" class="login-password" name="password" />
+            <input type="password" class="input" name="password" />
             <button type="button" class="show-password">Show/Hide password</button>
           </label>
           <button type="submit" class="login-button">Log In</button>
         </form>
-        <button class="sign-account">don't have an account</button>
+        <button class="sign-account">Don't have an account</button>
         <button class="reg-close-btn">
         <svg class="reg-close-icon">
           <use href="./img/icons.svg#close-icon"></use>
         </svg>
       </button>
       </div>`;
+
     const logModal = basicLightbox.create(logForm);
     logModal.show();
 

@@ -67,11 +67,35 @@
 */
 
 .modal {
-  width: 500px;
-  height: 500px;
-  background: #fff;
+  width: 335px;
+  height: 582px;
   border-radius: 15px;
-  padding: 40px;
+  background: #fff;
+  padding: 28px 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal {
+    padding: 40px;
+    width: 440px;
+    height: 632px;
+  }
+}
+
+.reg-title {
+  color: var(--primary-color);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+@media only screen and (min-width: 768px) {
+  .reg-title {
+    margin-bottom: 40px;
+  }
 }
 
 .registration-form {
@@ -92,28 +116,6 @@
   gap: 10px;
 }
 
-.sign-password {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px 169px 14px 18px;
-  align-items: flex-start;
-  gap: 32px;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-}
-
-.sign-name {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px 169px 14px 18px;
-  align-items: flex-start;
-  gap: 32px;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-}
-
 .show-password {
   display: flex;
   width: 200px;
@@ -127,23 +129,42 @@
 }
 
 .sign-button {
+  font-family: Inter;
+  font-weight: 500;
   display: flex;
-  width: 360px;
-  height: 48px;
+  width: 300px;
   padding: 14px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 15px;
-  background: #9bb537;
+  background: var(--white-color);
   margin-top: 40px;
   margin-bottom: 20px;
+  border: 1px solid rgba(5, 5, 5, 0.20);
+  transition: var(--transition-dur-timing-func);
+}
+
+@media only screen and (min-width: 768px) {
+  .sign-button {
+    width: 360px;
+  }
+}
+
+.sign-button:hover,
+.sign-button:focus {
+  color: #f8f8f8;
+  background-color: var(--green-color);
+  border: none;
 }
 
 .log-account {
+  color: var(--white-color);
+  font-family: Inter;
+  font-weight: 500;
   display: flex;
-  width: 360px;
+  width: 300px;
   height: 48px;
   padding: 14px;
   justify-content: center;
@@ -151,12 +172,20 @@
   gap: 10px;
   flex-shrink: 0;
   border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.20);
+  background-color: var(--green-color);
 }
 
-.login-password {
+@media only screen and (min-width: 768px) {
+  .log-account {
+    width: 360px;
+  }
+}
+
+.input {
   display: flex;
-  width: 360px;
-  height: 48px;
+  width: 295px;
+  height: 46px;
   padding: 14px 169px 14px 18px;
   align-items: flex-start;
   gap: 32px;
@@ -164,30 +193,42 @@
   border: 1px solid rgba(5, 5, 5, 0.2);
 }
 
-.login-name {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px 169px 14px 18px;
-  align-items: flex-start;
-  gap: 32px;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+@media only screen and (min-width: 768px) {
+  .input {
+    width: 360px;
+    height: 48px;
+  }
 }
 
 .login-button {
+  font-family: Inter;
+  font-weight: 500;
   display: flex;
-  width: 360px;
-  height: 48px;
+  width: 300px;
   padding: 14px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 15px;
-  background: #9bb537;
+  background: var(--white-color);
   margin-top: 40px;
   margin-bottom: 20px;
+  border: 1px solid rgba(5, 5, 5, 0.20);
+  transition: var(--transition-dur-timing-func);
+}
+
+@media only screen and (min-width: 768px) {
+  .login-button {
+    width: 360px;
+  }
+}
+
+.login-button:hover,
+.login-button:focus {
+  color: #f8f8f8;
+  background-color: var(--green-color);
+  border: none;
 }
 
 .login-form {
@@ -202,15 +243,25 @@
 }
 
 .sign-account {
+  color: var(--white-color);
+  font-family: Inter;
+  font-weight: 500;
   display: flex;
-  width: 360px;
-  height: 48px;
+  width: 300px;
   padding: 14px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.20);
+  background-color: var(--green-color);
+}
+
+@media only screen and (min-width: 768px) {
+  .sign-account {
+    width: 360px;
+  }
 }
 
 .reg-close-btn {
