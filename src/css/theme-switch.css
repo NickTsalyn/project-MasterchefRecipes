@@ -61,10 +61,55 @@ body.dark-theme {
 }
 
 .dark-theme .send-button {
-  color: #FFF;
+  color: var(--primary-color);
+}
+
+.dark-theme .ord-close-icon {
+  stroke: var(--white-color);
+}
+
+.dark-theme .input {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.dark-theme .comment {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
 }
 
 /* ----------- ORDER MODAL ----------- */
+
+/* ----------- REGISTRATION MODAL ----------- */
+
+.dark-theme .modal {
+  background: var(--primary-color)
+}
+
+.dark-theme .reg-title {
+  color: #FFF;
+}
+
+.dark-theme .label {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.dark-theme .sign-name {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.dark-theme .sign-password {
+  background: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.dark-theme .reg-close-icon {
+  stroke: var(--white-color);
+}
+
+/* ----------- REGISTRATION MODAL ----------- */
+
 
 /* ----------- FOOTER ----------- */
 

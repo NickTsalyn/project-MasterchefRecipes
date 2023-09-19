@@ -1,4 +1,3 @@
-
 const scrollBtn = document.querySelector('#scroll-btn')
 
 window.addEventListener('scroll', handleScroll)
