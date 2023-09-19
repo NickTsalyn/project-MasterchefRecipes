@@ -66,3 +66,4 @@ for (const recipe of recipes) {
 //     categories.style.display='block'
 //     cart.innerHTML=listCards
 // }
+ 
