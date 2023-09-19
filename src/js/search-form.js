@@ -9,7 +9,8 @@ import {rendersAllRecipes} from "./render-recipes-list"
 
 const elements = {
     form: document.querySelector('.search-form'),
-    overlay: document.querySelector('.search-overlay'),
+        
+    overlay: document.querySelector('.search-overlay'),   
     searchInput: document.querySelector('.input-form'),
     btnCloseSearch: document.querySelector('.btn-close-search'),
 
@@ -30,9 +31,9 @@ const elements = {
     galleryRecipes: document.querySelector('.gallery-recipes'),
     btnHeart: document.querySelector('.heart')
 }
-console.log(elements.btnCloseSearch);
 
 // -----Заповнення випадаючих списків форми
+
      getAllRecipes()
     .then((data) => {        
         elements.galleryRecipes.insertAdjacentHTML("beforeend", renderCard(data.results))
@@ -66,6 +67,7 @@ elements.searchInput.addEventListener('change', debounce(handlerSearchInput, 300
 function handlerSearchInput() {
     const inputValue = elements.searchInput.value.trim().toLowerCase();     
     elements.btnCloseSearch.style.display = "flex";
+
     console.log(elements.btnCloseSearch);
     getAllRecipes()
         .then((data) => {
@@ -74,7 +76,7 @@ function handlerSearchInput() {
                 const lowerCaseTags = recipe.tags.map(tag => tag.toLowerCase());
                 return lowerCaseTags.includes(inputValue);
             })
-            if (inputValue !== '' && filteredRecipesbyTag.length === 0) {
+            if (inputValue === '' && filteredRecipesbyTag.length === 0) {
                 Notiflix.Notify.info("No recipes found for the specified tag.");
             }
             elements.searchInput.value = inputValue;
@@ -93,6 +95,8 @@ elements.btnCloseSearch.addEventListener('click', () => {
  
 // -------------------Пошук та рендер рецептів за часом приготування---------------
 elements.btnSelectTime.addEventListener('click', () => elements.selectTime.style.display = "flex")
+
+elements.selectTime.addEventListener('mouseleave', () => elements.selectTime.style.display = "none" )
 
 elements.selectTime.addEventListener('click', handlerTimeSelect)
 let selectedTimeElement;
@@ -124,8 +128,11 @@ function handlerTimeSelect(evt) {
 // -------------------Пошук та рендер рецептів за країною походження---------------
 
 elements.btnSelectArea.addEventListener('click', () => elements.selectArea.style.display = "flex")
-let selectedAreaElement;
+
+elements.selectArea.addEventListener('mouseleave', () => elements.selectArea.style.display = "none" )
+
 elements.selectArea.addEventListener('click', handlerAreaSelect)
+let selectedAreaElement;
 function handlerAreaSelect(evt) {
     if (!evt.target.classList.contains('active')) {       
         if (selectedAreaElement) {
@@ -152,10 +159,11 @@ function handlerAreaSelect(evt) {
 // -------------------Пошук та рендер рецептів за інгридієнтами---------------
 
 elements.btnSelectIngredients.addEventListener('click', () => elements.selectIngredients.style.display = "flex");
-let selectedIngredientElement; 
+
+elements.selectIngredients.addEventListener('mouseleave', () => elements.selectIngredients.style.display = "none" )
 
 elements.selectIngredients.addEventListener('click', handlerIngredientSelect);
-
+let selectedIngredientElement; 
 function handlerIngredientSelect(evt) {
     if (!evt.target.classList.contains('active')) {
         if (selectedIngredientElement) {
