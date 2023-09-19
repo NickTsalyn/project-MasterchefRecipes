@@ -55,14 +55,14 @@ for (const recipe of recipes) {
   </li>
 `;
 }
-// if (listCards==0) {
-//     nothing.style.display='block';
-//     secRecipes.style.display='none';
-//     categories.style.display='none'
-// }
-// else{
-//     nothing.style.display='none';
-//     secRecipes.style.display='block';
-//     categories.style.display='block'
-//     cart.innerHTML=listCards
-// }
+if (listCards==0) {
+    nothing.style.display='block';
+    secRecipes.style.display='none';
+    categories.style.display='none'
+}
+else{
+    nothing.style.display='none';
+    secRecipes.style.display='block';
+    categories.style.display='block'
+    cart.innerHTML=listCards
+}
