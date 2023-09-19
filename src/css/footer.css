@@ -1,50 +1,51 @@
 .develop-container {
-    width: 400px;
-    height: 400px;
-
+  width: 100%;
+  height: 400px;
 }
-
+@media only screen and (min-width: 375px) {
+  .develop-container {
+    width: 335px;
+  }
+}
 .develop-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .develop-img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
-
 .develop-text {
-    font-size: 8px;
-    text-align: center;
+  font-size: 8px;
+  text-align: center;
 }
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .social-icon {
-    stroke: #9BB537;
-    fill: transparent;
+  stroke: #9bb537;
+  fill: transparent;
 }
 
 .social-list {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .footer-container {
-    padding: 30px;
-
+  padding: 30px;
 }
 
 .footer-title {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
