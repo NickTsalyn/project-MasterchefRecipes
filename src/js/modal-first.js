@@ -98,7 +98,7 @@ function handlerOnClick(evt) {
 
             <button type="button" data-id="${
               respInfo._id
-            }" class="btn-modal-general btn-modal-secont give-rating-btn ">Give a rating</button>
+            }" class="btn-modal-general btn-modal-secont give-rating-btn">Give a rating</button>
 
             </div>
              </div> `
@@ -142,9 +142,7 @@ function handlerOnClick(evt) {
 
     instance.show();
 
- 
 
-    
 
   });
 }

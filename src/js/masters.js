@@ -8,7 +8,7 @@ async function mastersEvt() {
   try {
       const data = await getMasters()
      {
-      console.log(data);
+      // console.log(data);
       eventCards(data)
      }
   } catch (error) {

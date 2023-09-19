@@ -10,71 +10,126 @@
   fill: #eea10c;
 }
 .modal-rating-form {
-  max-width: 335px;
+  padding: 20px;
+  /* min-width: 335px; */
   border-radius: 15px;
   background: #fff;
+  position: relative;
+  height: 216px;
 }
 @media only screen and (min-width: 375px) {
   .modal-rating-form {
     width: 335px;
-    height: 216px;
+    /* height: 216px; */
+  }
+}
+@media only screen and (min-width: 768px) {
+  .modal-rating-form {
+    width: 424px;
+    height: 254px;
+    padding: 32px;
   }
 }
 .modal-rating-display {
-  padding: 20px;
-  height: 216px;
+  /* padding: 20px; */
+    /* height: 216px;   */
 }
 .modal-rating-head {
   color: #050505;
-  font-family: Inter;
-  font-size: 14px;
+ 
+  font-size: 14px; 
   font-style: normal;
   font-weight: 600;
-  line-height: 18px;
+  
   margin-bottom: 4px;
 }
 .modal-rating-container {
+  height: 24px;
   display: flex;
   margin-bottom: 24px;
 
   align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .modal-rating-container {
+    margin-bottom: 32px;
+  }
 }
 .modal-rating-email-container {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
+@media only screen and (min-width: 768px) {
+  .modal-rating-email-container{
+    gap: 16px;
+  }
+}
 .modal-rating-btn {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  display: flex;
+  padding: 15px 0;
+  /* padding-top: 15px;
+  padding-bottom: 15px; */
   justify-content: center;
   border-radius: 15px;
   background: #9bb537;
   color: #f8f8f8;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
+ 
   font-weight: 500;
-  line-height: normal;
+
+  border: none;
 }
-.modal-rating-email-in-input::placeholder {
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 18px;
+@media only screen and (min-width: 768px) {
+  .modal-rating-btn{
+    padding: 14px 0;
+  }
 }
+
 .modal-rating-email-in-input {
-  border-radius: 15px;
+padding: 14px 18px;
+  /* padding-top: 14px;
+  padding-bottom: 14px;  */
+   padding-left: 18px;
+  border-radius: 15px; 
   border: 1px solid rgba(5, 5, 5, 0.2);
-  width: 295px;
-  height: 46px;
+  width: 100%;
+  /* height: 46px; */
+
+  color: rgba(5, 5, 5, 0.50);
+/* font-family: Inter;
+font-size: 14px;
+font-style: normal; */
+font-weight: 500;
+
+}
+@media only screen and (min-width: 768px) {
+  .modal-rating-email-in-input{
+    font-size: 16px;
+    line-height:1.25;
+  }
 }
 
 .modal-rating-counter {
   margin-right: 8px;
-  min-width: 24px;
+ width: 25px;
   color: #050505;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
+}
+.modal-rating-close-btn{
+position: absolute;
+stroke:#050505;
+top: 14px;
+right: 14px;
+cursor: pointer;
+
+  
+}
+@media only screen and (min-width: 768px) {
+  .modal-rating-close-btn{
+    top:16px;
+    right: 16px;
+  }
 }
