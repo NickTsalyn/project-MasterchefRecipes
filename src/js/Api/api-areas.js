@@ -1,4 +1,8 @@
+
+// https://tasty-treats-backend.p.goit.global/api/areas
+
 // https://tasty-treats-backend.p.goit.global/api/areas// https://tasty-treats-backend.p.goit.global/api/areas
+
 
 import axios from "axios";
 import Notiflix from "notiflix";

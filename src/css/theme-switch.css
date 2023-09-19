@@ -20,4 +20,48 @@ body.dark-theme {
   stroke: var(--white-color);
 }
 
+.dark-theme .mregistration-btn-icon {
+  stroke: var(--white-color);
+}
+
 /* ----------- HEADER ----------- */
+
+
+
+/* ----------- POPULAR ----------- */
+
+.dark-theme .popular-title {
+  color: #FFF;
+}
+
+.dark-theme .item-title {
+  color: #FFF;
+}
+
+.dark-theme .item-text {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+/* ----------- POPULAR ----------- */
+
+
+
+/* ----------- ORDER MODAL ----------- */
+
+.dark-theme .modal {
+  background: var(--primary-color)
+}
+
+.dark-theme .ord-title {
+  color: #FFF;
+}
+
+.dark-theme .label {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.dark-theme .send-button {
+  color: #FFF;
+}
+
+/* ----------- ORDER MODAL ----------- */
