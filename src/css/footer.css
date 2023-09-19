@@ -16,12 +16,13 @@
 }
 
 .develop-img {
-  border-radius: 50%;
+    border-radius: 50%;
+    margin-bottom: 4px;
 }
 
 .develop-text {
-  font-size: 8px;
-  text-align: center;
+font-size: 10px;
+text-align: center;
 }
 
 .footer-container {
@@ -31,8 +32,19 @@
   gap: 40px;
 }
 
+
+    
+
+
 .social-icon {
-  stroke: #9bb537;
+    stroke: var(--primary-color);
+    fill: transparent;
+}
+
+.social-list-item:hover .social-icon:hover,
+.social-list-item:focus .social-icon:focus {
+  outline: none;
+  stroke: var(--green-color);
   fill: transparent;
 }
 

@@ -20,7 +20,7 @@ body.dark-theme {
   stroke: var(--white-color);
 }
 
-.dark-theme .mregistration-btn-icon {
+.dark-theme .registration-btn-icon {
   stroke: var(--white-color);
 }
 
@@ -65,3 +65,11 @@ body.dark-theme {
 }
 
 /* ----------- ORDER MODAL ----------- */
+
+/* ----------- FOOTER ----------- */
+
+.dark-theme .social-icon {
+  stroke: var(--white-color);
+}
+
+/* ----------- FOOTER ----------- */
