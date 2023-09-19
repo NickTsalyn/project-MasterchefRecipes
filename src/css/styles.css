@@ -25,6 +25,10 @@
   --transition-dur-timing-func: 300ms ease-out;
 }
 
+* {
+  transition: all 3s;
+}
+
 html {
   scroll-behavior: smooth;
 }
