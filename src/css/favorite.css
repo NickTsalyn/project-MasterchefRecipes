@@ -1,325 +1,185 @@
-/* 
-@media only screen and (min-width: 768px) {
-    
-   }
-@media only screen and (min-width: 1158px) {
-   
-} 
-*/
-
-.fav-hero-sec{
-    /* display: none; */
-    margin-bottom: 40px;
-}
-@media only screen and (min-width: 768px) {
- .fav-hero-sec{
-    display: block;
-margin-bottom: 64px;
- }   
+@import url('./reset.css');
+@import url('./fonts.css');
+@import url('./header.css');
+@import url("./styles.css");
+  
+.fav-header {
+    /* display: none;
+    overflow: hidden; */
+    width: 100%;
+    overflow-x: hidden;
 }
 
-
-.fav-hero-container{
-    width: 335px;
-    height: 516px;
-    
-    background-image: url("/img/hero-mobile.jpg");
+ .fav-hero {
+    width: 100%;
     border-radius: 15px;
-    background-size: cover;
-    background-repeat: no-repeat;
+ }
+
+ .fav-categories-list {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+ }
+
+ .fav-category-btn {
+    padding: 14px 18px;
+
+    border-radius: 15px;
+    border: 1px solid rgba(5, 5, 5, 0.20);
+    background-color: transparent;
+
+    color: rgba(5, 5, 5, 0.30);
+    font-family: Inter;
+   
+    font-weight: 500;
+    line-height: 1.25; 
+
+    transition: var(--transition-dur-timing-func);
+ }
+ .fav-category.active .fav-category-btn{
+    background-color: #9BB537;
+    color: #F8F8F8;
+    border: 1px solid #9BB537;
 }
-@media only screen and (min-width: 768px) {
-    .fav-hero-container{
-        /* width: 704px; */
-        width: 100%;
-        height: 356px;
-        background-image: url("/img/hero-tablet.jpg");
+
+.empty-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-section-text {
+    color: #050505;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* -----------MEDIA 375--------- */
+
+ @media only screen and (min-width: 375px) {
+    .fav-container {
+        width: calc(100% - 40px);
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .fav-hero {
+        height: 516px;
+
+        background: url(../img/fav-hero.png), lightgray 0px -682.376px / 100% 380.258% no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .fav-categories-list {
+        margin-top: 40px;
+        gap: 12px;
+     }
+    .fav-category {
+        margin-bottom: 24px;
+    }
+
+    .fav-category-btn {
+        font-size: 14px;
+    }
+
+    .empty-section-wrapper {
+        padding: 300px 0;
+        gap: 24px;
+    }
+
+    .empty-section-icon {
+        width: 68px;
+        height: 58px;
+    }
+
+    .empty-section-text {
+        width: 335px;
+        font-size: 14px;
     }
 }
-@media only screen and (min-width: 1080px) {
-.fav-hero-container{
-    /* width: 1080px; */
-    
-    height: 356px;
-    background-image: url("/img/hero-desktop.jpg");
-}
-}
-/* =========================================================== */
-/*     nothing */
 
+/* -----------MEDIA 768PX--------- */
+@media only screen and (min-width: 768px) {
+    .fav-container {
+        width: calc(100% - 64px);
 
-.hat{
-    width: 68px;
-    height: 58px;
-    margin-bottom: 32px;
-    margin-left: auto;margin-right: auto;
-}
-.nothing-text{
-font-family: Inter;
-font-size: 14px;
-font-weight: 400;
-line-height: 18px;
-letter-spacing: 0em;
-text-align: center;
-width: 335px;
-margin-left: auto;
-margin-right: auto;
-}
-@media only screen and (min-width: 768px) {
- .hat{
-    width: 97px;
-    height: 83px;
- }   
- .nothing-text{
-    width: 481px;
- }
-}
-@media only screen and (min-width: 1158px) {
-   .nothing-text{
-       font-family: Inter;
-       font-size: 16px;
-       font-weight: 400;
-       line-height: 24px;
-       letter-spacing: 0em;
-       text-align: center;
-       
-   }
-}
-/* ============================================================ */
-/*        buttons of categories       */
-.fav-categories-sec{
-    margin-bottom: 24px;
-}
-@media only screen and (min-width: 768px) {
-    fav-categories-sec{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .fav-hero {
+        height: 356px;
+
+        background: url(../img/fav-hero.png), lightgray 0px -682.376px / 100% 380.258% no-repeat;
+        background-size: cover;
+
+        
+    }
+    .fav-categories-list {
+        margin-top: 64px;
+        gap: 15px;
+     }
+
+    .fav-category {
         margin-bottom: 32px;
     }
-}
-.fav-category{
-    width: 132px;
-    height:46px;
-    padding: 14px, 18px, 14px, 18px;
-    border-radius: 15px;
-    border: 1px;
-    gap: 18px;
-    background: #05050533;
-    border: 1px solid #05050533;
-
-} 
-/* ============================================================ */
-/*                 recipes */
-.fav-list-recipes{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-}
-@media only screen and (min-width: 768px) {
-    .fav-list-recipes{
-        gap: 16px;    
+     .fav-category-btn {
+        font-size: 16px;
     }
-}
-@media only screen and (min-width: 1158px) {
-    .fav-list-recipes{
-        row-gap: 32px;
-    column-gap: 16px;
+
+    .empty-section-wrapper {
+        padding: 64px 0;
+        gap: 32px;
+    }
+
+    .empty-section-wrapper.hidden {
+        display: none;
+        visibility: hidden;
+    }
+
+    .empty-section-icon {
+        width: 97px;
+        height: 83px;
+    }
+
+    .empty-section-text {
+        width: 481px;
+        font-size: 16px;
     }
 }
 
-.fav-recipe-card{
-    /* background-image: url("/img/cards.jpg"); */
-    position: relative;
-    width: 335px;
-    height: 335px;
-    /* background-size: contain;
-    background-repeat: no-repeat; */
-    padding: 16px;
-    text-align: left;
-    border-radius: 15px;
-    box-sizing: border-box;
-}
-@media only screen and (min-width: 768px) {
- .fav-recipe-card{
-    width: 224px;
-    height: 244px;
- }   
-}
-@media only screen and (min-width: 1158px) {
-.fav-recipe-card{
-   
-    width: 258px;
-    height: 287px;
-    position: relative;
-}
-}
-.fav-card-img{
-    position: absolute; 
-    top: 0;
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    object-fit: cover; 
-    z-index: -1; 
-}
-.fav-button-heart{
-    float: right;
-    width: 22px;
-    height: 22px;
-    /* padding: 2.75px, 1.83px, 2.9px, 1.83px; */
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0.0);
-    border: none;
-}
-.fav-heart{
-    fill: #f4f4fd;
-    /* width: 22px;
-    height: 22px; */
-    
+/* -----------MEDIA 1200PX--------- */
+@media only screen and (min-width: 1200px) {
+    .fav-container {
+        width: calc(100% - 200px);
+
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .fav-hero {
+        background: url(../img/fav-hero.png), lightgray 0px -682.376px / 100% 380.258% no-repeat;
+        background-size: cover;
+        background-position: 0px -60px;
+    }
     
 }
-.fav-card-title{
-    margin-top: 198px;
-    margin-bottom: 8px;
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #F8F8F8;
-}
-@media only screen and (min-width: 768px) {
-    .fav-card-title{
-        margin-top: 92px;
+
+@media (hover: hover) {
+    .fav-category-btn:hover{
+        background-color: #9BB537;
+        color: #F8F8F8;
+        border: 1px solid #9BB537;
     }
-}
-@media only screen and (min-width: 1158px) {
-    .fav-card-title{
-        margin-top: 125px;
-    }
-}
-.fav-cart-text{
-    height: 32px;
-    margin-bottom: 16px;
-    overflow: hidden;
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #F8F8F8;
-}
-.fav-cart-footer{
-    display: flex;
-    text-align: center;
-    /* justify-content: center; */
-    align-items: center;
+  }
   
-}
-.fav-rate{
-    font-family: Inter;
-font-size: 14px;
-font-weight: 500;
-line-height: 18px;
-letter-spacing: 0em;
-text-align: left;
-align-items: center;
-margin-right: 4px;
-color: #F8F8F8;
-}
-.fav-cart-stars{
-    display: flex;
-}
-.fav-star{
-    fill:yellow;
-}
+@media not (hover: hover) {
+    .fav-category-btn:active{
+        background-color: #9BB537;
+        color: #F8F8F8;
+        border: 1px solid #9BB537;
+    }
+  }
 
-.fav-card-button{
-    width: 89px;
-    height: 31px;
-    float: right;
-    margin-left: auto;
-    background-color: #9BB537;
-    padding: 8px, 14px, 8px, 14px;
-    border-radius: 8px;
-    gap: 10px;
-}
-/* ================================================== */
-/*               pagination   */
-.fav-sec-pagination{
-    margin-top: 40px;
-}
-.fav-cont-pagination{
-    height: 40px;
-    display: flex;
-}
-.fav-pag-left{
-    gap: 8px;
-    margin-right: 7px;
-    display: flex;
-}
-.fav-pag-numbers{
-    gap: 8px;
-    margin-left: 7px;
-    margin-right: 7px;
-    display: flex;
-}
-.fav-pag-number{
-    box-sizing: border-box;
-    border-radius: 50%;
-    display: flex;
-    width: 40px;
-    height: 40px;
-    border: 1px solid;
-    align-items: center;
-    justify-content: center;
-    font-family: Inter;
-font-size: 18px;
-font-weight: 600;
-line-height: 22px;
-letter-spacing: 0em;
-text-align: left;
-color: #050505;
-
-
-}
-.fav-pag-right{
-    gap: 8px;
-    margin-left: 7px;
-    display: flex;
-}
-.fav-end-begin{
-    background-color: black;
-    fill: white;
-
-}
-.fav-current{
-    background-color: #9BB537;
-}
-
-@media only screen and (min-width: 768px) {
-    .fav-sec-pagination{
-        margin-top: 64px;
-    }
-    .fav-cont-pagination{
-        height: 44px;
-    }
-    .fav-pag-left{
-        gap: 10px;
-        margin-right: 12px;
-    }
-    .fav-pag-numbers{
-        gap: 10px;
-        margin-left: 12px;
-        margin-right: 12px;
-    }
-    .fav-pag-number{
-        width: 44px;
-        height:  44px;
-    }
-    .fav-pag-right{
-        gap: 10px;
-        margin-left: 12px;
-    }
-}
- 

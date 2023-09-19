@@ -2,9 +2,9 @@
 
 export function renderCard(arr) {
   const cardRecipe = arr
-    .map(({ _id, preview, title, description, rating }) => {
+    .map(({ _id, preview, title, description, rating, category }) => {
       return ` 
-    <div  class="card-item" data-id="${_id}" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${preview}), lightgray -36.5px 0px / 129.2% 112.544% no-repeat; background-size: cover">
+    <div  class="card-item" data-id="${_id}" data-category="${category}" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${preview}), lightgray -36.5px 0px / 129.2% 112.544% no-repeat; background-size: cover">
       <button class="heart" type="button">
         <svg class="icon-heart" width="22" height="22">
         <use href="./img/icons.svg#heart"></use></svg>
