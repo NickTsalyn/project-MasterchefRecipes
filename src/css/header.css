@@ -14,10 +14,9 @@
   outline: none;
 }
 
-.page-header-container {
-  display: flex;
+.container.page-header-container {
   align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
 }
 
 .page-header {
@@ -53,8 +52,30 @@
   fill: transparent;
 }
 
+.registration-btn {
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.registration-btn-icon {
+  stroke: var(--primary-color);
+  fill: transparent;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
 .header-chart-link:hover .header-chart-icon:hover,
 .header-chart-link:focus .header-chart-icon:focus {
+  outline: none;
+  stroke: var(--green-color);
+  fill: transparent;
+}
+
+.registration-btn:hover .registration-btn-icon:hover,
+.registration-btn:focus .registration-btn-icon:focus {
   outline: none;
   stroke: var(--green-color);
   fill: transparent;

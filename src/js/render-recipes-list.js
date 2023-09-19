@@ -50,7 +50,7 @@ function categoriesContainerHandler (e) {
 }
 
 // //////////////
-function rendersAllRecipes () {
+export function rendersAllRecipes () {
   const btn = categoriesRefs.allCategoriesBtn
   if (!btn.classList.contains("active")) {
     btn.classList.add("active")

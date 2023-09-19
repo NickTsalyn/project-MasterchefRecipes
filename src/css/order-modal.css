@@ -60,42 +60,61 @@
   transform: scale(1);
 }
 
-/**
-  |============================
-  |       Класи Модалки 
-  |============================
-*/
-
 .modal {
-  width: 500px;
-  height: 500px;
-  background: #fff;
+  width: 335px;
+  height: 582px;
   border-radius: 15px;
+  background: #fff;
   padding: 40px;
 }
 
-.registration-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+@media only screen and (min-width: 768px) {
+  .modal {
+    width: 440px;
+    height: 632px;
+  }
 }
 
-.login-form {
-  display: flex;
+.ord-title {
+  color: var(--primary-color);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+@media only screen and (min-width: 768px) {
+  .ord-title {
+    margin-bottom: 40px;
+  }
+}
+
+.order-form {
+  display: inline-flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .order-form {
+    gap: 18px;
+  }
 }
 
 .label {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  color: var(--secondary-color);
+  font-family: Inter;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
-.sign-password {
+.input {
   display: flex;
-  width: 360px;
-  height: 48px;
+  width: 295px;
+  height: 46px;
   padding: 14px 169px 14px 18px;
   align-items: flex-start;
   gap: 32px;
@@ -103,135 +122,78 @@
   border: 1px solid rgba(5, 5, 5, 0.2);
 }
 
-.sign-name {
+@media only screen and (min-width: 768px) {
+  .input {
+    width: 360px;
+    height: 48px;
+  }
+}
+
+.comment {
   display: flex;
-  width: 360px;
-  height: 48px;
+  width: 295px;
+  height: 100px;
   padding: 14px 169px 14px 18px;
   align-items: flex-start;
   gap: 32px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
+  resize: none;
 }
 
-.show-password {
+@media only screen and (min-width: 768px) {
+  .comment {
+    width: 360px;
+    height: 100px;
+  }
+}
+
+.send-button {
+  color: var(--primary-color);
+  font-family: Inter;
+  font-weight: 500;
   display: flex;
-  width: 200px;
-  padding: 5px;
+  width: 295px;
+  padding: 15px 162px;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
+  border-radius: 15px;
   border: none;
-  background-color: transparent;
+  background-color: var(--white-color);
+  transition: var(--transition-dur-timing-func);
 }
 
-.sign-button {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 15px;
-  background: #9bb537;
-  margin-top: 40px;
-  margin-bottom: 20px;
+.send-button:hover,
+.send-button:focus {
+  color: #f8f8f8;
+  background-color: var(--green-color);
 }
 
-.log-account {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 15px;
+@media only screen and (min-width: 768px) {
+  .send-button {
+    padding: 14px 162px;
+    width: 360px;
+    height: 48px;
+  }
 }
 
-.login-password {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px 169px 14px 18px;
-  align-items: flex-start;
-  gap: 32px;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-}
-
-.login-name {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px 169px 14px 18px;
-  align-items: flex-start;
-  gap: 32px;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-}
-
-.login-button {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 15px;
-  background: #9bb537;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.reg-title {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.sign-account {
-  display: flex;
-  width: 360px;
-  height: 48px;
-  padding: 14px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 15px;
-}
-
-.reg-close-btn {
+.ord-close-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-
   top: 20.5px;
   right: 20px;
   padding: 0;
-
   color: var(--white-color);
   background-color: transparent;
   outline: none;
   border: none;
-
   transition: color var(--transition-dur-timing-func);
 }
 
-.reg-close-icon {
+.ord-close-icon {
   width: 24px;
   height: 24px;
   stroke: var(--primary-color);
