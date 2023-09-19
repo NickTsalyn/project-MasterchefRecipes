@@ -204,41 +204,41 @@ function print() { __p += __j.call(arguments, '') }
     <h4 class="reg-title">Registration</h4>
       <form class="registration-form">
         <label for="text" class="label">Sign Up
-          <input type="email" class="sign-name" email="sign up" />
+          <input type="email" class="input" email="sign up" />
         </label>
         <label for="password" class="label">Password
-          <input type="password" class="sign-password" name="password" />
+          <input type="password" class="input" name="password" />
           <button class="show-password">Show/Hide password</button>
         </label>
         <button type="submit" class="sign-button">Sign up</button>
       </form>
-      <button class="log-account">already have an account</button>
+      <button class="log-account">Already have an account</button>
       <button class="reg-close-btn">
         <svg class="reg-close-icon">
           <use href="./img/icons.svg#close-icon"></use>
         </svg>
       </button>
     </div>
-  `,i=Fn.create(r);i.show(),document.querySelector(".registration-form").addEventListener("submit",a=>{a.preventDefault();const u=document.querySelector(".sign-name").value,p=document.querySelector(".sign-password");if(document.querySelector(".show-password").addEventListener("click",()=>{p.type==="password"?p.type="text":p.type="password"}),u===""&&p.value===""){Oe.Notify.warning("Please insert a valid email address");return}if(!c1.test(u)){Oe.Notify.warning("Please insert a valid email address");return}if(p.value.length<=6){Oe.Notify.warning("Password should have at least 6 symbols");return}const m={username:u,password:p.value};localStorage.setItem("login-info",JSON.stringify(m)),Oe.Notify.success("Registration successful"),i.close(),l()}),document.querySelector(".log-account").addEventListener("click",()=>{i.close(),l()});function l(){const a=`
+  `,i=Fn.create(r);i.show(),document.querySelector(".reg-close-icon").addEventListener("click",()=>{i.close()}),document.querySelector(".registration-form").addEventListener("submit",u=>{u.preventDefault();const p=document.querySelector(".sign-name").value,f=document.querySelector(".sign-password");if(document.querySelector(".show-password").addEventListener("click",()=>{f.type==="password"?f.type="text":f.type="password"}),p===""&&f.value===""){Oe.Notify.warning("Please insert a valid email address");return}if(!c1.test(p)){Oe.Notify.warning("Please insert a valid email address");return}if(f.value.length<=6){Oe.Notify.warning("Password should have at least 6 symbols");return}const h={username:p,password:f.value};localStorage.setItem("login-info",JSON.stringify(h)),Oe.Notify.success("Registration successful"),i.close(),a()}),document.querySelector(".log-account").addEventListener("click",()=>{i.close(),a()});function a(){const u=`
       <div class="modal">
       <h4 class="reg-title">Login</h4>
         <form class="login-form">
           <label for="text" class="label">Email
-            <input type="email" class="login-name" name="login" />
+            <input type="email" class="input" name="login" />
           </label>
           <label for="password" class="label">Password
-            <input type="password" class="login-password" name="password" />
+            <input type="password" class="input" name="password" />
             <button type="button" class="show-password">Show/Hide password</button>
           </label>
           <button type="submit" class="login-button">Log In</button>
         </form>
-        <button class="sign-account">don't have an account</button>
+        <button class="sign-account">Don't have an account</button>
         <button class="reg-close-btn">
         <svg class="reg-close-icon">
           <use href="./img/icons.svg#close-icon"></use>
         </svg>
       </button>
-      </div>`,u=Fn.create(a);u.show(),document.querySelector(".login-form").addEventListener("submit",h=>{h.preventDefault();const y=document.querySelector(".login-name").value,_=document.querySelector(".login-password");showPassword.addEventListener("click",()=>{_.type==="password"?_.type="text":_.type="password"});const v=JSON.parse(localStorage.getItem("login-info"));v&&v.username===y&&v.password===_.value?(Oe.Notify.success("Login successful"),u.close()):Oe.Notify.failure("Login failed. Please check your credentials")}),document.querySelector(".sign-account").addEventListener("click",()=>{u.close(),i.show()}),document.querySelector(".reg-close-btn").addEventListener("click",()=>{u.close(),i.close()})}});document.querySelector(".fav-list-recipes");document.querySelector(".nothing");document.querySelector(".fav-recipes");document.querySelector(".fav-categories");let u1="";const f1=[];for(const r of f1)console.log("t",r.title),u1+=`            <li class="fav-recipe-card">
+      </div>`,p=Fn.create(u);p.show(),document.querySelector(".login-form").addEventListener("submit",y=>{y.preventDefault();const _=document.querySelector(".login-name").value,v=document.querySelector(".login-password");showPassword.addEventListener("click",()=>{v.type==="password"?v.type="text":v.type="password"});const b=JSON.parse(localStorage.getItem("login-info"));b&&b.username===_&&b.password===v.value?(Oe.Notify.success("Login successful"),p.close()):Oe.Notify.failure("Login failed. Please check your credentials")}),document.querySelector(".sign-account").addEventListener("click",()=>{p.close(),i.show()}),document.querySelector(".reg-close-btn").addEventListener("click",()=>{p.close(),i.close()})}});document.querySelector(".fav-list-recipes");document.querySelector(".nothing");document.querySelector(".fav-recipes");document.querySelector(".fav-categories");let u1="";const f1=[];for(const r of f1)console.log("t",r.title),u1+=`            <li class="fav-recipe-card">
     <img class="fav-card-img" src="${r.preview}" alt="${r.title}">
     <button class="fav-button-heart">
       <svg class="fav-heart" width="22" height="22">
