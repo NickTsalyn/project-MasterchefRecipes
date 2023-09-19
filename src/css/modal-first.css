@@ -67,7 +67,7 @@
 */
 .modal-frame {
   max-width: 335px;
-  max-height: 800px;
+  max-height: 95vh;
   border-radius: 15px;
   border: 1px solid #000;
   background: #fff;
