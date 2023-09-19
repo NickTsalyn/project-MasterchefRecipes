@@ -43,31 +43,7 @@ function handlerOnClick(evt) {
 
         <p class="recipe-rating recipe-box-text">${respInfo.rating}</p>
         <ul class="icon-list-modal">
-          <li class="icon-rating-modal">
-            <svg class="icon-star" width="14" height="14">
-              <use href="./img/icons.svg#star"></use>
-            </svg>
-          </li>
-          <li class="icon-rating-modal">
-            <svg class="icon-star" width="14" height="14">
-              <use href="./img/icons.svg#star"></use>
-            </svg>
-          </li>
-          <li class="icon-rating-modal">
-            <svg class="icon-star" width="14" height="14">
-              <use href="./img/icons.svg#star"></use>
-            </svg>
-          </li>
-          <li class="icon-rating-modal">
-            <svg class="icon-star" width="14" height="14">
-              <use href="./img/icons.svg#star"></use>
-            </svg>
-          </li>
-          <li class="icon-rating-modal">
-            <svg class="icon-star" width="14" height="14">
-              <use href="./img/icons.svg#star"></use>
-            </svg>
-          </li>
+           ${createRatingMarkup(respInfo.rating)}
         </ul>
         
         <p class="preparing-time recipe-box-text">${respInfo.time} min</p>
@@ -129,6 +105,7 @@ function handlerOnClick(evt) {
       iframeContainer.appendChild(image);
     }
     const closeButton = instance.element().querySelector('.modal-close-button');
+
     closeButton.addEventListener('click', () => {
       instance.close();
     });
@@ -139,15 +116,34 @@ function handlerOnClick(evt) {
       }
     });
 
-
     instance.show();
 
     const addRatingBtn = document.querySelector('.give-rating-btn');
 
-    addRatingBtn.addEventListener('click',handlerModalRating);
-    function handlerModalRating(id){
+    addRatingBtn.addEventListener('click', handlerModalRating);
+    function handlerModalRating(id) {
       const indeficator = respInfo._id;
-      openRatingModal(indeficator)
+      openRatingModal(indeficator);
     }
   });
+}
+
+function createRatingMarkup(num) {
+  let ratingNum = Math.round(num);
+  let ratingMarkup = [];
+
+  for (let i = 0; i < 5; i += 1) {
+    if (ratingNum >= 1) {
+      ratingMarkup.push(`
+        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg#star"></use></svg></li>
+        `);
+      ratingNum -= 1;
+    } else {
+      ratingMarkup.push(`
+        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg#star"></use></svg></li>
+        `);
+    }
+  }
+
+  return ratingMarkup.join('');
 }
