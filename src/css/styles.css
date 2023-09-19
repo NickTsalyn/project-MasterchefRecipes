@@ -59,7 +59,7 @@ body {
     width: 375px;
     margin: 0 auto;
 
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 }
 
@@ -69,35 +69,60 @@ body {
     padding-left: 32px;
     padding-right: 32px;
 
-    flex-direction: row;
+    /* flex-direction: row; */
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .container {
     width: 1280px;
     padding-left: 100px;
-    padding-right: 100px;
+    padding-right: 99px;
   }
 }
 
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
 .left-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.right-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
-
-
-
 @media only screen and (min-width: 375px) {
-  
+  .left-container {
+    width: 332px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-  
+  .left-container {
+    width: 176px;
+    gap: 64px;
+  }
+  .section-wrapper {
+    flex-direction: row;
+    gap: 32px;
+  }
 }
 
-@media only screen and (min-width: 1200px) {
- 
+@media only screen and (min-width: 1280px) {
+  .left-container {
+    width: 235px;
+  }
+  .section-wrapper {
+    gap: 64px;
+  }
 }
 
 .scroll-button {
