@@ -140,5 +140,13 @@ function handlerOnClick(evt) {
     });
 
     instance.show();
+
+    const addRatingBtn = document.querySelector('.give-rating-btn');
+
+    addRatingBtn.addEventListener('click',handlerModalRating);
+    function handlerModalRating(id){
+      const indeficator = respInfo._id;
+      openRatingModal(indeficator)
+    }
   });
 }
