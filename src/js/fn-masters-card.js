@@ -5,67 +5,73 @@ export function eventCards(arr) {
     const eventCard = arr.map(({ cook: { imgUrl: chefImgUrl, imgWebpUrl: chefImgWebpUrl }, topic: { name, area, previewUrl, previewWebpUrl, imgUrl, imgWebpUrl} }) => ` 
     <div class="event-description swiper-slide">
   <ul class="event-item">
-    <li class="chef-photo">
+    <li class="chef">
       <picture>
         <source
-          // media="(min-width: 1280px)"
+       
           srcset="
            ${chefImgWebpUrl}
           "
           type="image/webp"
         />
         <source
-          // media="(min-width: 1280px)"
+         
           srcset="
             ${chefImgUrl}
           "
           type="image/png"
         />
-        <img src="${chefImgUrl}" alt="chef photo  width="122"
-        height="305"
+        <img class="chef-photo" src="${chefImgUrl}" alt="chef photo"  
+        width="200"
+        height="280"
         loading="lazy"" />
       </picture>
     </li>
-    <li>
-      <picture>
+    <li class="event">
+    <div class="event-wrapper">
+    <picture>
         <source
-          media="(min-width: 1280px)"
+          
           srcset="
            ${previewWebpUrl}
           "
           type="image/webp"
         />
         <source
-          media="(min-width: 1280px)"
+       
           srcset="
             ${previewUrl}
           "
           type="image/png"
         />
-        <img src="${previewUrl}" alt="chef photo  width="150"
-        height="150"
+        <img class="event-photo" src="${previewUrl}" alt="event photo"  width="200"
+        height="280"
         loading="lazy"" />
       </picture>
-      <h2>${name}</h2>
-      <p>${area}</p>
+      <div class="event-text">
+      <h2 class="event-name">${name}</h2>
+      <p class="event-area">${area}</p>
+      </div>
+    </div>
+      
     </li>
-    <li>
+    <li class="event-big-photo">
       <picture>
         <source
-          media="(min-width: 1280px)"
+          
           srcset="
            ${imgWebpUrl}
           "
           type="image/webp"
         />
         <source
-          media="(min-width: 1280px)"
+       
           srcset="
             ${imgUrl}
           "
           type="image/png"
         />
-        <img src="${imgUrl}" alt="chef photo  width="222"
+        <img class="big-photo" src="${imgUrl}" alt="big event photo"  width="200"
         height="280"
         loading="lazy"" />
       </picture>
