@@ -13,3 +13,5 @@ import './js/registration';
 import './js/favorite';
 import './js/masters';
 import './js/order-modal';
+import './js/scroll'
+

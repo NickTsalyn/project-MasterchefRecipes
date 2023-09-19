@@ -260,8 +260,8 @@
   }
 }
 .iframeContainer {
-  width: 295px;
-  height: 295px;
+  max-width: 295px;
+  max-height: 295px;
   border-radius: 8px;
   background: linear-gradient(
     0deg,
@@ -272,8 +272,8 @@
 
 @media only screen and (min-width: 768px) {
   .iframeContainer {
-    width: 467px;
-    height: 250px;
+    max-width: 467px;
+    max-height: 250px;
     margin-top: 16px;
   }
 }

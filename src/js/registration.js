@@ -3,8 +3,8 @@ import Notiflix from 'notiflix';
 
 const button = document.querySelector('.registration-btn');
 
-const emailPattertn =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const emailPattern =
+/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}/;
 
 button.addEventListener('click', () => {
   const content = `
@@ -12,15 +12,20 @@ button.addEventListener('click', () => {
     <h4 class="reg-title">Registration</h4>
       <form class="registration-form">
         <label for="text" class="label">Sign Up
-          <input type="text" class="sign-name" name="sign up" />
+          <input type="email" class="sign-name" email="sign up" />
         </label>
         <label for="password" class="label">Password
           <input type="password" class="sign-password" name="password" />
-          <button type="button" class="show-password">Show/Hide password</button>
+          <button class="show-password">Show/Hide password</button>
         </label>
         <button type="submit" class="sign-button">Sign up</button>
       </form>
       <button class="log-account">already have an account</button>
+      <button class="reg-close-btn">
+        <svg class="reg-close-icon">
+          <use href="./img/icons.svg#close-icon"></use>
+        </svg>
+      </button>
     </div>
   `;
 
@@ -36,25 +41,22 @@ button.addEventListener('click', () => {
     const signPassword = document.querySelector('.sign-password');
     const showPassword = document.querySelector('.show-password');   
     
-    document.addEventListener('DOMContentLoaded', () => {
     showPassword.addEventListener('click', () => {
-        if (signPassword.type === 'password') {
-            signPassword.type = 'text';
-        } else {
-            signPassword.type = 'password';
-        }
-    });
-    })
-
-    if(signName === "" && showPassword.value === "") {
+      if (signPassword.type === 'password') {
+          signPassword.type = 'text';
+      } else {
+          signPassword.type = 'password';
+      }
+  });
+    if(signName === "" && signPassword.value === "") {
         Notiflix.Notify.warning('Please insert a valid email address')
         return
     }
 
-    // if(signName !== emailPattertn) {
-    //     Notiflix.Notify.warning('Please insert a valid email address');
-    //     return
-    // }
+    if(!emailPattern.test(signName)) {
+        Notiflix.Notify.warning('Please insert a valid email address');
+        return
+    }
     if (signPassword.value.length <= 6) {
       Notiflix.Notify.warning('Password should have at least 6 symbols');
       return;
@@ -94,6 +96,11 @@ button.addEventListener('click', () => {
           <button type="submit" class="login-button">Log In</button>
         </form>
         <button class="sign-account">don't have an account</button>
+        <button class="reg-close-btn">
+        <svg class="reg-close-icon">
+          <use href="./img/icons.svg#close-icon"></use>
+        </svg>
+      </button>
       </div>`;
     const logModal = basicLightbox.create(logForm);
     logModal.show();
@@ -105,15 +112,15 @@ button.addEventListener('click', () => {
 
       const loginName = document.querySelector('.login-name').value;
       const loginPassword = document.querySelector('.login-password');
-    //   const showPassword = document.querySelector('.show-password')
+      // const showPassword = document.querySelector('.show-password')
 
-    //   showPassword.addEventListener('click', () => {
-    //     if (loginPassword.type === 'password') {
-    //         loginPassword.type = 'text';
-    //     } else {
-    //         loginPassword.type = 'password';
-    //     }
-    // });
+      showPassword.addEventListener('click', () => {
+        if (loginPassword.type === 'password') {
+            loginPassword.type = 'text';
+        } else {
+            loginPassword.type = 'password';
+        }
+    });
 
       const storedUser = JSON.parse(localStorage.getItem('login-info'));
 
@@ -134,5 +141,11 @@ button.addEventListener('click', () => {
       logModal.close();
       signModal.show();
     });
+
+    const closeBtn = document.querySelector('.reg-close-btn')
+    closeBtn.addEventListener('click', ()=> {
+      logModal.close()
+      signModal.close()
+    })
   }
 });

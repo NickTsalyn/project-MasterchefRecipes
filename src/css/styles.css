@@ -5,6 +5,7 @@
 @import url('./form.css');
 @import url('./list-button.css');
 @import url('./popular.css');
+@import url('./theme-switch.css');
 @import url('./footer.css');
 @import url('./header.css');
 @import url('./recipes-gallery.css');
@@ -97,4 +98,15 @@ body {
 
 @media only screen and (min-width: 1200px) {
  
+}
+
+.scroll-button {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 999;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
 }

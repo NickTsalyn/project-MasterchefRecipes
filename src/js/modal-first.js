@@ -2,12 +2,10 @@ import { getRecipesDetail } from './Api/api-recipe_info';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-import Player from '@vimeo/player';
 import './modal-rating';
 import { openRatingModal } from './modal-rating';
 
 import YouTubePlayer from 'youtube-player';
-
 
 const seeFullRecipec = document.querySelector('.gallery-recipes');
 
@@ -20,9 +18,11 @@ function handlerOnClick(evt) {
   }
   const currentElement = evt.target.closest('.card-item');
   const value = currentElement.dataset.id;
-  console.log(value);
+
   getRecipesDetail(value).then(respInfo => {
-    console.log(respInfo);
+    const parts = respInfo.youtube.split('=');
+    const videoId = parts[1];
+
     const instance = basicLightbox.create(`
     <div class="modal-frame">
           
@@ -94,19 +94,14 @@ function handlerOnClick(evt) {
           <div class="btn-container">
             <button type="button" class="btn-modal-general btn-modal-first">Add to favorite</button>
 
-            <button type="button" class="btn-modal-general btn-modal-secont">Give a rating</button>
+            
 
             <button type="button" data-id="${
               respInfo._id
             }" class="btn-modal-general btn-modal-secont give-rating-btn ">Give a rating</button>
 
             </div>
-             </div> `
-            
- 
-           
-    )
-    
+             </div> `);
 
     const tagContainer = instance.element().querySelector('.tag-container');
     if (respInfo.tags && respInfo.tags.length > 0) {
@@ -125,26 +120,33 @@ function handlerOnClick(evt) {
 
     if (respInfo.youtube !== '') {
       const player = YouTubePlayer(iframeContainer, {
-        videoId: respInfo.youtube,
+        videoId: videoId,
       });
-      player
-        .playVideo()
-        .then(() =>
-          console.log(
-            'Starting to play player1. It will take some time to buffer video before it starts playing.'
-          )
-        );
+      player.playVideo().then(() => '');
     } else {
       const image = document.createElement('img');
       image.src = respInfo.thumb;
       iframeContainer.appendChild(image);
     }
+    const closeButton = instance.element().querySelector('.modal-close-button');
+    closeButton.addEventListener('click', () => {
+      instance.close();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        instance.close();
+      }
+    });
 
     instance.show();
 
- 
+    const addRatingBtn = document.querySelector('.give-rating-btn');
 
-    
-
+    addRatingBtn.addEventListener('click',handlerModalRating);
+    function handlerModalRating(id){
+      const indeficator = respInfo._id;
+      openRatingModal(indeficator)
+    }
   });
 }
