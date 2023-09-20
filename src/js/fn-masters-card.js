@@ -1,11 +1,12 @@
 // ------------ Events card -----
-const masters = document.querySelector(".hero-event")
-
-export function eventCards(arr) {    
-    const eventCard = arr.map(({ cook: { imgUrl: chefImgUrl, imgWebpUrl: chefImgWebpUrl }, topic: { name, area, previewUrl, previewWebpUrl, imgUrl, imgWebpUrl} }) => ` 
+// const masters = document.querySelector(".hero-event")
+const swiperEvent = document.querySelector(".swiper-wrapper");
+ 
+export function eventCards(arr) {
+    const eventCard = arr.map(({ cook: { imgUrl: chefImgUrl, imgWebpUrl: chefImgWebpUrl }, topic: { name, area, previewUrl, previewWebpUrl, imgUrl, imgWebpUrl} }) => `
     <div class="event-description swiper-slide">
-  <ul class="event-item">
-    <li class="chef">
+  <div class="event-item">
+    <div class="chef">
       <picture>
         <source
        
@@ -21,13 +22,13 @@ export function eventCards(arr) {
           "
           type="image/png"
         />
-        <img class="chef-photo" src="${chefImgUrl}" alt="chef photo"  
+        <img class="chef-photo" src="${chefImgUrl}" alt="chef photo"
         width="200"
         height="280"
         loading="lazy"" />
       </picture>
-    </li>
-    <li class="event">
+    </div>
+    <div class="event">
     <div class="event-wrapper">
     <picture>
         <source
@@ -54,8 +55,8 @@ export function eventCards(arr) {
       </div>
     </div>
       
-    </li>
-    <li class="event-big-photo">
+    </div>
+    <div class="event-big-photo">
       <picture>
         <source
           
@@ -75,10 +76,31 @@ export function eventCards(arr) {
         height="280"
         loading="lazy"" />
       </picture>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
   `).join('');
-    masters.insertAdjacentHTML("beforeend", eventCard)
+    swiperEvent.insertAdjacentHTML("beforeend", eventCard)
 }
 
+// export function eventCards(arr) {    
+//     const eventCard = arr.map(({ cook: { imgWebpUrl: chefImgWebpUrl }, topic: { name, area,  previewWebpUrl,  imgWebpUrl} }) => ` 
+//    <div class="swiper-slide" >
+//     <div class="event">     
+//         <div class="" style="background-image: url(${chefImgWebpUrl})"></div>
+//         <div class="" >
+//         <div class="" style="background-image: url(${previewWebpUrl})"></div>
+//             <h2 class="">${name}</h2>
+//             <p class="">${area}</p>
+//         </div>
+//         <div class="" style="
+//         background-image: url(${imgWebpUrl}); 
+//         background-size: cover;
+//         background-position: center center 10%"
+//         >
+//         </div>  
+//     </div>  
+// </div>
+//   `).join('');
+//     swiperEvent.insertAdjacentHTML("beforeend", eventCard)
+// }

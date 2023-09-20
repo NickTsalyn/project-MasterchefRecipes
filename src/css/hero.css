@@ -104,10 +104,9 @@
     padding-bottom: 100px;
   }
 }
-/* .hero-event {
-  width: 497px;
-  overflow-x: hidden;
-} */
+.hero-event {
+  margin-bottom: 4px;
+}
 .event-description {
   width: 497px;
   /* overflow-x: hidden; */
@@ -217,6 +216,7 @@
   .big-photo {
     width: 351px;
     height: 442px;
+    background: var(--primary-color);
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -235,40 +235,42 @@
   }
 }
 
-/* .swiper-pagination-bullet {
-  width: 13px;
-  height: 13px;
+.swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
 }
 .swiper-pagination-bullet-active {
-  width: 28px;
-  height: 13px;
-  border-radius: 100px 100px;
-  background: black;
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: var(--green-color, var(--primary-color));
 }
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet.swiper-pagination-bullet {
+  background: var(--green-color, var(--primary-color));
 }
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  bottom: 80px;
+
+.swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+  background: var(--primary-color);
 }
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px);
-}
-.swiper,
-swiper-container {
-  position: static;
-}
-.swiper-wrapper {
-  position: static;
-}
-.section-hero {
-  padding-bottom: 117px;
-  position: relative;
+/* .swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 4px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 4px)
+  );
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: var(
+    --swiper-pagination-bullet-inactive-color,
+    var(--primary-color)
+  );
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+} */
+/* .swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
 } */
