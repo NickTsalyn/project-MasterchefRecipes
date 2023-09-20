@@ -3,14 +3,16 @@ const refs = {
   
 }
 
-document.addEventListener('DOMContentLoaded', function(e){
-  const html = refs.recipesGallery.children
-  let arr = [...html];
- console.log(html)
+// document.addEventListener('DOMContentLoaded', function(e){
+//   const html = refs.recipesGallery.children
+//   let arr = [...html];
+//  console.log(html)
   
-})
+// })
 
 const storageKey = "favRecipes"
+const heartKey = 'heartKey'
+const heartClass = 'active'
 
 refs.recipesGallery.addEventListener('click', favBtnClickHandler)
 
@@ -88,3 +90,17 @@ activatesFavoriteIconsFromStorage(refs.cardItemsArr)
   //   console.log(el)
   // })
  }
+
+ const heart = document.querySelector('.menu-link');
+const key = "heartKey";
+const className = 'active';
+
+if (localStorage.getItem(key) === className) {
+    heart.classList.add(className);
+}
+
+heart.addEventListener('click', (e) => {
+    e.preventDefault();
+    heart.classList.toggle(className); 
+    localStorage.setItem(key, heart.classList.contains(className) ? className : ''); 
+});
