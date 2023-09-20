@@ -1,14 +1,12 @@
 body.dark-theme {
   background-color: var(--dark-theme-background);
   color: var(--white-color);
-  transition: color var(--transition-dur-timing-func);
 }
 
 /* ----------- HEADER ----------- */
 
 .dark-theme .logo {
   color: var(--white-color);
-  transition: color var(--transition-dur-timing-func);
 }
 
 .dark-theme .mobile-menu {
@@ -17,16 +15,13 @@ body.dark-theme {
 
 .dark-theme .header-chart-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 .dark-theme .mobile-menu-open-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 
 .dark-theme .registration-btn-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 
 /* ----------- HEADER ----------- */
@@ -150,7 +145,6 @@ body.dark-theme {
 
 .dark-theme .social-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 
 /* ----------- FOOTER ----------- */
