@@ -197,6 +197,7 @@
   padding: 8px 16px;
   border-radius: 35px;
   border: 1px solid rgba(5, 5, 5, 0.2);
+  font-size: 12px;
 }
 @media only screen and (min-width: 768px) {
   .tag-container {
@@ -248,7 +249,7 @@
 @media (hover: hover) {
   .btn-modal-first:hover,
   .btn-modal-first:focus {
-    color: var(--black-color);
+    color: var(--primary-color);
   }
   .btn-modal-secont:hover,
   .btn-modal-secont:focus {
@@ -259,7 +260,7 @@
 
 @media not (hover: hover) {
   .btn-modal-first:active {
-    color: var(--black-color);
+    color: var(--primary-color);
   }
   .btn-modal-secont:active {
     background: var(--green-color);

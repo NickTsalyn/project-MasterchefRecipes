@@ -13,10 +13,10 @@ seeFullRecipec.addEventListener('click', handlerOnClick);
 
 function handlerOnClick(evt) {
   evt.preventDefault();
-  if (!evt.target.classList.contains('card-item')) {
+  if (!evt.target.classList.contains('modal-open-js')) {
     return;
   }
-  const currentElement = evt.target.closest('.card-item');
+  const currentElement = evt.target.closest('.modal-open-js');
   const value = currentElement.dataset.id;
 
   getRecipesDetail(value).then(respInfo => {
@@ -84,7 +84,7 @@ function handlerOnClick(evt) {
       respInfo.tags.forEach(tag => {
         const tagSpan = document.createElement('span');
         tagSpan.textContent = `#${tag}`;
-        tagSpan.className = 'tag';
+        tagSpan.classList.add('tag');
 
         tagContainer.appendChild(tagSpan);
       });
@@ -135,12 +135,12 @@ function createRatingMarkup(num) {
   for (let i = 0; i < 5; i += 1) {
     if (ratingNum >= 1) {
       ratingMarkup.push(`
-        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="16" height="16"><use href="./img/icons.svg#star"></use></svg></li>
         `);
       ratingNum -= 1;
     } else {
       ratingMarkup.push(`
-        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href="./img/icons.svg#star"></use></svg></li>
         `);
     }
   }
