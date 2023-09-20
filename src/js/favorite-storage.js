@@ -1,24 +1,16 @@
+import { save, load } from "./storage-service";
+
 const refs = {
   recipesGallery: document.querySelector(".gallery-recipes"),
   
 }
 
-// document.addEventListener('DOMContentLoaded', function(e){
-//   const html = refs.recipesGallery.children
-//   let arr = [...html];
-//  console.log(html)
-  
-// })
-
 const storageKey = "favRecipes"
-const heartKey = 'heartKey'
-const heartClass = 'active'
 
 refs.recipesGallery.addEventListener('click', favBtnClickHandler)
 
-function favBtnClickHandler (e) {
+ function favBtnClickHandler (e) {
   if (e.target.closest(".heart")) {
-    let favBtn = e.target.closest(".heart");
     let currentCard = e.target.closest(".card-item")
     const currentId = currentCard.dataset.id
     const currentCategory = currentCard.dataset.category
@@ -59,55 +51,10 @@ function favBtnClickHandler (e) {
 function createRecipeObject (id, category){
   return {
     id,
-    category,
+    category
   }
 }
 
 
-const save = (key, value) => {
-  try {
-    const serializedState = JSON.stringify(value);
-    localStorage.setItem(key, serializedState);
-  } catch (error) {
-    console.error("Set state error: ", error.message);
-  }
-};
-
-const load = key => {
-  try {
-    const serializedState = localStorage.getItem(key);
-    return serializedState === null ? undefined : JSON.parse(serializedState);
-  } catch (error) {
-    console.error("Get state error: ", error.message);
-  }
-};
-
-activatesFavoriteIconsFromStorage(refs.cardItemsArr)
-
- function activatesFavoriteIconsFromStorage (arr) {
-  console.log(arr)
-  // [...arr].map(el => {
-  //   console.log(el)
-  // })
- }
 
 
-/**
-  |============================
-  |    My exapmle on Header
-  |============================
-*/
-
- const heart = document.querySelector('.menu-link');
-const key = "heartKey";
-const className = 'active';
-
-if (localStorage.getItem(key) === className) {
-    heart.classList.add(className);
-}
-
-heart.addEventListener('click', (e) => {
-    e.preventDefault();
-    heart.classList.toggle(className); 
-    localStorage.setItem(key, heart.classList.contains(className) ? className : ''); 
-});

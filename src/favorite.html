@@ -18,9 +18,9 @@
     <main>
       <div class="fav-container">
         <div class="fav-hero"></div>
-        <ul class="fav-categories-list">
-            <li class="fav-category">
-              <button class="fav-category-btn">Beef</button>
+        <ul class="fav-categories-list hidden">
+            <li class="fav-category " data-value="all">
+              <button class="fav-category-btn ">All categories</button>
             </li>
         </ul>
         <div class="empty-section-wrapper">
@@ -29,11 +29,12 @@
           </svg>
           <p class="empty-section-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
         </div>
-        </div>
-        <ul class="fav-recipes-list"></ul>
+
+        <ul class="fav-recipes-list hidden">
+        </ul>
+        
       </div>
     </main>
-    <script type="module" src="/main.js"></script>
     <script type="module" src="./js/favorite.js"></script>
   </body>
 </html>

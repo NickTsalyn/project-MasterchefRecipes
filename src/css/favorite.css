@@ -2,10 +2,13 @@
 @import url('./fonts.css');
 @import url('./header.css');
 @import url("./styles.css");
-  
+.fav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}  
 .fav-header {
-    /* display: none;
-    overflow: hidden; */
+   
     width: 100%;
     overflow-x: hidden;
 }
@@ -57,6 +60,27 @@
     line-height: 1.5;
 }
 
+.fav-recipes-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items:center;
+}
+
+.fav-recipes-list.hidden {
+    display: none;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+    overflow: hidden;
+}
+
+
+
+
 /* -----------MEDIA 375--------- */
 
  @media only screen and (min-width: 375px) {
@@ -99,6 +123,17 @@
     .empty-section-text {
         width: 335px;
         font-size: 14px;
+    }
+
+    .fav-recipes-list {
+       flex-direction: column;
+       gap: 24px; 
+    }
+
+    .card-item {
+        margin-bottom: 0;
+        width: 335px;
+        height: 335px;
     }
 }
 
@@ -149,6 +184,16 @@
         width: 481px;
         font-size: 16px;
     }
+
+    .fav-recipes-list {
+        flex-direction: row;
+        gap: 16px; 
+     }
+
+     .card-item {
+        width: 224px;
+        height: 244px;
+    }
 }
 
 /* -----------MEDIA 1200PX--------- */
@@ -163,6 +208,12 @@
         background: url(../img/fav-hero.png), lightgray 0px -682.376px / 100% 380.258% no-repeat;
         background-size: cover;
         background-position: 0px -60px;
+    }
+    .card-item {
+        margin-bottom: 16px;
+
+        width: 258px;
+        height: 287px;
     }
     
 }
