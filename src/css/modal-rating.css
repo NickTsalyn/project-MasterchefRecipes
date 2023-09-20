@@ -30,12 +30,8 @@
     padding: 32px;
   }
 }
-.modal-rating-display {
-  /* padding: 20px; */
-    /* height: 216px;   */
-}
 .modal-rating-head {
-  color: #050505;
+  color: var(--primary-color);
  
   font-size: 14px; 
   font-style: normal;
@@ -72,12 +68,16 @@
   padding-bottom: 15px; */
   justify-content: center;
   border-radius: 15px;
-  background: #9bb537;
-  color: #f8f8f8;
+  background-color: var(--white-color);
+  color: var(--primary-color);
  
   font-weight: 500;
 
-  border: none;
+  border: 1px solid var(--green-color);
+}
+.modal-rating-btn:hover{
+  background-color: var(--green-color);
+  color:var(--white-color);
 }
 @media only screen and (min-width: 768px) {
   .modal-rating-btn{
@@ -108,7 +108,9 @@ font-weight: 500;
     line-height:1.25;
   }
 }
-
+.modal-rating-email-in-input:hover{
+  border-color:var(--green-color);
+}
 .modal-rating-counter {
   margin-right: 8px;
  width: 25px;
@@ -132,4 +134,7 @@ cursor: pointer;
     top:16px;
     right: 16px;
   }
+}
+.modal-rating-stars-container{
+  height: 100%;
 }

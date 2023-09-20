@@ -65,11 +65,12 @@
   height: 582px;
   border-radius: 15px;
   background: #fff;
-  padding: 40px;
+  padding: 28px 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .modal {
+    padding: 40px;
     width: 440px;
     height: 632px;
   }
@@ -154,20 +155,30 @@
   font-weight: 500;
   display: flex;
   width: 295px;
-  padding: 15px 162px;
+  padding: 15px 148px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 15px;
-  border: none;
+  border: 1px solid rgba(5, 5, 5, 0.2);
   background-color: var(--white-color);
   transition: var(--transition-dur-timing-func);
+}
+
+
+@media only screen and (min-width: 768px) {
+  .send-button {
+    width: 360px;
+    height: 48px;
+    padding: 14px 162px;
+  }
 }
 
 .send-button:hover,
 .send-button:focus {
   color: #f8f8f8;
   background-color: var(--green-color);
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
