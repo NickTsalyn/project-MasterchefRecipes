@@ -5,14 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/project-MasterchefRecipes/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasty Treats</title>
-    
+
 	
-    <script type="module" crossorigin src="/project-MasterchefRecipes/assets/scroll-427545fd.js"></script>
-    <link rel="stylesheet" href="/project-MasterchefRecipes/assets/scroll-7c635957.css">
-    <link rel="stylesheet" href="/project-MasterchefRecipes/assets/favorite-fb0456c5.css">
+  
+    <script type="module" crossorigin src="/project-MasterchefRecipes/assets/favorite-bae1a4e8.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-MasterchefRecipes/assets/theme-switcher-b292f4da.js">
+    <link rel="stylesheet" href="/project-MasterchefRecipes/assets/favorite-f80675e3.css">
   </head>
-  <body>
-    <header class="page-header" id="home">
+  <body class="fav-body">
+    <div class="fav-header">
+      <header class="page-header" id="home">
   <div class="page-header-container container">
     <nav class="page-nav">
       <ul class="menu list">
@@ -36,7 +38,7 @@
         class="header-chart-link"
       >
         <svg class="header-chart-icon ord-btn" width="24" height="24">
-          <use href="/project-MasterchefRecipes/assets/icons-6aa64d11.svg#cart"></use>
+          <use href="/project-MasterchefRecipes/assets/icons-e288fbbc.svg#cart"></use>
         </svg>
       </a>
 
@@ -47,13 +49,13 @@
 
       <button type="button" class="registration-btn">
         <svg class="registration-btn-icon" width="26" height="26">
-          <use href="/project-MasterchefRecipes/assets/icons-6aa64d11.svg#account"></use>
+          <use href="/project-MasterchefRecipes/assets/icons-e288fbbc.svg#account"></use>
         </svg>
       </button>
 
       <button type="button" class="mobile-menu-open js-open-menu">
         <svg class="mobile-menu-open-icon" width="32" height="32">
-          <use href="/project-MasterchefRecipes/assets/icons-6aa64d11.svg#burger"></use>
+          <use href="/project-MasterchefRecipes/assets/icons-e288fbbc.svg#burger"></use>
         </svg>
       </button>
       
@@ -66,7 +68,7 @@
     <div class="mobile-menu-container">
       <button class="modal-close-btn js-close-menu hidden">
         <svg class="mobile-menu-close-icon">
-          <use href="/project-MasterchefRecipes/assets/icons-6aa64d11.svg#close-icon"></use>
+          <use href="/project-MasterchefRecipes/assets/icons-e288fbbc.svg#close-icon"></use>
         </svg>
       </button>
 
@@ -88,58 +90,28 @@
   </div>
 </header>
 
+    </div>
     <main>
-      <section class="fav-hero-sec">
-        <div class="container fav-hero-container">
-        
-        
-        </div>
- 
+      <div class="fav-container">
+  <div class="fav-hero"></div>
+  <ul class="fav-categories-list hidden">
+      <li class="fav-category " data-value="all">
+        <button class="fav-category-btn" type="button">All categories</button>
+      </li>
+  </ul>
+  <div class="empty-section-wrapper">
+    <svg class="empty-section-icon" >
+      <use href="/project-MasterchefRecipes/assets/icons-e288fbbc.svg#hat-icon" ></use>
+    </svg>
+    <p class="empty-section-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
+  </div>
 
-      </section>
-
-      <section class="fav-categories-sec">
-       
-        <div class="container fav-categories">
- <button class="fav-category">All categories </button>
-        </div>
-      </section>
-
-      <section class="fav-sec-recipes">
-        <div class="container nothing">  
-          <img class="hat" src="/project-MasterchefRecipes/assets/hat-072ee2a0.jpg" alt="hat">
-          <p class="nothing-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
-                  </div>
-        <div class="container fav-recipes">
-          <ul class="fav-list-recipes">
-            <li class="fav-recipe-card">
-             <img class="fav-card-img" src="/project-MasterchefRecipes/assets/cards-ff2a2b11.jpg" alt="card">
-              <button class="fav-button-heart">
-                <svg class="fav-heart" width="22" height="22">
-                  <use href="/project-MasterchefRecipes/assets/icons-6aa64d11.svg#heart"></use>
-                </svg>
-              </button>
-                <h3 class="fav-card-title">BANANA PANCAKES</h3>
-                <p class="fav-cart-text">Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice.</p>
-                <div class="fav-cart-footer">
-                  <p class="fav-rate">4.5</p>
-                 <div class="fav-cart-stars">
-                   <svg class="fav-star" width="18" height="18">
-                     <use href="/project-MasterchefRecipes/assets/icons-6aa64d11.svg#star"></use>
-                   </svg>
-                 </div>
-                  <button class="fav-card-button">See recipe</button>
-                </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      
+  <ul class="fav-recipes-list hidden">
+  </ul>
+  
+</div>
     </main>
-
-
-
+    
     
   </body>
 </html>
