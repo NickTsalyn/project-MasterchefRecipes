@@ -22,7 +22,7 @@ function handlerOnClick(evt) {
   if (!modalOpenElement) {
     return;
   }
-
+  let player = null;
   const value = modalOpenElement.dataset.id;
 
   getRecipesDetail(value).then(respInfo => {
@@ -103,8 +103,10 @@ function handlerOnClick(evt) {
     if (respInfo.youtube !== '') {
       const player = YouTubePlayer(iframeContainer, {
         videoId: videoId,
+        playerVars: {
+          autoplay: 0,
+        },
       });
-      player.playVideo().then(() => '');
     } else {
       const image = document.createElement('img');
       image.src = respInfo.thumb;
