@@ -25,6 +25,10 @@
   --transition-dur-timing-func: 300ms ease-out;
 }
 
+* {
+  transition: all 3s;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -43,23 +47,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  transition: color var(--transition-dur-timing-func);
 }
 
 .container {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
-
-  display: flex;
-  justify-content: space-between;
 }
 
 @media only screen and (min-width: 375px) {
   .container {
     width: 375px;
     margin: 0 auto;
-
-    /* flex-direction: column; */
   }
 }
 
@@ -68,8 +69,6 @@ body {
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
-
-    /* flex-direction: row; */
   }
 }
 
@@ -125,13 +124,62 @@ body {
   }
 }
 
+/**
+  |============================
+  |    Scroll Button
+  |============================
+*/
+
 .scroll-button {
+  fill: var(--green-color);
   display: none;
   position: fixed;
   bottom: 50px;
   right: 50px;
   z-index: 999;
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--green-color);
+  background-color: var(--white-color);
+  transition: 300ms ease-out;;
+  transform: translateY(0);
+  animation: float 2s linear infinite;
+}
+
+
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  25% {
+    transform: translatey(-3px);
+  }
+
+  50% {
+    transform: translatey(0px);
+  }
+
+  75% {
+    transform: translatey(3px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+
+.scroll-button:hover,
+.scroll-button:focus {
+  fill: var(--white-color);
+  background-color: var(--green-color);
+  border: none;
+}
+
+.scroll-icon {
+  width: 20px;
+  height: 20px;
 }
