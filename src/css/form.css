@@ -85,7 +85,7 @@
     fill: var(--green-color);
 }
 .dark-theme .input-search:not(:placeholder-shown) + .icon-search {
-    fill: var(--green-color);
+    fill: var(--green-color);}
 
 .label-form:hover .icon-search,
 .label-form:focus .icon-search {
@@ -253,7 +253,8 @@
 }
 
 .dark-theme .active {
-    color: #fff;
+    color: #fff;}
+
 .option-form:active {
   color: var(--primary-color);
 }
