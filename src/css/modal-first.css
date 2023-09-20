@@ -1,3 +1,8 @@
+/**
+  |============================
+  | стилі галереї BasickLightbox
+  |============================
+*/
 .basicLightbox {
   position: fixed;
   display: flex;
@@ -55,9 +60,14 @@
 .basicLightbox--visible .basicLightbox__placeholder {
   transform: scale(1);
 }
+/**
+  |============================
+  | Стилі елементів модального вікна
+  |============================
+*/
 .modal-frame {
   max-width: 335px;
-  max-height: 800px;
+  max-height: 95vh;
   border-radius: 15px;
   border: 1px solid #000;
   background: #fff;
@@ -91,7 +101,7 @@
 }
 .dish-title {
   margin-top: 20px;
-  color: #050505;
+  color: var(--primary-color);
 
   font-family: Inter;
   font-size: 18px;
@@ -120,7 +130,7 @@
   margin-right: 6px;
 }
 .recipe-box-text {
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--secondary-color);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -173,7 +183,7 @@
   }
 }
 .modal-close-icon {
-  stroke: #050505;
+  stroke: var(--primary-color);
 }
 .tag-container {
   margin-top: 48px;
@@ -219,11 +229,42 @@
   font-size: 13px;
   font-weight: 500;
   border-radius: 15px;
-  border: 1px solid #9bb537;
+  border: 1px solid var(--green-color);
+}
+@media only screen and (min-width: 768px) {
+  .btn-modal-general {
+    padding: 14px 28px;
+  }
 }
 .btn-modal-first {
-  background: #9bb537;
-  color: #f8f8f8;
+  background: var(--green-color);
+  color: var(--white-color);
+  transition: color var(--transition-dur-timing-func);
+}
+.btn-modal-secont {
+  transition: color var(--transition-dur-timing-func),
+    background var(--transition-dur-timing-func);
+}
+@media (hover: hover) {
+  .btn-modal-first:hover,
+  .btn-modal-first:focus {
+    color: var(--black-color);
+  }
+  .btn-modal-secont:hover,
+  .btn-modal-secont:focus {
+    background: var(--green-color);
+    color: var(--white-color);
+  }
+}
+
+@media not (hover: hover) {
+  .btn-modal-first:active {
+    color: var(--black-color);
+  }
+  .btn-modal-secont:active {
+    background: var(--green-color);
+    color: var(--white-color);
+  }
 }
 @media only screen and (min-width: 768px) {
   .swap-container {
@@ -276,4 +317,15 @@
     max-height: 250px;
     margin-top: 16px;
   }
+}
+.icon-rating {
+  height: 18px;
+}
+.icon-rating.checked.modal-icon {
+  fill: #eea10c;
+}
+
+.icon-rating.unchecked.modal-icon {
+  fill: rgba(5, 5, 5, 0.4);
+  opacity: 0.2;
 }
