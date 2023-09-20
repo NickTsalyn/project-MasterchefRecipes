@@ -17,7 +17,7 @@ seeFullRecipec.item2.addEventListener('click', handlerOnClick);
 
 function handlerOnClick(evt) {
   evt.preventDefault();
-  if (!evt.target.classList.contains('modal-open-js')) {
+  if (!evt.target.classList.contains('modal-open')) {
     return;
   }
   const currentElement = evt.target.closest('.modal-open-js');
