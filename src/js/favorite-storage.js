@@ -91,6 +91,13 @@ activatesFavoriteIconsFromStorage(refs.cardItemsArr)
   // })
  }
 
+
+/**
+  |============================
+  |    My exapmle on Header
+  |============================
+*/
+
  const heart = document.querySelector('.menu-link');
 const key = "heartKey";
 const className = 'active';
