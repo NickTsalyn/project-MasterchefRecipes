@@ -40,9 +40,9 @@
     transition: var(--transition-dur-timing-func);
  }
  .fav-category.active .fav-category-btn{
-    background-color: #9BB537;
-    color: #F8F8F8;
-    border: 1px solid #9BB537;
+    background-color: var(--green-color);
+    color: var(--background-color);
+    border: 1px solid var(--green-color);
 }
 
 .empty-section-wrapper {
@@ -53,7 +53,7 @@
 }
 
 .empty-section-text {
-    color: #050505;
+    color: var(--primary-color);
     text-align: center;
     font-family: Inter;
     font-weight: 400;
@@ -220,17 +220,17 @@
 
 @media (hover: hover) {
     .fav-category-btn:hover{
-        background-color: #9BB537;
-        color: #F8F8F8;
-        border: 1px solid #9BB537;
+        background-color: var(--green-color);
+        color: var(--background-color);
+        border: 1px solid var(--green-color);
     }
   }
   
 @media not (hover: hover) {
     .fav-category-btn:active{
-        background-color: #9BB537;
-        color: #F8F8F8;
-        border: 1px solid #9BB537;
+        background-color: var(--green-color);
+        color: var(--background-color);
+        border: 1px solid var(--green-color);
     }
   }
 

@@ -31,7 +31,14 @@ body.dark-theme {
 
 /* ----------- HEADER ----------- */
 
+/* ----------- CATEGORIES ----------- */
+.dark-theme .category-item {
+  color: var(--white-color);
+}
 
+.dark-theme .categories-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(214, 214, 214, 0.18);
+}
 
 /* ----------- POPULAR ----------- */
 
@@ -154,3 +161,19 @@ body.dark-theme {
 }
 
 /* ----------- FOOTER ----------- */
+
+
+/* ----------- FAVORITES PAGE ----------- */
+
+.dark-theme .fav-body {
+  background-color: var(--dark-theme-background);
+}
+
+.dark-theme .empty-section-text {
+  color: var(--white-color);
+}
+
+.dark-theme .fav-category-btn {
+  border: 1px solid var(--green-color);
+  color: var(--green-color);
+}

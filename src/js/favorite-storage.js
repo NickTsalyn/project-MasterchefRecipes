@@ -2,7 +2,6 @@ import { save, load } from "./storage-service";
 
 const refs = {
   recipesGallery: document.querySelector(".gallery-recipes"),
-  
 }
 
 const storageKey = "favRecipes"
@@ -30,7 +29,6 @@ refs.recipesGallery.addEventListener('click', favBtnClickHandler)
         const newArr = storageArr;
         save(storageKey, newArr) 
       }
-
       return
     }
 
@@ -43,8 +41,6 @@ refs.recipesGallery.addEventListener('click', favBtnClickHandler)
       save(storageKey, newArr) 
       return
     }
-    
-
   }
 }
 
