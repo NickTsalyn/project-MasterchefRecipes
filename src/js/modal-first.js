@@ -7,9 +7,13 @@ import { openRatingModal } from './modal-rating';
 
 import YouTubePlayer from 'youtube-player';
 
-const seeFullRecipec = document.querySelector('.gallery-recipes');
+const seeFullRecipec = {
+  item1: document.querySelector('.gallery-recipes'),
+  item2: document.querySelector('.popular-list'),
+};
 
-seeFullRecipec.addEventListener('click', handlerOnClick);
+seeFullRecipec.item1.addEventListener('click', handlerOnClick);
+seeFullRecipec.item2.addEventListener('click', handlerOnClick);
 
 function handlerOnClick(evt) {
   evt.preventDefault();
