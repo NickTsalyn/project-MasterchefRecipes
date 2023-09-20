@@ -1,12 +1,14 @@
 .modal-rating-input {
   position: absolute;
   opacity: 0;
+  width: 24px;
+  height: 24px;
 }
 .modal-rating-star {
   fill: #d9d9d9;
   cursor: pointer;
 }
-.modal-rating-star-active {
+.star-active {
   fill: #eea10c;
 }
 .modal-rating-form {
@@ -137,4 +139,5 @@ cursor: pointer;
 }
 .modal-rating-stars-container{
   height: 100%;
+  /* display: flex; */
 }

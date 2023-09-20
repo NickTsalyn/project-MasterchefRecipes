@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import { getRecipesDetail } from './Api/api-recipe_info';
 import * as basicLightbox from 'basiclightbox';
@@ -73,12 +72,9 @@ export function openRatingModal(indeficator) {
     </div>
   </form>`;
 
- 
   const openModalForm = basicLightbox.create(modalRatingForm);
 
   openModalForm.show();
-  
-
 
   const elements = {
     counter: document.querySelector('.modal-rating-counter'),
@@ -89,20 +85,18 @@ export function openRatingModal(indeficator) {
     mail: document.querySelector('.modal-rating-email-in-input'),
     btn: document.querySelector('.modal-rating-btn'),
     card: document.querySelector('.card-item'),
-    closeBtn:document.querySelector('.modal-rating-close-btn'),
+    closeBtn: document.querySelector('.modal-rating-close-btn'),
   };
- 
+
   elements.container.addEventListener('click', handlerGiveRating);
   elements.mail.addEventListener('input', handlerInput);
   elements.form.addEventListener('submit', handlerSubmit);
-  elements.closeBtn.addEventListener('click',handlerClose);
-  function handlerClose(){
+  elements.closeBtn.addEventListener('click', handlerClose);
+  function handlerClose() {
     openModalForm.close();
   }
 
-
   function handlerGiveRating(evt) {
-  
     evt.preventDefault();
     if (evt.currentTarget === evt.target) {
       return;
@@ -110,34 +104,39 @@ export function openRatingModal(indeficator) {
     replaceStar();
     const modalInput = [...elements.input];
     const modalStar = [...elements.star];
-   
-    for (let i = 0; i < modalInput.length; i += 1) {
-      if (evt.target !== modalInput[i]) {
-        modalStar[i].classList.replace(
-          'modal-rating-star',
-          'modal-rating-star-active'
-        );
-      } else {
-        modalStar[i].classList.replace(
-          'modal-rating-star',
-          'modal-rating-star-active'
-        );
-        return elements.counter.textContent = `${modalInput[i].value}.0`;
-       
+    modalInput.forEach((elem, index) => {
+      if (elem === evt.target) {
+        for (let i = 0; i <= index; i++) {
+          modalStar[i].classList.add('star-active');
+        }
+        return elements.counter.textContent= `${index + 1}.0`
       }
-    }
+    });
+    // for (let i = 0; i < modalInput.length; i += 1) {
+    //   if (evt.target !== modalInput[i]) {
+    //     modalStar[i].classList.replace(
+    //       'modal-rating-star',
+    //       'modal-rating-star-active'
+    //     );
+    //   } else {
+    //     modalStar[i].classList.replace(
+    //       'modal-rating-star',
+    //       'modal-rating-star-active'
+    //     );
+    //     return elements.counter.textContent = `${modalInput[i].value}.0`;
 
-
+    //   }
+    // }
   }
 
   function replaceStar() {
     elements.star.forEach(star => {
-      star.classList.replace('modal-rating-star-active', 'modal-rating-star');
+      star.classList.remove('star-active');
+      elements.counter.textContent = `0.0`
+      // star.classList.replace('modal-rating-star-active', 'modal-rating-star');
     });
   }
   function patchRating(indeficator, eMail) {
-  
-    
     const postToUpdate = {
       id: indeficator,
       body: {
@@ -154,15 +153,17 @@ export function openRatingModal(indeficator) {
       },
     };
 
-   return fetch(`https://tasty-treats-backend.p.goit.global/api/recipes/${postToUpdate.id}/rating`,options).then(response => response.json());
+    return fetch(
+      `https://tasty-treats-backend.p.goit.global/api/recipes/${postToUpdate.id}/rating`,
+      options
+    ).then(response => response.json());
   }
   function handlerInput(evt) {
     elements.mail.value = evt.target.value.trim();
   }
   function handlerSubmit(evt) {
-    
     evt.preventDefault();
-    if(elements.mail.value === "" || elements.counter.textContent === "0.0"){
+    if (elements.mail.value === '' || elements.counter.textContent === '0.0') {
       Notiflix.Notify.warning('Заповніть усі поля,будьте добрі!');
       return;
     }
@@ -174,11 +175,10 @@ export function openRatingModal(indeficator) {
     //   Notiflix.Notify.success('Your rate was add!');
     // }
     patchRating(indeficator, elements.mail.value)
-    .then
-    (post => {Notiflix.Notify.success('Your rate was add!');
-    openModalForm.close();
-  })
-    .catch(error => Notiflix.Notify.failure('Something goes wrong!'));
+      .then(post => {
+        Notiflix.Notify.success('Your rate was add!');
+        openModalForm.close();
+      })
+      .catch(error => Notiflix.Notify.failure('Something goes wrong!'));
   }
 }
-
