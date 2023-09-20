@@ -39,6 +39,7 @@
 
     transition: var(--transition-dur-timing-func);
  }
+ 
  .fav-category.active .fav-category-btn{
     background-color: var(--green-color);
     color: var(--background-color);

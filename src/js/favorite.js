@@ -11,28 +11,39 @@ const refs = {
 }
 const storageArr = load("favRecipes")
 const storageKey = "favRecipes"
+let currentActiveBtn = "";
 
 
 refs.buttonList.addEventListener("click", categoryBtnClickHandler)
 
 function categoryBtnClickHandler (e) {
   const btnEl = e.target.closest(".fav-category")
-  const btn = e.target.closest(".fav-category-btn")
 
   if (btnEl && btnEl.dataset.category) {
     const btnCategory = btnEl.dataset.category
     const newArr = storageArr.filter(({category}) => category === btnCategory )
-
     renderFavCards(newArr)
+
   } else if (btnEl && btnEl.dataset.value === 'all') {
     const newStorageArr = load("favRecipes")
     renderFavCards(newStorageArr)
   }
+
+  currentActiveBtn.classList.remove("active")
+  btnEl.classList.add("active")
+  currentActiveBtn = btnEl;
+}
+renderPage()
+function renderPage () {
+  const btn = document.querySelector("[data-value=all]");
+  btn.classList.add("active");
+  currentActiveBtn = btn;
+  
+  renderFavCards(storageArr);
+  renderFavCategories(storageArr);
 }
 
 
-renderFavCards(storageArr);
-renderFavCategories(storageArr);
 
 refs.favRecipesGallery.addEventListener('click', heartBtnClickHandler)
 
