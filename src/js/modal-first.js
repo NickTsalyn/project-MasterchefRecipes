@@ -17,11 +17,13 @@ seeFullRecipec.item2.addEventListener('click', handlerOnClick);
 
 function handlerOnClick(evt) {
   evt.preventDefault();
-  if (!evt.target.classList.contains('modal-open')) {
+  const modalOpenElement = evt.target.closest('.modal-open-js');
+
+  if (!modalOpenElement) {
     return;
   }
-  const currentElement = evt.target.closest('.modal-open-js');
-  const value = currentElement.dataset.id;
+
+  const value = modalOpenElement.dataset.id;
 
   getRecipesDetail(value).then(respInfo => {
     const parts = respInfo.youtube.split('=');
