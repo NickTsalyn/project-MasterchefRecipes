@@ -80,20 +80,6 @@ button.heart {
   opacity: 1;
 }
 
-@media (hover: hover) {
-  .card-item .icon-heart:hover,
-  .card-item .icon-heart:focus {
-    fill: var(--background-color);
-    opacity: 1;
-  }
-}
-
-@media not (hover: hover) {
-  .card-item .icon-heart:active {
-    fill: var(--background-color);
-    opacity: 1;
-  }
-}
 
 .card-descr {
   display: flex;
