@@ -154,6 +154,13 @@ button.heart {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .icon-star {
+    width: 13px;
+    height: 13px;
+  }
+}
+
 @media only screen and (min-width: 1280px) {
   .see-recipe {
     padding: 8px 16px;
@@ -167,7 +174,7 @@ button.heart {
 }
 
 @media not (hover: hover) {
-  .see-recipe {
+  .see-recipe:active {
     color: var(--primary-color);
   }
 }
