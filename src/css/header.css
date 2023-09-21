@@ -120,6 +120,7 @@
 /* -------------------------- */
 .switch {
   display: inline-block;
+  position: relative;
   width: 46px;
   height: 20px;
 }
@@ -177,15 +178,15 @@ input:checked + .theme-slider:before {
     display: none;
   }
 
-  .switch {
+  .desktop-switch {
     display: none;
   }
 
-  .switch.is-open {
+  .mobile-switch {
     display: inline-block;
     position: absolute;
     bottom: 20px;
-    right: 134px;
+    left: 20px;
     z-index: 10;
   }
 
