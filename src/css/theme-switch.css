@@ -27,7 +27,7 @@ body.dark-theme {
 /* ----------- HEADER ----------- */
 
 /* ----------- CATEGORIES ----------- */
-.categories-btn {
+.dark-theme .categories-btn {
   color: var(--btn-light-color);
   border: 1px solid var(--btn-light-color);;
 }
