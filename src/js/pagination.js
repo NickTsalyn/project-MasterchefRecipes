@@ -1,7 +1,11 @@
 import Pagination from 'tui-pagination';  
 import {renderCard} from './render.js'
+import { getRecipeByCategory } from "./Api/api-fetch-recipes.js";
+
 
 const container = document.querySelector('.tui-pagination');
+const categoriesContainer= document.querySelector(".categories-wrapper");
+const  recipesContainer= document.querySelector(".gallery-recipes")
 
 const options = { 
     totalItems: 100,
@@ -28,5 +32,51 @@ const options = {
             '</a>'
     }
 };
-
 const pagination = new Pagination(container, options);
+
+// ===============================================================
+const buttonsPag=document.querySelectorAll(".tui-page-btn");
+
+buttonsPag.forEach(function(button) {
+    button.addEventListener("click", onClickPagination)
+    
+});
+
+
+function onClickPagination(e){
+    e.preventDefault();
+    const activeCategory=document.querySelector('.active')
+    // console.log(e.target.textContent);
+    
+
+    
+    if (e.target.textContent=='first') {
+        
+    }
+    if (e.target.textContent=='prev') {
+        
+    }
+    if (e.target.textContent=='next') {
+        
+    }
+    if (e.target.textContent=='last') {
+        
+    }
+    if (e.target.textContent=='...') {
+        
+    }
+    if (activeCategory.textContent!=='All categories') {
+        while (recipesContainer.firstChild) {
+            recipesContainer.removeChild(recipesContainer.firstChild);
+          }
+        getRecipeByCategory(activeCategory.textContent, e.target.textContent, '8').then((response) => {
+            // console.log(response.results);
+            
+            recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
+        });
+        
+    }
+    
+};
+
+// ===========================================================
