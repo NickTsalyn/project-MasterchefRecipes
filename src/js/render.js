@@ -1,6 +1,6 @@
 // ------------ Розмітка картки страви -----
 import { load } from './storage-service';
-import heartImg from './img/icons.svg#heart'
+import heartImg from '../img/icons.svg#heart'
 
 const storageArr = load('favRecipes');
 export function renderCard(arr) {
