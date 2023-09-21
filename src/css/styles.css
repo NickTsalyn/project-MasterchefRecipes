@@ -23,6 +23,7 @@
   --white-color: #f8f8f8;
   --dark-theme-background: #161616;
   --transition-dur-timing-func: 300ms ease-out;
+  --btn-light-color: rgba(255, 255, 255, 0.30);
   /* Swiper */
   --swiper-pagination-color: #9bb537;
   --swiper-pagination-left: auto;
