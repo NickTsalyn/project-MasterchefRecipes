@@ -1,6 +1,7 @@
 // ------------ Розмітка картки страви -----
 import { load } from './storage-service';
 import heartImg from '../img/icons.svg#heart'
+import starImg from '../img/icons.svg#star'
 
 const storageArr = load('favRecipes');
 export function renderCard(arr) {
@@ -43,12 +44,12 @@ function createRatingMarkup(num) {
   for (let i = 0; i < 5; i += 1) {
     if (ratingNum >= 1) {
       ratingMarkup.push(`
-        <li class="icon-rating checked"><svg class="icon-star" width="15" height="15"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating checked"><svg class="icon-star" width="15" height="15"><use href=${starImg}></use></svg></li>
         `);
       ratingNum -= 1;
     } else {
       ratingMarkup.push(`
-        <li class="icon-rating unchecked"><svg class="icon-star" width="16" height="16"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating unchecked"><svg class="icon-star" width="16" height="16"><use href=${starImg}></use></svg></li>
         `);
     }
   }
