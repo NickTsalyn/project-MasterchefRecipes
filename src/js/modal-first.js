@@ -34,7 +34,7 @@ function handlerOnClick(evt) {
           
         <button class="modal-close-button">
           <svg class="modal-close-icon" width="20" height="20">
-          <use href="./img/icons.svg#close-icon"></use>
+          <use href="img/icons.svg#close-icon"></use>
         </svg>
         </button>
 
@@ -143,12 +143,12 @@ function createRatingMarkup(num) {
   for (let i = 0; i < 5; i += 1) {
     if (ratingNum >= 1) {
       ratingMarkup.push(`
-        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="16" height="16"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>
         `);
       ratingNum -= 1;
     } else {
       ratingMarkup.push(`
-        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>
         `);
     }
   }
