@@ -23,7 +23,7 @@ button.addEventListener('click', () => {
       <button class="log-account">Already have an account</button>
       <button class="reg-close-btn">
         <svg class="reg-close-icon">
-          <use href="./img/icons.svg#close-icon"></use>
+          <use href="img/icons.svg#close-icon"></use>
         </svg>
       </button>
     </div>
@@ -103,7 +103,7 @@ button.addEventListener('click', () => {
         <button class="sign-account">Don't have an account</button>
         <button class="reg-close-btn">
         <svg class="reg-close-icon">
-          <use href="./img/icons.svg#close-icon"></use>
+          <use href="img/icons.svg#close-icon"></use>
         </svg>
       </button>
       </div>`;

@@ -77,6 +77,11 @@
 
   border: 1px solid var(--green-color);
 }
+
+* .modal-rating-star {
+  transition: none;
+}
+
 .modal-rating-btn:hover{
   background-color: var(--green-color);
   color:var(--white-color);

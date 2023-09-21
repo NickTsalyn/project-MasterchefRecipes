@@ -29,7 +29,7 @@ order.addEventListener('click', () => {
         </form>
         <button class="ord-close-btn">
         <svg class="ord-close-icon">
-          <use href="./img/icons.svg#close-icon"></use>
+          <use href="img/icons.svg#close-icon"></use>
         </svg>
       </button>
       </div>`;
