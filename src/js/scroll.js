@@ -3,7 +3,7 @@ const scrollBtn = document.querySelector('#scroll-btn')
 window.addEventListener('scroll', handleScroll)
 
 function handleScroll () {
-    if(window.scrollY > 100) {
+    if(window.scrollY > 300) {
         scrollBtn.style.display = 'block'
     }
     else {
