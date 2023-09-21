@@ -10,12 +10,10 @@ import { openRatingModal } from './modal-rating';
 import YouTubePlayer from 'youtube-player';
 
 const seeFullRecipec = {
-  item1: document.querySelector('.gallery-recipes'),
-  item2: document.querySelector('.popular-list'),
+  favoriteElement: document.querySelector('.fav-recipes-list'),
 };
 
-seeFullRecipec.item1.addEventListener('click', handlerOnClick);
-seeFullRecipec.item2.addEventListener('click', handlerOnClick);
+seeFullRecipec.favoriteElement.addEventListener('click', handlerOnClick);
 
 function handlerOnClick(evt) {
   evt.preventDefault();
@@ -214,9 +212,9 @@ function createRatingMarkup(num) {
         `);
       ratingNum -= 1;
     } else {
-      ratingMarkup.push(`
-        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>
-        `);
+      ratingMarkup.push(
+        `<li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>`
+      );
     }
   }
 
