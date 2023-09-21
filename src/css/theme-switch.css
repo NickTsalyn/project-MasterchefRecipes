@@ -109,7 +109,32 @@ body.dark-theme {
   color: var(--white-color);
 }
 
-/* -----------  MODAL RATING   ----------- */
+/* -----------  MODAL RECIPE DTAILS  ----------- */
+.dark-theme .modal-frame {
+  background: #050505;
+}
+.dark-theme .modal-close-icon {
+  stroke: #fff;
+}
+.dark-theme .tag {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dark-theme .dish-title {
+  color: var(--white-color);
+}
+.dark-theme .ingredient-measure {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-theme .recipe-box-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-theme .btn-modal-secont {
+  color: var(--white-color);
+  background: #050505;
+}
+.dark-theme .ingredients-container-box::after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 /* ----------- REGISTRATION MODAL ----------- */
 
 .dark-theme .modal {
@@ -137,6 +162,9 @@ body.dark-theme {
 .dark-theme .reg-close-icon {
   stroke: var(--white-color);
 }
+.dark-theme .icon-rating.unchecked.modal-icon {
+  fill: rgba(255, 255, 255, 0.4);
+}
 
 /* ----------- REGISTRATION MODAL ----------- */
 
@@ -155,7 +183,6 @@ body.dark-theme {
 }
 
 /* ---------- HERO ----------- */
-
 /* ----------- FAVORITES PAGE ----------- */
 
 .dark-theme .fav-body {
