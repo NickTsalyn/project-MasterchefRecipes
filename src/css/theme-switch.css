@@ -1,14 +1,12 @@
 body.dark-theme {
   background-color: var(--dark-theme-background);
   color: var(--white-color);
-  transition: color var(--transition-dur-timing-func);
 }
 
 /* ----------- HEADER ----------- */
 
 .dark-theme .logo {
   color: var(--white-color);
-  transition: color var(--transition-dur-timing-func);
 }
 
 .dark-theme .mobile-menu {
@@ -17,19 +15,25 @@ body.dark-theme {
 
 .dark-theme .header-chart-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 .dark-theme .mobile-menu-open-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 
 .dark-theme .registration-btn-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 
 /* ----------- HEADER ----------- */
+
+/* ----------- CATEGORIES ----------- */
+.dark-theme .category-item {
+  color: var(--white-color);
+}
+
+.dark-theme .categories-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(214, 214, 214, 0.18);
+}
 
 /* ----------- POPULAR ----------- */
 
@@ -140,7 +144,6 @@ body.dark-theme {
 
 .dark-theme .social-icon {
   stroke: var(--white-color);
-  transition: stroke var(--transition-dur-timing-func);
 }
 
 /* ----------- FOOTER ----------- */
@@ -152,3 +155,18 @@ body.dark-theme {
 }
 
 /* ---------- HERO ----------- */
+
+/* ----------- FAVORITES PAGE ----------- */
+
+.dark-theme .fav-body {
+  background-color: var(--dark-theme-background);
+}
+
+.dark-theme .empty-section-text {
+  color: var(--white-color);
+}
+
+.dark-theme .fav-category-btn {
+  border: 1px solid var(--green-color);
+  color: var(--green-color);
+}

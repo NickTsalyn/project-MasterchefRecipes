@@ -10,8 +10,8 @@ import './js/popular';
 import './js/pagination';
 import './js/modal-rating';
 import './js/registration';
-import './js/favorite';
 import './js/masters';
 import './js/order-modal';
 import './js/scroll'
+import './js/favorite-storage'
 
