@@ -26,8 +26,7 @@ button.addEventListener('click', () => {
           <use href="img/icons.svg#close-icon"></use>
         </svg>
       </button>
-    </div>
-  `;
+    </div>`;
 
   const signModal = basicLightbox.create(content);
   signModal.show();
@@ -42,7 +41,7 @@ button.addEventListener('click', () => {
   registrationForm.addEventListener('submit', evt => {
     evt.preventDefault();
 
-    const signName = document.querySelector('.sign-name').value;
+    const signName = document.querySelector('.sign-name');
     const signPassword = document.querySelector('.sign-password');
     const showPassword = document.querySelector('.show-password');   
     
@@ -53,12 +52,12 @@ button.addEventListener('click', () => {
           signPassword.type = 'password';
       }
   });
-    if(signName === "" && signPassword.value === "") {
+    if(signName.value === "" && signPassword.value === "") {
         Notiflix.Notify.warning('Please insert a valid email address')
         return
     }
 
-    if(!emailPattern.test(signName)) {
+    if(!emailPattern.test(signName.value)) {
         Notiflix.Notify.warning('Please insert a valid email address');
         return
     }
@@ -68,7 +67,7 @@ button.addEventListener('click', () => {
     }
 
     const newUser = {
-      username: signName,
+      username: signName.value,
       password: signPassword.value,
     };
 
