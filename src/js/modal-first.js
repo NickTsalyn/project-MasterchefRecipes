@@ -86,16 +86,18 @@ function handlerOnClick(evt) {
              </div> `);
 
     const tagContainer = instance.element().querySelector('.tag-container');
+
     if (respInfo.tags && respInfo.tags.length > 0) {
       respInfo.tags.forEach(tag => {
-        const tagSpan = document.createElement('span');
-        tagSpan.textContent = `#${tag}`;
-        tagSpan.classList.add('tag');
+        if (tag.trim() !== '') {
+          const tagSpan = document.createElement('span');
+          tagSpan.textContent = `#${tag}`;
+          tagSpan.classList.add('tag');
 
-        tagContainer.appendChild(tagSpan);
+          tagContainer.appendChild(tagSpan);
+        }
       });
     }
-
     const iframeContainer = instance
       .element()
       .querySelector('.iframeContainer');
