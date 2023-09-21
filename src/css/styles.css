@@ -42,7 +42,7 @@
 }
 
 * {
-  transition: all 500ms;
+  transition: all 200ms;
 }
 
 html {
