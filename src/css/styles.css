@@ -23,7 +23,7 @@
   --white-color: #f8f8f8;
   --dark-theme-background: #161616;
   --transition-dur-timing-func: 300ms ease-out;
-  --btn-light-color: rgba(255, 255, 255, 0.30);
+  --btn-light-color: rgba(255, 255, 255, 0.3);
   /* Swiper */
   --swiper-pagination-color: #9bb537;
   --swiper-pagination-left: auto;
@@ -156,7 +156,7 @@ body {
   width: 50px;
   height: 50px;
   border: 1px solid var(--green-color);
-  background-color: var(--white-color);
+  background-color: transparent;
   transition: 300ms ease-out;
   transform: translateY(0);
   animation: float 2s linear infinite;
