@@ -61,11 +61,7 @@ orderBtn.addEventListener('click', orderNow);
 
       if (!formFields.name || !formFields.phone || !formFields.email) {
         return;
-      } else if (
-        !namePattern.test(formFields.name) ||
-        !numberPattern.test(formFields.phone) ||
-        !emailPattern.test(formFields.email)
-      ) {
+      } else if (!namePattern.test(formFields.name) || !numberPattern.test(formFields.phone) || !emailPattern.test(formFields.email)) {
         return;
       }
 
