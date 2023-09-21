@@ -23,6 +23,22 @@
   --white-color: #f8f8f8;
   --dark-theme-background: #161616;
   --transition-dur-timing-func: 300ms ease-out;
+  /* Swiper */
+  --swiper-pagination-color: #9bb537;
+  --swiper-pagination-left: auto;
+  --swiper-pagination-right: 8px;
+  --swiper-pagination-bottom: 0;
+  --swiper-pagination-top: auto;
+  --swiper-pagination-fraction-color: inherit;
+  --swiper-pagination-progressbar-size: 4px;
+  --swiper-pagination-bullet-size: 4px;
+  --swiper-pagination-bullet-width: 4px;
+  --swiper-pagination-bullet-height: 4px;
+  --swiper-pagination-bullet-inactive-color: #050505;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 3px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
 }
 
 * {
@@ -142,12 +158,10 @@ body {
   height: 50px;
   border: 1px solid var(--green-color);
   background-color: var(--white-color);
-  transition: 300ms ease-out;;
+  transition: 300ms ease-out;
   transform: translateY(0);
   animation: float 2s linear infinite;
 }
-
-
 
 @keyframes float {
   0% {
@@ -170,7 +184,6 @@ body {
     transform: translatey(0px);
   }
 }
-
 
 .scroll-button:hover,
 .scroll-button:focus {

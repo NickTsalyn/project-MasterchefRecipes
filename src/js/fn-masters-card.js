@@ -28,8 +28,7 @@ export function eventCards(arr) {
         loading="lazy"" />
       </picture>
     </div>
-    <div class="event">
-    <div class="event-wrapper">
+    <div class="event-detail">
     <picture>
         <source
           
@@ -53,7 +52,7 @@ export function eventCards(arr) {
       <h2 class="event-name">${name}</h2>
       <p class="event-area">${area}</p>
       </div>
-    </div>
+   
       
     </div>
     <div class="event-big-photo">
@@ -72,7 +71,8 @@ export function eventCards(arr) {
           "
           type="image/png"
         />
-        <img class="big-photo" src="${imgUrl}" alt="big event photo"  width="200"
+        <img class="big-photo" src="${imgUrl}" alt="big event photo"  
+        width="200"
         height="280"
         loading="lazy"" />
       </picture>
@@ -82,25 +82,3 @@ export function eventCards(arr) {
   `).join('');
     swiperEvent.insertAdjacentHTML("beforeend", eventCard)
 }
-
-// export function eventCards(arr) {    
-//     const eventCard = arr.map(({ cook: { imgWebpUrl: chefImgWebpUrl }, topic: { name, area,  previewWebpUrl,  imgWebpUrl} }) => ` 
-//    <div class="swiper-slide" >
-//     <div class="event">     
-//         <div class="" style="background-image: url(${chefImgWebpUrl})"></div>
-//         <div class="" >
-//         <div class="" style="background-image: url(${previewWebpUrl})"></div>
-//             <h2 class="">${name}</h2>
-//             <p class="">${area}</p>
-//         </div>
-//         <div class="" style="
-//         background-image: url(${imgWebpUrl}); 
-//         background-size: cover;
-//         background-position: center center 10%"
-//         >
-//         </div>  
-//     </div>  
-// </div>
-//   `).join('');
-//     swiperEvent.insertAdjacentHTML("beforeend", eventCard)
-// }
