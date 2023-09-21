@@ -45,7 +45,6 @@ function categoriesContainerHandler (e) {
       categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
     })
   }
-  
 
 }
 
