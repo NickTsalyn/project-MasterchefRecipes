@@ -53,6 +53,17 @@ body.dark-theme {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.dark-theme .item-text:hover,
+.dark-theme .item-text:focus {
+  color: var(--green-color);
+}  
+
+
+.dark-theme .item-title:hover,
+.dark-theme .item-title:focus {
+  color: var(--green-color);
+}
+
 /* ----------- POPULAR ----------- */
 
 /* ----------- ORDER MODAL ----------- */
@@ -170,6 +181,10 @@ body.dark-theme {
   fill: rgba(255, 255, 255, 0.4);
 }
 
+.dark-theme .input {
+  color: var(--white-color);
+}
+
 /* ----------- REGISTRATION MODAL ----------- */
 
 /* ----------- FOOTER ----------- */
@@ -201,3 +216,12 @@ body.dark-theme {
   border: 1px solid var(--btn-light-color);
   color: var(--btn-light-color);
 }
+
+
+/* ----------- FOOTER ----------- */
+
+.dark-theme .footer-container {
+  border-top: none;
+}
+
+/* ----------- FOOTER ----------- */
