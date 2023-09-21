@@ -250,21 +250,29 @@
     padding: 14px 28px;
   }
 }
+
 .btn-modal-first {
   background: var(--green-color);
   color: var(--white-color);
   transition: color var(--transition-dur-timing-func);
 }
+
+.btn-modal-first:hover {
+  color: var(--primary-color);
+}
+.btn-modal-first.active {
+  color: var(--white-color);
+}
+.btn-modal-first.active:hover {
+  color: var(--primary-color);
+}
+
 .btn-modal-secont {
   background-color: var(--white-color);
   transition: color var(--transition-dur-timing-func),
     background var(--transition-dur-timing-func);
 }
 @media (hover: hover) {
-  .btn-modal-first:hover,
-  .btn-modal-first:focus {
-    color: var(--primary-color);
-  }
   .btn-modal-secont:hover,
   .btn-modal-secont:focus {
     background: var(--green-color);
@@ -273,9 +281,6 @@
 }
 
 @media not (hover: hover) {
-  .btn-modal-first:active {
-    color: var(--primary-color);
-  }
   .btn-modal-secont:active {
     background: var(--green-color);
     color: var(--white-color);
