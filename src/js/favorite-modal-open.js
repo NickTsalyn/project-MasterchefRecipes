@@ -3,6 +3,8 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { save, load } from './storage-service';
 import { createRecipeObject } from './favorite-storage';
+import closeIcon from '../img/icons.svg#close-icon';
+import starImg from '../img/icons.svg#star';
 
 import './modal-rating';
 import { openRatingModal } from './modal-rating';
@@ -36,9 +38,9 @@ function handlerOnClick(evt) {
     const instance = basicLightbox.create(`
     <div class="modal-frame " >
        
-        <button class="modal-close-button">
+       <button class="modal-close-button">
           <svg class="modal-close-icon" width="20" height="20">
-          <use href="img/icons.svg#close-icon"></use>
+          <use href=${closeIcon}></use>
         </svg>
         </button>
 
@@ -208,12 +210,12 @@ function createRatingMarkup(num) {
   for (let i = 0; i < 5; i += 1) {
     if (ratingNum >= 1) {
       ratingMarkup.push(`
-        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="16" height="16"><use href=${starImg}></use></svg></li>
         `);
       ratingNum -= 1;
     } else {
       ratingMarkup.push(
-        `<li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>`
+        ` <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href=${starImg}></use></svg></li>`
       );
     }
   }
