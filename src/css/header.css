@@ -69,6 +69,13 @@
   border: none;
 }
 
+.header-chart-link {
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
 .header-chart-link:hover .header-chart-icon:hover,
 .header-chart-link:focus .header-chart-icon:focus {
   outline: none;
