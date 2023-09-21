@@ -14,9 +14,11 @@
   outline: none;
 }
 
-.container.page-header-container {
+.page-header-container {
+  display: flex;
   align-items: center;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .page-header {
@@ -132,6 +134,7 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
+  box-shadow: 8px 6px 15px 0px rgba(0, 0, 0, 0.41);
 }
 
 .theme-slider:before {
@@ -313,7 +316,7 @@ input:checked + .theme-slider:before {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .page-nav {
     gap: 391px;
   }

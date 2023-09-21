@@ -1,237 +1,232 @@
 @import url('./reset.css');
 @import url('./fonts.css');
 @import url('./header.css');
-@import url("./styles.css");
+@import url('./styles.css');
 .fav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .fav-header {
-   
-    width: 100%;
-    overflow-x: hidden;
+  width: 100%;
+  overflow-x: hidden;
 }
 
- .fav-hero {
-    width: 100%;
-    border-radius: 15px;
- }
+.fav-hero {
+  width: 100%;
+  border-radius: 15px;
+}
 
- .fav-categories-list {
-    width: 100%;
-    display: flex;
-    overflow-x: scroll;
- }
+.fav-categories-list {
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+}
 
- .fav-category-btn {
-    padding: 14px 18px;
+.fav-category-btn {
+  padding: 14px 18px;
 
-    border-radius: 15px;
-    border: 1px solid rgba(5, 5, 5, 0.20);
-    background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  background-color: transparent;
 
-    color: rgba(5, 5, 5, 0.30);
-    font-family: Inter;
-   
-    font-weight: 500;
-    line-height: 1.25; 
+  color: rgba(5, 5, 5, 0.3);
+  font-family: Inter;
 
-    transition: var(--transition-dur-timing-func);
- }
- 
- .fav-category.active .fav-category-btn{
-    background-color: var(--green-color);
-    color: var(--background-color);
-    border: 1px solid var(--green-color);
+  font-weight: 500;
+  line-height: 1.25;
+
+  transition: var(--transition-dur-timing-func);
+}
+
+.fav-category.active .fav-category-btn {
+  background-color: var(--green-color);
+  color: var(--background-color);
+  border: 1px solid var(--green-color);
 }
 
 .empty-section-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .empty-section-text {
-    color: var(--primary-color);
-    text-align: center;
-    font-family: Inter;
-    font-weight: 400;
-    line-height: 1.5;
+  color: var(--primary-color);
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .fav-recipes-list {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-    align-items:center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .fav-recipes-list.hidden {
-    display: none;
-    overflow: hidden;
+  display: none;
+  overflow: hidden;
 }
 
 .hidden {
-    display: none;
-    overflow: hidden;
+  display: none;
+  overflow: hidden;
 }
-
-
-
 
 /* -----------MEDIA 375--------- */
 
- @media only screen and (min-width: 375px) {
-    .fav-container {
-        width: calc(100% - 40px);
+@media only screen and (min-width: 375px) {
+  .fav-container {
+    width: calc(100% - 40px);
 
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .fav-hero {
-        height: 516px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .fav-hero {
+    height: 516px;
 
-        background: url(../img/fav-hero.png), lightgray 0px -682.376px / 100% 380.258% no-repeat;
-        background-size: cover;
-        background-position: 50% 50%;
-    }
+    background: url(../img/fav-hero.png),
+      lightgray 0px -682.376px / 100% 380.258% no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
 
-    .fav-categories-list {
-        margin-top: 40px;
-        gap: 12px;
-     }
-    .fav-category {
-        margin-bottom: 24px;
-    }
+  .fav-categories-list {
+    margin-top: 40px;
+    gap: 12px;
+  }
+  .fav-category {
+    margin-bottom: 24px;
+  }
 
-    .fav-category-btn {
-        font-size: 14px;
-    }
+  .fav-category-btn {
+    font-size: 14px;
+  }
 
-    .empty-section-wrapper {
-        padding: 300px 0;
-        gap: 24px;
-    }
+  .empty-section-wrapper {
+    padding: 300px 0;
+    gap: 24px;
+  }
 
-    .empty-section-icon {
-        width: 68px;
-        height: 58px;
-    }
+  .empty-section-icon {
+    width: 68px;
+    height: 58px;
+  }
 
-    .empty-section-text {
-        width: 335px;
-        font-size: 14px;
-    }
+  .empty-section-text {
+    width: 335px;
+    font-size: 14px;
+  }
 
-    .fav-recipes-list {
-       flex-direction: column;
-       gap: 24px; 
-    }
+  .fav-recipes-list {
+    flex-direction: column;
+    gap: 24px;
+  }
 
-    .card-item {
-        margin-bottom: 0;
-        width: 335px;
-        height: 335px;
-    }
+  .card-item {
+    margin-bottom: 0;
+    width: 335px;
+    height: 335px;
+  }
 }
 
 /* -----------MEDIA 768PX--------- */
 @media only screen and (min-width: 768px) {
-    .fav-container {
-        width: calc(100% - 64px);
+  .fav-container {
+    width: calc(100% - 64px);
 
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-    .fav-hero {
-        height: 356px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .fav-hero {
+    height: 356px;
 
-        background: url(../img/fav-hero.png), lightgray 0px -682.376px / 100% 380.258% no-repeat;
-        background-size: cover;
+    background: url(../img/fav-hero.png),
+      lightgray 0px -682.376px / 100% 380.258% no-repeat;
+    background-size: cover;
+  }
+  .fav-categories-list {
+    margin-top: 64px;
+    gap: 15px;
+  }
 
-        
-    }
-    .fav-categories-list {
-        margin-top: 64px;
-        gap: 15px;
-     }
+  .fav-category {
+    margin-bottom: 32px;
+  }
+  .fav-category-btn {
+    font-size: 16px;
+  }
 
-    .fav-category {
-        margin-bottom: 32px;
-    }
-     .fav-category-btn {
-        font-size: 16px;
-    }
+  .empty-section-wrapper {
+    padding: 64px 0;
+    gap: 32px;
+  }
 
-    .empty-section-wrapper {
-        padding: 64px 0;
-        gap: 32px;
-    }
+  .empty-section-wrapper.hidden {
+    display: none;
+    visibility: hidden;
+  }
 
-    .empty-section-wrapper.hidden {
-        display: none;
-        visibility: hidden;
-    }
+  .empty-section-icon {
+    width: 97px;
+    height: 83px;
+  }
 
-    .empty-section-icon {
-        width: 97px;
-        height: 83px;
-    }
+  .empty-section-text {
+    width: 481px;
+    font-size: 16px;
+  }
 
-    .empty-section-text {
-        width: 481px;
-        font-size: 16px;
-    }
+  .fav-recipes-list {
+    flex-direction: row;
+    gap: 16px;
+  }
 
-    .fav-recipes-list {
-        flex-direction: row;
-        gap: 16px; 
-     }
-
-     .card-item {
-        width: 224px;
-        height: 244px;
-    }
+  .card-item {
+    width: 224px;
+    height: 244px;
+  }
 }
 
 /* -----------MEDIA 1200PX--------- */
 @media only screen and (min-width: 1200px) {
-    .fav-container {
-        width: calc(100% - 200px);
+  .fav-container {
+    width: calc(100% - 200px);
 
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-    .fav-hero {
-        background: url(../img/fav-hero.png), lightgray 0px -682.376px / 100% 380.258% no-repeat;
-        background-size: cover;
-        background-position: 0px -60px;
-    }
-    .card-item {
-        margin-bottom: 16px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .fav-hero {
+    background: url(../img/fav-hero.png),
+      lightgray 0px -682.376px / 100% 380.258% no-repeat;
+    background-size: cover;
+    background-position: 0px -60px;
+  }
+  .card-item {
+    margin-bottom: 16px;
 
-        width: 258px;
-        height: 287px;
-    }
-    
+    width: 258px;
+    height: 287px;
+  }
 }
 
 @media (hover: hover) {
-    .fav-category-btn:hover{
-        background-color: var(--green-color);
-        color: var(--background-color);
-        border: 1px solid var(--green-color);
-    }
+  .fav-category-btn:hover {
+    background-color: var(--green-color);
+    color: var(--background-color);
+    border: 1px solid var(--green-color);
   }
-  
-@media not (hover: hover) {
-    .fav-category-btn:active{
-        background-color: var(--green-color);
-        color: var(--background-color);
-        border: 1px solid var(--green-color);
-    }
-  }
+}
 
+@media not (hover: hover) {
+  .fav-category-btn:active {
+    background-color: var(--green-color);
+    color: var(--background-color);
+    border: 1px solid var(--green-color);
+  }
+}

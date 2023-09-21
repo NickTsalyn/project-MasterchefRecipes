@@ -18,7 +18,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .popular-title {
     font-size: 24px;
     line-height: 1.66;
@@ -48,7 +48,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .popular-list {
     gap: 32px;
   }
@@ -99,13 +99,13 @@
   white-space: nowrap;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .item-text {
     width: 252px;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .item-text {
     font-size: 10px;
     line-height: 1.4;

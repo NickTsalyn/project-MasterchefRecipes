@@ -176,6 +176,13 @@ body.dark-theme {
 
 /* ----------- FOOTER ----------- */
 
+/* ---------- HERO ----------- */
+
+.dark-theme .hero-btn {
+  color: #fff;
+}
+
+/* ---------- HERO ----------- */
 /* ----------- FAVORITES PAGE ----------- */
 
 .dark-theme .fav-body {

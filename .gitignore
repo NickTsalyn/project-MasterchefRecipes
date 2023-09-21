@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+src/partials/header.html
+src/img/icons.svg
+src/partials/header.html
