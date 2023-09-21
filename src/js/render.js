@@ -1,5 +1,7 @@
 // ------------ Розмітка картки страви -----
 import { load } from './storage-service';
+import heartImg from '../img/icons.svg#heart'
+import starImg from '../img/icons.svg#star'
 
 const storageArr = load('favRecipes');
 export function renderCard(arr) {
@@ -10,10 +12,10 @@ export function renderCard(arr) {
         isActive = 'active';
       }
       return ` 
-    <div  class="card-item modal-open-js  ${isActive}" data-id="${_id}" data-category="${category}" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${preview}), lightgray -36.5px 0px / 129.2% 112.544% no-repeat; background-size: cover">
+    <div  class="card-item   ${isActive}" data-category="${category}" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${preview}), lightgray -36.5px 0px / 129.2% 112.544% no-repeat; background-size: cover">
       <button class="heart" type="button">
         <svg class="icon-heart" width="22" height="22">
-        <use href="./img/icons.svg#heart"></use></svg>
+        <use href=${heartImg}></use></svg>
       </button>
     
       <div class="card-descr">
@@ -26,7 +28,7 @@ export function renderCard(arr) {
               ${createRatingMarkup(rating)}
             </ul>
           </div>
-         <button class="see-recipe  "  type="button" >See recipe</button>
+         <button class="see-recipe modal-open-js " data-id="${_id}"   type="button" >See recipe</button>
         </div>
       </div>  
     </div>`;
@@ -42,12 +44,12 @@ function createRatingMarkup(num) {
   for (let i = 0; i < 5; i += 1) {
     if (ratingNum >= 1) {
       ratingMarkup.push(`
-        <li class="icon-rating checked"><svg class="icon-star" width="15" height="15"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating checked"><svg class="icon-star" width="15" height="15"><use href=${starImg}></use></svg></li>
         `);
       ratingNum -= 1;
     } else {
       ratingMarkup.push(`
-        <li class="icon-rating unchecked"><svg class="icon-star" width="16" height="16"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating unchecked"><svg class="icon-star" width="16" height="16"><use href=${starImg}></use></svg></li>
         `);
     }
   }
