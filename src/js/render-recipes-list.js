@@ -1,6 +1,7 @@
 import { getRecipeByCategory } from "./Api/api-fetch-recipes"
 import { getAllRecipes } from "./Api/api-fetch-recipes"
 import { renderCard } from "./render"
+import {zeroPagination} from "./pagination.js"
 
 const categoriesRefs = {
   allCategoriesBtn: document.querySelector(".categories-btn"),
@@ -45,7 +46,8 @@ function categoriesContainerHandler (e) {
       categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
     })
   }
-
+  
+zeroPagination()  //переносить клас selected на першу позицію добавив Чуйков Роман
 }
 
 // //////////////
@@ -54,7 +56,6 @@ export function rendersAllRecipes () {
   if (!btn.classList.contains("active")) {
     btn.classList.add("active")
   }
-
   if (tempValues.activeCategory) {
     tempValues.activeCategory.classList.remove("active")
   }
@@ -65,7 +66,6 @@ export function rendersAllRecipes () {
     categoriesRefs.recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
   })
 }
-
 
 
 function changeLimitByViewportWidth () {

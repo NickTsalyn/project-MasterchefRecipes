@@ -3,18 +3,21 @@ import {renderCard} from './render.js'
 import { getRecipeByCategory } from "./Api/api-fetch-recipes.js";
 import {getAllRecipes } from "./Api/api-fetch-recipes.js";
 
+// function changeLimitByViewportWidth 
+//  in file render-recipes-list.js
+
 const container = document.querySelector('.tui-pagination');
 const categoriesContainer= document.querySelector(".categories-wrapper");
 const  recipesContainer= document.querySelector(".gallery-recipes")
 const tuiContainer=document.querySelector("#tui-pagination-container")
-
+let limitRecipes;
 
 
 
 const options = { 
     totalItems: 100,
     itemsPerPage: 9,
-    visiblePages: 3,
+    visiblePages: 3 ,
     page: 1,
     centerAlign: false,
     firstItemClassName: 'tui-first-child',
@@ -36,8 +39,20 @@ const options = {
             '</a>'
     }
 };
+if (window.matchMedia('(max-width: 767px)').matches) {// Мobile
+options.visiblePages=2
+limitRecipes='6';
+  } 
+if (window.matchMedia('(min-width: 768px) and (max-width: 1200px)').matches) {// tablet
+    options.visiblePages=3
+    limitRecipes='8';
+ }
+if (window.matchMedia('(min-width: 1200px)').matches) {// desktop
+        limitRecipes='9';
+} 
+ 
 const pagination = new Pagination(container, options);
-
+  
 // ===============================================================
 // const buttonsPag=document.querySelectorAll(".tui-page-btn");
 /*
@@ -55,7 +70,7 @@ function onClickPagination(e){
     if (e.target.tagName === 'A') {
         e.preventDefault();
         var link = e.target.textContent;
-        console.log('текстСсылки',link);
+      
         if (e.target.textContent=='first') {
             loadRecipes(activeCategory.textContent,'1');
         }
@@ -90,45 +105,35 @@ function loadRecipes(activeCat,page){
         while (recipesContainer.firstChild) {
             recipesContainer.removeChild(recipesContainer.firstChild);
           }
-        getRecipeByCategory(activeCat, page, '8').then((response) => {
-           
+        getRecipeByCategory(activeCat, page, limitRecipes).then((response) => {        
             recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
-        
-                
-            
+
         });
-        
     }
     else{  //All Categories
         while (recipesContainer.firstChild) {
             recipesContainer.removeChild(recipesContainer.firstChild);
-        }
-            
-            getAllRecipes( page, '8').then((response) => {
-        
+        } 
+            getAllRecipes( page, limitRecipes).then((response) => {
             recipesContainer.insertAdjacentHTML("beforeend", renderCard(response.results))
          });
     }
 }      
 
-function zeroPagination(){
+ export function zeroPagination(){
     // ===================   обнуління пагінаціі
     const buttonsPag=document.querySelectorAll(".tui-page-btn");
     buttonsPag.forEach(function(button) {
-        console.log('button',button.textContent);
-      
         if (button.textContent=='1') {
-          console.log('prev1',button);
           button.classList.add('tui-is-selected');
-          console.log('after1',button);
         }
         else{
           if (button.classList.contains('tui-is-selected')) {
-            console.log('prev2',button);
             button .classList.remove('tui-is-selected')
-            console.log('after2',button);
           }
         }
     });
     // ===========================================
 }
+
+  
