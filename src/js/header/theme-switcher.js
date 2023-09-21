@@ -1,23 +1,30 @@
-const themeToggle = document.getElementById('theme-toggle');
-
+const themeToggle = document.querySelectorAll('#theme-toggle');
 const THEME = 'dark-theme';
 
-// Перевіряємо, чи є у сxовищі тема
-if (!(localStorage.getItem('theme') === null)) {
+// Перевіряємо, чи є у сховищі збережена тема
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === THEME) {
   document.body.classList.add(THEME);
-  document.querySelector('input[type=checkbox]').checked = true;
+  themeToggle.forEach(el => (el.checked = true));
 }
 
-themeToggle.addEventListener('change', onChangeThemeClick);
+themeToggle.forEach(el => el.addEventListener('change', onChangeThemeClick));
 
 function onChangeThemeClick() {
-  document.body.classList.toggle(THEME);
+  const isChecked = this.checked;
 
-  //  Перевіряємо, чи додана тема. Якщо так, додаємо у веб сховище
-  if (document.body.classList.contains(THEME)) {
+  // Змінюємо стан обох світчерів
+  themeToggle.forEach(el => {
+    el.checked = isChecked;
+  });
+
+  // Змінюємо тему в залежності від стану світчера
+  if (isChecked) {
+    document.body.classList.add(THEME);
     localStorage.setItem('theme', THEME);
-    return;
+  } else {
+    document.body.classList.remove(THEME);
+    localStorage.removeItem('theme');
   }
-
-  localStorage.removeItem('theme');
 }
+
