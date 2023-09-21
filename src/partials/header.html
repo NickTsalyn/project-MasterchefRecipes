@@ -6,7 +6,7 @@
           <a class="link menu-link" href="./index.html">Home</a>
         </li>
         <li class="menu-item">
-          <a class="link menu-link" href="/favorite.html">Favorites</a>
+          <a class="link menu-link" href="./favorite.html">Favorites</a>
         </li>
       </ul>
 
@@ -16,17 +16,14 @@
     </nav>
 
     <div class="header-chart-and-switcher-container">
-      <a
-        href="tel:+380730000000"
-        rel="noreferrer noopener"
-        class="header-chart-link"
-      >
+      <button type="button"
+        class="header-chart-link">
         <svg class="header-chart-icon ord-btn" width="24" height="24">
           <use href="./img/icons.svg#cart"></use>
         </svg>
-      </a>
+      </button>
 
-      <label class="switch">
+      <label class="desktop-switch switch">
         <input type="checkbox" id="theme-toggle" />
         <span class="theme-slider"></span>
       </label>
@@ -42,7 +39,6 @@
           <use href="./img/icons.svg#burger"></use>
         </svg>
       </button>
-      
     </div>
   </div>
 
@@ -58,18 +54,26 @@
 
       <ul class="mobile-menu-list list">
         <li class="mobile-menu-list-item">
-          <a class="link mobile-menu-link menu-link js-close-menu" href="#home"
+          <a
+            class="link mobile-menu-link menu-link js-close-menu"
+            href="./index.html"
             >Home</a
           >
         </li>
         <li class="mobile-menu-list-item">
           <a
             class="link mobile-menu-link menu-link js-close-menu"
-            href="#favorites"
+            href="./favorites.html"
             >Favorites</a
           >
         </li>
       </ul>
+
+      <label class="mobile-switch switch">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="theme-slider"></span>
+      </label>
+
     </div>
   </div>
 </header>

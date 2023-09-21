@@ -27,8 +27,12 @@ body.dark-theme {
 /* ----------- HEADER ----------- */
 
 /* ----------- CATEGORIES ----------- */
+.dark-theme .categories-btn {
+  color: var(--btn-light-color);
+  border: 1px solid var(--btn-light-color);;
+}
 .dark-theme .category-item {
-  color: var(--white-color);
+  color: var(--btn-light-color);
 }
 
 .dark-theme .categories-wrapper::-webkit-scrollbar-thumb {
@@ -38,33 +42,31 @@ body.dark-theme {
 /* ----------- POPULAR ----------- */
 
 .dark-theme .popular-title {
-  color: #FFF;
+  color: #fff;
 }
 
 .dark-theme .item-title {
-  color: #FFF;
+  color: #fff;
 }
 
 .dark-theme .item-text {
-  color: rgba(255, 255, 255, 0.80);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ----------- POPULAR ----------- */
 
-
-
 /* ----------- ORDER MODAL ----------- */
 
 .dark-theme .modal {
-  background: var(--primary-color)
+  background: var(--primary-color);
 }
 
 .dark-theme .ord-title {
-  color: #FFF;
+  color: #fff;
 }
 
 .dark-theme .label {
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-theme .send-button {
@@ -77,76 +79,98 @@ body.dark-theme {
 
 .dark-theme .input {
   background: var(--primary-color);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark-theme .comment {
   background: var(--primary-color);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ----------- ORDER MODAL ----------- */
 
-
-
 /* -----------  MODAL RATING   ----------- */
-.dark-theme .modal-rating-form{
+.dark-theme .modal-rating-form {
   background-color: var(--primary-color);
- 
 }
-.dark-theme .modal-rating-head{
-  color:var(--white-color); 
-  
+.dark-theme .modal-rating-head {
+  color: var(--white-color);
 }
-.dark-theme .modal-rating-counter{
-  color:var(--white-color); 
+.dark-theme .modal-rating-counter {
+  color: var(--white-color);
 }
-.dark-theme .modal-rating-close-btn{
-  stroke:var(--white-color);
+.dark-theme .modal-rating-close-btn {
+  stroke: var(--white-color);
 }
-.dark-theme .modal-rating-email-in-input{
-  color: rgba(255, 255, 255, 0.50);
-
+.dark-theme .modal-rating-email-in-input {
+  color: rgba(255, 255, 255, 0.5);
 }
-.dark-theme .modal-rating-btn{
+.dark-theme .modal-rating-btn {
   background-color: var(--primary-color);
-  color: #FFF;
+  color: #fff;
 }
-.dark-theme .modal-rating-btn:hover{
-  color:var(--white-color);
+.dark-theme .modal-rating-btn:hover {
+  color: var(--white-color);
 }
 
-/* -----------  MODAL RATING   ----------- */
+/* -----------  MODAL RECIPE DTAILS  ----------- */
+.dark-theme .modal-frame {
+  background: #050505;
+}
+.dark-theme .modal-close-icon {
+  stroke: #fff;
+}
+.dark-theme .tag {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dark-theme .dish-title {
+  color: var(--white-color);
+}
+.dark-theme .ingredient-measure {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-theme .recipe-box-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-theme .btn-modal-secont {
+  color: var(--white-color);
+  background: #050505;
+}
+.dark-theme .ingredients-container-box::after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 /* ----------- REGISTRATION MODAL ----------- */
 
 .dark-theme .modal {
-  background: var(--primary-color)
+  background: var(--primary-color);
 }
 
 .dark-theme .reg-title {
-  color: #FFF;
+  color: #fff;
 }
 
 .dark-theme .label {
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-theme .sign-name {
   background: var(--primary-color);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark-theme .sign-password {
   background: var(--primary-color);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark-theme .reg-close-icon {
   stroke: var(--white-color);
 }
+.dark-theme .icon-rating.unchecked.modal-icon {
+  fill: rgba(255, 255, 255, 0.4);
+}
 
 /* ----------- REGISTRATION MODAL ----------- */
-
 
 /* ----------- FOOTER ----------- */
 
@@ -156,7 +180,13 @@ body.dark-theme {
 
 /* ----------- FOOTER ----------- */
 
+/* ---------- HERO ----------- */
 
+.dark-theme .hero-btn {
+  color: #fff;
+}
+
+/* ---------- HERO ----------- */
 /* ----------- FAVORITES PAGE ----------- */
 
 .dark-theme .fav-body {
@@ -168,6 +198,6 @@ body.dark-theme {
 }
 
 .dark-theme .fav-category-btn {
-  border: 1px solid var(--green-color);
-  color: var(--green-color);
+  border: 1px solid var(--btn-light-color);
+  color: var(--btn-light-color);
 }

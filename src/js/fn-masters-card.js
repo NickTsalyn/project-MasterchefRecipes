@@ -1,11 +1,12 @@
 // ------------ Events card -----
-const masters = document.querySelector(".hero-event")
-
-export function eventCards(arr) {    
-    const eventCard = arr.map(({ cook: { imgUrl: chefImgUrl, imgWebpUrl: chefImgWebpUrl }, topic: { name, area, previewUrl, previewWebpUrl, imgUrl, imgWebpUrl} }) => ` 
+// const masters = document.querySelector(".hero-event")
+const swiperEvent = document.querySelector(".swiper-wrapper");
+ 
+export function eventCards(arr) {
+    const eventCard = arr.map(({ cook: { imgUrl: chefImgUrl, imgWebpUrl: chefImgWebpUrl }, topic: { name, area, previewUrl, previewWebpUrl, imgUrl, imgWebpUrl} }) => `
     <div class="event-description swiper-slide">
-  <ul class="event-item">
-    <li class="chef">
+  <div class="event-item">
+    <div class="chef">
       <picture>
         <source
        
@@ -21,14 +22,13 @@ export function eventCards(arr) {
           "
           type="image/png"
         />
-        <img class="chef-photo" src="${chefImgUrl}" alt="chef photo"  
+        <img class="chef-photo" src="${chefImgUrl}" alt="chef photo"
         width="200"
         height="280"
         loading="lazy"" />
       </picture>
-    </li>
-    <li class="event">
-    <div class="event-wrapper">
+    </div>
+    <div class="event-detail">
     <picture>
         <source
           
@@ -52,10 +52,10 @@ export function eventCards(arr) {
       <h2 class="event-name">${name}</h2>
       <p class="event-area">${area}</p>
       </div>
-    </div>
+   
       
-    </li>
-    <li class="event-big-photo">
+    </div>
+    <div class="event-big-photo">
       <picture>
         <source
           
@@ -71,14 +71,14 @@ export function eventCards(arr) {
           "
           type="image/png"
         />
-        <img class="big-photo" src="${imgUrl}" alt="big event photo"  width="200"
+        <img class="big-photo" src="${imgUrl}" alt="big event photo"  
+        width="200"
         height="280"
         loading="lazy"" />
       </picture>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
   `).join('');
-    masters.insertAdjacentHTML("beforeend", eventCard)
+    swiperEvent.insertAdjacentHTML("beforeend", eventCard)
 }
-

@@ -3,12 +3,16 @@ import Notiflix from 'notiflix';
 import axios from 'axios';
 
 const order = document.querySelector('.ord-btn');
+const orderBtn = document.querySelector('.order-btn')
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/orders/add';
 const namePattern = '/^[a-zA-Zа-яА-Я-і-І-ї-Ї]+$/';
 const emailPattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/';
 const numberPattern = '/^d{10}$/';
 
-order.addEventListener('click', () => {
+order.addEventListener('click', orderNow);
+orderBtn.addEventListener('click', orderNow);
+
+  function orderNow() {
   const content = `
       <div class="modal">
       <h4 class="ord-title">Order now</h4>
@@ -29,7 +33,7 @@ order.addEventListener('click', () => {
         </form>
         <button class="ord-close-btn">
         <svg class="ord-close-icon">
-          <use href="./img/icons.svg#close-icon"></use>
+          <use href="img/icons.svg#close-icon"></use>
         </svg>
       </button>
       </div>`;
@@ -101,4 +105,4 @@ order.addEventListener('click', () => {
   closeBtn.addEventListener('click', () => {
     orderModal.close()
   })
-});
+};

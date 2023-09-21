@@ -7,17 +7,23 @@ import { openRatingModal } from './modal-rating';
 
 import YouTubePlayer from 'youtube-player';
 
-const seeFullRecipec = document.querySelector('.gallery-recipes');
+const seeFullRecipec = {
+  item1: document.querySelector('.gallery-recipes'),
+  item2: document.querySelector('.popular-list'),
+};
 
-seeFullRecipec.addEventListener('click', handlerOnClick);
+seeFullRecipec.item1.addEventListener('click', handlerOnClick);
+seeFullRecipec.item2.addEventListener('click', handlerOnClick);
 
 function handlerOnClick(evt) {
   evt.preventDefault();
-  if (!evt.target.classList.contains('card-item')) {
+  const modalOpenElement = evt.target.closest('.modal-open-js');
+
+  if (!modalOpenElement) {
     return;
   }
-  const currentElement = evt.target.closest('.card-item');
-  const value = currentElement.dataset.id;
+  let player = null;
+  const value = modalOpenElement.dataset.id;
 
   getRecipesDetail(value).then(respInfo => {
     const parts = respInfo.youtube.split('=');
@@ -28,7 +34,7 @@ function handlerOnClick(evt) {
           
         <button class="modal-close-button">
           <svg class="modal-close-icon" width="20" height="20">
-          <use href="./img/icons.svg#close-icon"></use>
+          <use href="img/icons.svg#close-icon"></use>
         </svg>
         </button>
 
@@ -80,16 +86,18 @@ function handlerOnClick(evt) {
              </div> `);
 
     const tagContainer = instance.element().querySelector('.tag-container');
+
     if (respInfo.tags && respInfo.tags.length > 0) {
       respInfo.tags.forEach(tag => {
-        const tagSpan = document.createElement('span');
-        tagSpan.textContent = `#${tag}`;
-        tagSpan.className = 'tag';
+        if (tag.trim() !== '') {
+          const tagSpan = document.createElement('span');
+          tagSpan.textContent = `#${tag}`;
+          tagSpan.classList.add('tag');
 
-        tagContainer.appendChild(tagSpan);
+          tagContainer.appendChild(tagSpan);
+        }
       });
     }
-
     const iframeContainer = instance
       .element()
       .querySelector('.iframeContainer');
@@ -97,8 +105,10 @@ function handlerOnClick(evt) {
     if (respInfo.youtube !== '') {
       const player = YouTubePlayer(iframeContainer, {
         videoId: videoId,
+        playerVars: {
+          autoplay: 0,
+        },
       });
-      player.playVideo().then(() => '');
     } else {
       const image = document.createElement('img');
       image.src = respInfo.thumb;
@@ -135,12 +145,12 @@ function createRatingMarkup(num) {
   for (let i = 0; i < 5; i += 1) {
     if (ratingNum >= 1) {
       ratingMarkup.push(`
-        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating checked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>
         `);
       ratingNum -= 1;
     } else {
       ratingMarkup.push(`
-        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="18" height="18"><use href="./img/icons.svg#star"></use></svg></li>
+        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href="img/icons.svg#star"></use></svg></li>
         `);
     }
   }

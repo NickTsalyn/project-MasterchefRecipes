@@ -18,7 +18,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .popular-title {
     font-size: 24px;
     line-height: 1.66;
@@ -48,7 +48,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .popular-list {
     gap: 32px;
   }
@@ -72,12 +72,16 @@
   font-weight: 600;
   line-height: 1.28;
   text-transform: uppercase;
-  /* margin-bottom: 8px; */
-  /* width: 120px; */
   height: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: var(--transition-dur-timing-func);
+}
+
+.item-title:hover,
+.item-title:focus {
+  color: var(--green-color);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
@@ -97,15 +101,21 @@
   color: rgba(5, 5, 5, 0.8);
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: var(--transition-dur-timing-func);
 }
 
-@media only screen and (min-width: 1200px) {
+.item-text:hover,
+.item-text:focus {
+  color: var(--green-color);
+}
+
+@media only screen and (min-width: 1280px) {
   .item-text {
     width: 252px;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .item-text {
     font-size: 10px;
     line-height: 1.4;
@@ -119,6 +129,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
