@@ -104,7 +104,7 @@ button.addEventListener('click', (e) => {
         </form>
         <button class="sign-account">Don't have an account</button>
         <button class="reg-close-btn">
-        <svg class="reg-close-icon">
+        <svg class="reg-close-icon2">
           <use href=${closeIcon}></use>
         </svg>
       </button>
@@ -158,7 +158,7 @@ button.addEventListener('click', (e) => {
       signModal.show();
     });
 
-    const closeBtn = document.querySelector('.reg-close-icon')
+    const closeBtn = document.querySelector('.reg-close-icon2')
     
     closeBtn.addEventListener('click', () => {
       signModal.close();
