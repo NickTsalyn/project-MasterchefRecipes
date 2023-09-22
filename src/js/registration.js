@@ -1,5 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 import Notiflix from 'notiflix';
+import closeIcon from '../img/icons.svg#close-icon'
 
 const button = document.querySelector('.registration-btn');
 
@@ -23,7 +24,7 @@ button.addEventListener('click', (e) => {
       <button class="log-account">Already have an account</button>
       <button class="reg-close-btn">
         <svg class="reg-close-icon">
-          <use href="img/icons.svg#close-icon"></use>
+          <use href=${closeIcon}></use>
         </svg>
       </button>
     </div>
@@ -104,7 +105,7 @@ button.addEventListener('click', (e) => {
         <button class="sign-account">Don't have an account</button>
         <button class="reg-close-btn">
         <svg class="reg-close-icon">
-          <use href="img/icons.svg#close-icon"></use>
+          <use href=${closeIcon}></use>
         </svg>
       </button>
       </div>`;
