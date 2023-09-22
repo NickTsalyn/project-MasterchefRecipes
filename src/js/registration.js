@@ -101,7 +101,7 @@ button.addEventListener('click', (e) => {
       <div class="modal">
        <div class="registr-wrapper">
     <svg class="registr-icon" >
-      <use href="./img/icons.svg#hat-icon" ></use>
+      <use href=${hat} ></use>
     </svg>
      </div>
       <h4 class="reg-title">Login</h4>
