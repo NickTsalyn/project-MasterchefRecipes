@@ -287,6 +287,11 @@
   height: 24px;
   stroke: var(--primary-color);
 }
+
+/* .reg-close-btn:hover,
+.reg-close-btn:focus {
+  
+} */
 .registr-wrapper {
   display: flex;
   justify-content: center;
@@ -295,4 +300,10 @@
 .registr-icon {
   width: 100px;
   height: 100px;
+}
+
+.reg-close-icon2 {
+  width: 24px;
+  height: 24px;
+  stroke: var(--primary-color);
 }
