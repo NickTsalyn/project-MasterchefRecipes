@@ -5,6 +5,7 @@ import { save, load } from './storage-service';
 import { createRecipeObject } from './favorite-storage';
 import closeIcon from '../img/icons.svg#close-icon';
 import starImg from '../img/icons.svg#star';
+import { Notify } from 'notiflix';
 
 import './modal-rating';
 import { openRatingModal } from './modal-rating';
@@ -166,6 +167,14 @@ function handlerOnClick(evt) {
 
     function favBtnClickHandler(e) {
       if (e.target.closest('.btn-modal-first')) {
+        // log in validation
+        const registrationData = load("login-info")
+        if (!registrationData) {
+          Notify.warning("Log In or Sign Up to add recipe to Favorites")
+          return
+        }
+
+        
         let currentCard = e.target.closest('.btn-modal-first');
         const currentId = currentCard.dataset.id;
         const currentCategory = currentCard.dataset.category;
