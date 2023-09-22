@@ -15,4 +15,5 @@ import './js/order-modal';
 import './js/scroll'
 import './js/favorite-storage'
 import './js/footer-modal.js'
+import './js/registration-checker'
 

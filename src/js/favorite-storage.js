@@ -1,4 +1,5 @@
 import { save, load } from './storage-service';
+import { Notify } from 'notiflix';
 
 const refs = {
   recipesGallery: document.querySelector('.gallery-recipes'),
@@ -10,6 +11,12 @@ refs.recipesGallery.addEventListener('click', favBtnClickHandler);
 
 function favBtnClickHandler(e) {
   if (e.target.closest('.heart')) {
+    const registrationData = load("login-info")
+    if (!registrationData) {
+      Notify.warning("Log In or Sign Up to add recipe to Favorites")
+      return
+    }
+
     let currentCard = e.target.closest('.card-item');
     const currentId = currentCard.dataset.id;
     const currentCategory = currentCard.dataset.category;
