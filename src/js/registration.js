@@ -1,6 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import Notiflix from 'notiflix';
 import closeIcon from '../img/icons.svg#close-icon'
+import hat from '../img/icons.svg#hat-icon'
 
 const button = document.querySelector('.registration-btn');
 
@@ -12,7 +13,7 @@ button.addEventListener('click', (e) => {
     <div class="modal">
     <div class="registr-wrapper">
     <svg class="registr-icon" >
-      <use href="./img/icons.svg#hat-icon" ></use>
+      <use href=${hat} ></use>
     </svg>
      </div>
     <h4 class="reg-title">Registration</h4>
