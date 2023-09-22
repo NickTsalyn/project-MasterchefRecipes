@@ -42,13 +42,7 @@ button.addEventListener('click', (e) => {
   closeRegistrationBtn.addEventListener('click', () => {
       signModal.close();
     })
-  
-  const registrationForm = document.querySelector('.registration-form');
 
-  registrationForm.addEventListener('submit', evt => {
-    evt.preventDefault();
-
-    const signName = document.querySelector('.sign-name');
     const signPassword = document.querySelector('.sign-password');
     const showPassword = document.querySelector('.show-password');   
     
@@ -59,6 +53,14 @@ button.addEventListener('click', (e) => {
           signPassword.type = 'password';
       }
   });
+  
+  const registrationForm = document.querySelector('.registration-form');
+
+  registrationForm.addEventListener('submit', evt => {
+    evt.preventDefault();
+
+    const signName = document.querySelector('.sign-name');
+   
   
     if(signName.value === "" && signPassword.value === "") {
         Notiflix.Notify.warning('Please insert a valid email address')
