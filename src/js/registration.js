@@ -12,7 +12,7 @@ button.addEventListener('click', (e) => {
     <div class="modal">
     <h4 class="reg-title">Registration</h4>
       <form class="registration-form">
-        <label for="text" class="label">Sign Up
+        <label for="text" class="label">Email
           <input type="email" class="input sign-name" email="sign up" />
         </label>
         <label for="password" class="label">Password
