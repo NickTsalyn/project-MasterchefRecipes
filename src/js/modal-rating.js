@@ -166,7 +166,7 @@ export function openRatingModal(indeficator) {
   function handlerSubmit(evt) {
     evt.preventDefault();
     if (elements.mail.value === '' || elements.counter.textContent === '0.0') {
-      Notiflix.Notify.warning('Заповніть усі поля,будьте добрі!');
+      Notiflix.Notify.warning('All fields required');
       return;
     }
     // const emailPattern ='/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}/';
