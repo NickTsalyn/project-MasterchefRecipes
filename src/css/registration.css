@@ -307,3 +307,7 @@
   height: 24px;
   stroke: var(--primary-color);
 }
+
+.active-account {
+  color: var(--green-color)
+}

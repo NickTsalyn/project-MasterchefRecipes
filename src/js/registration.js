@@ -4,6 +4,8 @@ import closeIcon from '../img/icons.svg#close-icon'
 import hat from '../img/icons.svg#hat-icon'
 
 const button = document.querySelector('.registration-btn');
+const accountBtn = document.querySelector('.registration-btn')
+
 
 const emailPattern =
 /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}/;
@@ -72,7 +74,7 @@ button.addEventListener('click', (e) => {
         Notiflix.Notify.warning('Please insert a valid email address');
         return
     }
-    if (signPassword.value.length <= 6) {
+    if (signPassword.value.length < 6) {
       Notiflix.Notify.warning('Password should have at least 6 symbols');
       return;
     }
@@ -160,6 +162,8 @@ button.addEventListener('click', (e) => {
       ) {
         Notiflix.Notify.success('Login successful');
         logModal.close();
+        accountBtn.classList.add('active-account')
+
       } else {
         Notiflix.Notify.failure('Login failed. Please check your credentials');
       }
