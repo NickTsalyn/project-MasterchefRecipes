@@ -1,4 +1,4 @@
-const themeToggle = document.querySelectorAll('#theme-toggle');
+const themeToggle = document.querySelectorAll('.theme-toggle');
 const THEME = 'dark-theme';
 
 // Перевіряємо, чи є у сховищі збережена тема
