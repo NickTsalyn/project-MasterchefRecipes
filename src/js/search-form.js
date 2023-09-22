@@ -5,7 +5,9 @@ import { getAllAreas } from "./Api/api-areas"
 import { getAllIngredients } from "./Api/api-ingredients"
 import { renderCard } from "./render.js"
 import {  getRecipesByTime, getRecipesByArea } from "./Api/api-filters"
-import {rendersAllRecipes} from "./render-recipes-list"
+import {rendersAllRecipes, getCurrentRecipeSetUp} from "./render-recipes-list"
+import { getRecipeByCategory } from "./Api/api-fetch-recipes"
+
 
 const elements = {
     form: document.querySelector('.search-form'),
@@ -68,7 +70,6 @@ function handlerSearchInput() {
     const inputValue = elements.searchInput.value.trim().toLowerCase();     
     elements.btnCloseSearch.style.display = "flex";
 
-    console.log(elements.btnCloseSearch);
     getAllRecipes()
         .then((data) => {
             const recipes = data.results;
@@ -171,7 +172,6 @@ function handlerIngredientSelect(evt) {
         }
         evt.target.classList.add('active');
         selectedIngredientElement = evt.target;
-        console.log(evt.target);
         elements.inputIngredients.value = selectedIngredientElement.textContent;
         const ingredientId = selectedIngredientElement.getAttribute('value'); 
         elements.selectIngredients.style.display = "none";
@@ -198,5 +198,18 @@ function handlerIngredientSelect(evt) {
 // ------------Очищення форми кнопкою reset--------
 elements.btnReset.addEventListener('click', () => {
     elements.form.reset();
-    rendersAllRecipes() 
+
+    if (document.querySelector(".categories-btn").classList.contains("active")) {
+        rendersAllRecipes() 
+    } else {
+        const {category, page, limit, container} = getCurrentRecipeSetUp();
+
+
+        getRecipeByCategory(category, page, limit).then((response) => { 
+            container.innerHTML = ""
+            container.insertAdjacentHTML("beforeend", renderCard(response.results))
+          })
+
+    }
+    
 })    

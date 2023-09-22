@@ -4,11 +4,13 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import './modal-first';
 import Notiflix from 'notiflix';
+import starIcon from '../img/icons.svg#star'
+import closeButton from '../img/icons.svg#close-icon'
 
 export function openRatingModal(indeficator) {
   const modalRatingForm = `<form class="modal-rating-form" action="">
   <svg class="modal-rating-close-btn" width="20" height="20">
-  <use href="./img/icons.svg#close-icon"></use>
+  <use href=${closeButton}></use>
 </svg>
    <div class="modal-rating-display"> <h2 class = "modal-rating-head">Rating</h2>
    <div class="modal-rating-container">
@@ -21,7 +23,7 @@ export function openRatingModal(indeficator) {
         value="1"
       />
       <svg class="modal-rating-star" width="24" height="24">
-        <use href="./img/icons.svg#star"></use>
+        <use href=${starIcon}></use>
       </svg>
   
       <input
@@ -31,7 +33,7 @@ export function openRatingModal(indeficator) {
         value="2"
       />
       <svg class="modal-rating-star" width="24" height="24">
-        <use href="./img/icons.svg#star"></use>
+        <use href=${starIcon}></use>
       </svg>
   
       <input
@@ -41,7 +43,7 @@ export function openRatingModal(indeficator) {
         value="3"
       />
       <svg class="modal-rating-star" width="24" height="24">
-        <use href="./img/icons.svg#star"></use>
+        <use href=${starIcon}></use>
       </svg>
   
       <input
@@ -51,7 +53,7 @@ export function openRatingModal(indeficator) {
         value="4"
       />
       <svg class="modal-rating-star" width="24" height="24">
-        <use href="./img/icons.svg#star"></use>
+        <use href=${starIcon}></use>
       </svg>
   
       <input
@@ -61,7 +63,7 @@ export function openRatingModal(indeficator) {
         value="5"
       />
       <svg class="modal-rating-star" width="24" height="24">
-        <use href="./img/icons.svg#star"></use>
+        <use href=${starIcon}></use>
       </svg>
       </div>
     </div>
@@ -164,7 +166,7 @@ export function openRatingModal(indeficator) {
   function handlerSubmit(evt) {
     evt.preventDefault();
     if (elements.mail.value === '' || elements.counter.textContent === '0.0') {
-      Notiflix.Notify.warning('Заповніть усі поля,будьте добрі!');
+      Notiflix.Notify.warning('All fields required');
       return;
     }
     // const emailPattern ='/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}/';

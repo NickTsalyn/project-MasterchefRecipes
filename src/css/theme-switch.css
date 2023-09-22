@@ -28,11 +28,26 @@ body.dark-theme {
 
 /* ----------- CATEGORIES ----------- */
 .dark-theme .categories-btn {
-  color: var(--btn-light-color);
-  border: 1px solid var(--btn-light-color);;
+  color: rgba(255, 255, 255, 0.50);
+  border: 1px solid var(--btn-light-color);
 }
+
+.dark-theme .categories-btn.active {
+  color: var(--white-color);
+}
+
+.dark-theme .categories-btn:hover,
+.dark-theme .categories-btn:focus {
+  color: var(--white-color);
+}
+
 .dark-theme .category-item {
   color: var(--btn-light-color);
+}
+
+.dark-theme .category-item:hover,
+.dark-theme .category-item:focus {
+  color: var(--green-color);
 }
 
 .dark-theme .categories-wrapper::-webkit-scrollbar-thumb {
@@ -53,6 +68,16 @@ body.dark-theme {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.dark-theme .item-text:hover,
+.dark-theme .item-text:focus {
+  color: var(--green-color);
+}
+
+.dark-theme .item-title:hover,
+.dark-theme .item-title:focus {
+  color: var(--green-color);
+}
+
 /* ----------- POPULAR ----------- */
 
 /* ----------- ORDER MODAL ----------- */
@@ -70,7 +95,7 @@ body.dark-theme {
 }
 
 .dark-theme .send-button {
-  color: var(--primary-color);
+  color: var(--white-color);
 }
 
 .dark-theme .ord-close-icon {
@@ -83,6 +108,7 @@ body.dark-theme {
 }
 
 .dark-theme .comment {
+  color: var(--white-color);
   background: var(--primary-color);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -170,6 +196,10 @@ body.dark-theme {
   fill: rgba(255, 255, 255, 0.4);
 }
 
+.dark-theme .input {
+  color: var(--white-color);
+}
+
 /* ----------- REGISTRATION MODAL ----------- */
 
 /* ----------- FOOTER ----------- */
@@ -201,3 +231,11 @@ body.dark-theme {
   border: 1px solid var(--btn-light-color);
   color: var(--btn-light-color);
 }
+
+/* ----------- FOOTER ----------- */
+
+.dark-theme .footer-container {
+  border-top: none;
+}
+
+/* ----------- FOOTER ----------- */

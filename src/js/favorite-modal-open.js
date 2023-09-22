@@ -5,7 +5,6 @@ import { save, load } from './storage-service';
 import { createRecipeObject } from './favorite-storage';
 import closeIcon from '../img/icons.svg#close-icon';
 import starImg from '../img/icons.svg#star';
-import { Notify } from 'notiflix';
 
 import './modal-rating';
 import { openRatingModal } from './modal-rating';
@@ -13,12 +12,10 @@ import { openRatingModal } from './modal-rating';
 import YouTubePlayer from 'youtube-player';
 
 const seeFullRecipec = {
-  item1: document.querySelector('.gallery-recipes'),
-  item2: document.querySelector('.popular-list'),
+  favoriteElement: document.querySelector('.fav-recipes-list'),
 };
 
-seeFullRecipec.item1.addEventListener('click', handlerOnClick);
-seeFullRecipec.item2.addEventListener('click', handlerOnClick);
+seeFullRecipec.favoriteElement.addEventListener('click', handlerOnClick);
 
 function handlerOnClick(evt) {
   evt.preventDefault();
@@ -41,7 +38,7 @@ function handlerOnClick(evt) {
     const instance = basicLightbox.create(`
     <div class="modal-frame " >
        
-        <button class="modal-close-button">
+       <button class="modal-close-button">
           <svg class="modal-close-icon" width="20" height="20">
           <use href=${closeIcon}></use>
         </svg>
@@ -167,14 +164,6 @@ function handlerOnClick(evt) {
 
     function favBtnClickHandler(e) {
       if (e.target.closest('.btn-modal-first')) {
-        // log in validation
-        const registrationData = load("login-info")
-        if (!registrationData) {
-          Notify.warning("Log In or Sign Up to add recipe to Favorites")
-          return
-        }
-
-        
         let currentCard = e.target.closest('.btn-modal-first');
         const currentId = currentCard.dataset.id;
         const currentCategory = currentCard.dataset.category;
@@ -225,9 +214,9 @@ function createRatingMarkup(num) {
         `);
       ratingNum -= 1;
     } else {
-      ratingMarkup.push(`
-        <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href=${starImg}></use></svg></li>
-        `);
+      ratingMarkup.push(
+        ` <li class="icon-rating unchecked modal-icon"><svg class="icon-star" width="16" height="16"><use href=${starImg}></use></svg></li>`
+      );
     }
   }
 

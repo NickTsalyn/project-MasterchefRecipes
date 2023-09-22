@@ -1,6 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import Notiflix from 'notiflix';
 import axios from 'axios';
+import closeBtnImg from '../img/icons.svg#close-icon'
 
 const order = document.querySelector('.ord-btn');
 const orderBtn = document.querySelector('.order-btn')
@@ -33,7 +34,7 @@ orderBtn.addEventListener('click', orderNow);
         </form>
         <button class="ord-close-btn">
         <svg class="ord-close-icon">
-          <use href="img/icons.svg#close-icon"></use>
+          <use href=${closeBtnImg}></use>
         </svg>
       </button>
       </div>`;
@@ -61,11 +62,7 @@ orderBtn.addEventListener('click', orderNow);
 
       if (!formFields.name || !formFields.phone || !formFields.email) {
         return;
-      } else if (
-        !namePattern.test(formFields.name) ||
-        !numberPattern.test(formFields.phone) ||
-        !emailPattern.test(formFields.email)
-      ) {
+      } else if (!namePattern.test(formFields.name) || !numberPattern.test(formFields.phone) || !emailPattern.test(formFields.email)) {
         return;
       }
 

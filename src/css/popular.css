@@ -63,6 +63,7 @@
   height: 64px;
   border-radius: 20%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .item-title {
