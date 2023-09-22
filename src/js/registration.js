@@ -10,6 +10,11 @@ const emailPattern =
 button.addEventListener('click', (e) => {
   const content = `
     <div class="modal">
+    <div class="registr-wrapper">
+    <svg class="registr-icon" >
+      <use href="./img/icons.svg#hat-icon" ></use>
+    </svg>
+     </div>
     <h4 class="reg-title">Registration</h4>
       <form class="registration-form">
         <label for="text" class="label">Email
@@ -91,6 +96,11 @@ button.addEventListener('click', (e) => {
   function openLoginModal() {
     const logForm = `
       <div class="modal">
+       <div class="registr-wrapper">
+    <svg class="registr-icon" >
+      <use href="./img/icons.svg#hat-icon" ></use>
+    </svg>
+     </div>
       <h4 class="reg-title">Login</h4>
         <form class="login-form">
           <label for="text" class="label">Email
