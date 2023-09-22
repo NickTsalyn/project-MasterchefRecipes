@@ -205,7 +205,7 @@
   font-family: Inter;
   font-weight: 500;
   display: flex;
-  width: 300px;
+  width: 100%;
   padding: 14px;
   justify-content: center;
   align-items: center;
@@ -247,7 +247,7 @@
   font-family: Inter;
   font-weight: 500;
   display: flex;
-  width: 300px;
+  width: 100%;
   padding: 14px;
   justify-content: center;
   align-items: center;
@@ -290,7 +290,7 @@
 .registr-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .registr-icon {
   width: 100px;
