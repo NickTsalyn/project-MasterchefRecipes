@@ -25,7 +25,7 @@
   --transition-dur-timing-func: 300ms ease-out;
   --btn-light-color: rgba(255, 255, 255, 0.3);
   /* Swiper */
-  --swiper-pagination-color: #9bb537;
+  /* --swiper-pagination-color: #9bb537;
   --swiper-pagination-left: auto;
   --swiper-pagination-right: 8px;
   --swiper-pagination-bottom: 0;
@@ -39,7 +39,7 @@
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-bullet-opacity: 1;
   --swiper-pagination-bullet-horizontal-gap: 3px;
-  --swiper-pagination-bullet-vertical-gap: 6px;
+  --swiper-pagination-bullet-vertical-gap: 6px; */
 }
 
 * {

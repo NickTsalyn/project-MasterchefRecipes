@@ -28,7 +28,7 @@ body.dark-theme {
 
 /* ----------- CATEGORIES ----------- */
 .dark-theme .categories-btn {
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--btn-light-color);
 }
 
@@ -215,7 +215,14 @@ body.dark-theme {
 .dark-theme .hero-btn {
   color: #fff;
 }
-
+/* .dark-theme
+  .swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background: var(--swiper-pagination-bullet-inactive-color, white);
+} */
 /* ---------- HERO ----------- */
 /* ----------- FAVORITES PAGE ----------- */
 
