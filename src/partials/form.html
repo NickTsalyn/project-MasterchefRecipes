@@ -1,8 +1,9 @@
 <div class="form-container">
     <form class="search-form" name="search-form">
-        <label for="input-search" class="label-form"> Search
+        <div class="search-container">
+            <label for="input-search" class="label-form"> Search</label> 
             <div class="search-overlay">
-                <input class="input-form input-search" id="input-search" type="text" value="" placeholder="Enter Text" autocomplete="off">
+                <input class="input-form input-search" id="input-search" name="input search" type="text" value="" placeholder="Enter Text" autocomplete="off">
                 <svg class="icon-search" width="18" height="18">
                     <use href="img/icons.svg#search"></use>
                 </svg>
@@ -12,65 +13,72 @@
                     </svg>
                 </button>
             </div>
-        </label>
+        </div>
+              
         <!-- Вибір по часу приготування  -->
-        <label for="input-time" class="label-form">Time
+        <div class="search-container">
+            <label for="input-time" class="label-form">Time</label>
             <div class="search-overlay ">
                 <input class="input-form input-time" type="text" id="input-time" placeholder="0 min" disabled>
                 <button class="btn-select-time btn-chevron-down" type="button">
                     <svg class="icon-select-time icon-chevron-down" width="18" height="18">
-                        <use href="img/icons.svg#icon-chevron-down">
+                        <use href="img/icons.svg#icon-chevron-down"></use>
                     </svg>
                 </button>
                 <ul class="form-select select-time">                  
-                    <li class="option-tag" value="">10 min</li>
-                    <li class="option-tag" value="">20 min</li>
-                    <li class="option-tag" value="">30 min</li>
-                    <li class="option-tag" value="">40 min</li>
-                    <li class="option-tag" value="">50 min</li>
-                    <li class="option-tag" value="">60 min</li>
-                    <li class="option-tag" value="">70 min</li>
-                    <li class="option-tag" value="">80 min</li>
-                    <li class="option-tag" value="">90 min</li>
-                    <li class="option-tag" value="">100 min</li>
-                    <li class="option-tag" value="">110 min</li>
-                    <li class="option-tag" value="">120 min</li>
-                    <li class="option-tag" value="">130 min</li>
-                    <li class="option-tag" value="">140 min</li>
-                    <li class="option-tag" value="">150 min</li>
-                    <li class="option-tag" value="">160 min</li>
+                    <li class="option-tag">10 min</li>
+                    <li class="option-tag">20 min</li>
+                    <li class="option-tag">30 min</li>
+                    <li class="option-tag">40 min</li>
+                    <li class="option-tag">50 min</li>
+                    <li class="option-tag">60 min</li>
+                    <li class="option-tag">70 min</li>
+                    <li class="option-tag">80 min</li>
+                    <li class="option-tag">90 min</li>
+                    <li class="option-tag">100 min</li>
+                    <li class="option-tag">110 min</li>
+                    <li class="option-tag">120 min</li>
+                    <li class="option-tag">130 min</li>
+                    <li class="option-tag">140 min</li>
+                    <li class="option-tag">150 min</li>
+                    <li class="option-tag">160 min</li>
                 </ul>
             </div>
-        </label>
+        </div>
+        
         <!-- Пошук за країною походження -->
 
-        <label for="input-area" class="label-form">Area
+        <div class="search-container">
+            <label for="input-area" class="label-form">Area</label>
             <div class="search-overlay">
                 <input class="input-form input-area" type="text" id="input-area" placeholder="Region" disabled>
                 <button class="btn-select-area btn-chevron-down" type="button">
                     <svg class="icon-select-area icon-chevron-down" width="18" height="18">
-                        <use href="img/icons.svg#icon-chevron-down">
+                        <use href="img/icons.svg#icon-chevron-down"></use>
                     </svg>
                 </button>
                 <ul class="form-select select-area">
                 </ul>
             </div>
-        </label>
+        </div>
+        
         <!-- Пошук за інгридієнтами -->
 
-        <label for="input-ingredients" class="label-form">Ingredients
+        <div class="search-container">
+            <label for="input-ingredients" class="label-form">Ingredients</label>
             <div class="search-overlay">
                 <input class="input-form input-ingredients" type="text" id="input-ingredients" placeholder="Ingredients"
                     disabled>
                 <button class="btn-select-ingredients btn-chevron-down" type="button">
                     <svg class="icon-select-ingredients icon-chevron-down" width="18" height="18">
-                        <use href="img/icons.svg#icon-chevron-down">
+                        <use href="img/icons.svg#icon-chevron-down"></use>
                     </svg>
                 </button>
                 <ul class="form-select select-ingredients">
                 </ul>
             </div>
-        </label>
+        </div>
+        
     </form>
     <div class="reset-block">
         <p class="reset-text">Reset the filter</p>

@@ -111,7 +111,8 @@ function handlerTimeSelect(evt) {
         evt.target.classList.add('active');        
         selectedTimeElement = evt.target;
         elements.inputTime.value = evt.target.textContent
-        const selectedTime = Number.parseInt(elements.inputTime.value)  
+        const selectedTime = Number.parseInt(elements.inputTime.value)
+        
         elements.selectTime.style.display = "none" 
           
             getRecipesByTime(selectedTime)
