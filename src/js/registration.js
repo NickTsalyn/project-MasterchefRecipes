@@ -53,7 +53,7 @@ button.addEventListener('click', (e) => {
           signPassword.type = 'password';
       }
   });
-  console.log(signName)
+  
     if(signName.value === "" && signPassword.value === "") {
         Notiflix.Notify.warning('Please insert a valid email address')
         return
@@ -160,7 +160,6 @@ button.addEventListener('click', (e) => {
     const closeBtn = document.querySelector('.reg-close-icon')
     
     closeBtn.addEventListener('click', () => {
-      console.log("message")
       signModal.close();
       logModal.close()
     })
