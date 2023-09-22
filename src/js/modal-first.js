@@ -34,9 +34,14 @@ function handlerOnClick(evt) {
     const parts = respInfo.youtube.split('=');
     const videoId = parts[1];
     const localId = load('favRecipes');
-    const filteredArr = localId.find(({ id }) => {
-      return id === respInfo._id;
-    });
+    let filteredArr = [];
+
+    if (localId) {
+      filteredArr = localId.find(({ id }) => {
+        return id === respInfo._id;
+      });
+    }
+    
 
     const instance = basicLightbox.create(`
     <div class="modal-frame " >

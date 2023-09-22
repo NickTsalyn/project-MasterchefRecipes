@@ -188,7 +188,9 @@ body.dark-theme {
   background: var(--primary-color);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+.dark-theme .show-password {
+  color: var(--btn-light-color);
+}
 .dark-theme .reg-close-icon {
   stroke: var(--white-color);
 }
@@ -241,3 +243,28 @@ body.dark-theme {
 }
 
 /* ----------- FOOTER ----------- */
+
+.dark-theme .tui-page-btn {
+    color: var(--white-color) !important;
+    border-color: var(--btn-light-color) !important;
+  }
+
+.dark-theme .tui-page-btn:hover {
+    color: var(--primary-color) !important;
+  }
+
+.dark-theme .tui-page-btn.tui-first.tui-is-disabled,
+.dark-theme .tui-page-btn.tui-prev.tui-is-disabled,
+.dark-theme .tui-page-btn.tui-last.tui-is-disabled,
+.dark-theme .tui-page-btn.tui-next.tui-is-disabled {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.dark-theme .tui-page-btn.tui-first,
+.dark-theme .tui-page-btn.tui-prev,
+.dark-theme .tui-page-btn.tui-last,
+.dark-theme .tui-page-btn.tui-next {
+  background-color: var(--green-color) !important;
+  border-color: var(--green-color) !important;
+}
