@@ -6,7 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasty Treats</title>
 
-    <link rel="stylesheet" href="./css/favorite.css" />
+	<link rel="stylesheet" href="./css/favorite.css" />
+  <link rel="stylesheet" href="./css/pagination.css" />
+  <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css"
+    />
+  <style>
+    .tui-pagination{
+      padding-top: 64px;
+      padding-bottom: 100px;
+    }
+    
+  </style>
   </head>
   <body class="fav-body">
     <div class="fav-header">
@@ -14,6 +26,9 @@
     </div>
     <main>
       <load ="partials/favorites-main.html" />
+      <div class="pagination-container">
+        <load ="partials/pagination.html" />
+      </div>
     </main>
 
     <script type="module" src="./js/favorite.js"></script>
