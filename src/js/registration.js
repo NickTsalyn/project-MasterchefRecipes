@@ -10,6 +10,11 @@ const emailPattern =
 button.addEventListener('click', (e) => {
   const content = `
     <div class="modal">
+    <div class="registr-wrapper">
+    <svg class="registr-icon" >
+      <use href="./img/icons.svg#hat-icon" ></use>
+    </svg>
+     </div>
     <h4 class="reg-title">Registration</h4>
       <form class="registration-form">
         <label for="text" class="label">Email
@@ -93,6 +98,11 @@ button.addEventListener('click', (e) => {
   function openLoginModal() {
     const logForm = `
       <div class="modal">
+       <div class="registr-wrapper">
+    <svg class="registr-icon" >
+      <use href="./img/icons.svg#hat-icon" ></use>
+    </svg>
+     </div>
       <h4 class="reg-title">Login</h4>
         <form class="login-form">
           <label for="text" class="label">Email
@@ -106,7 +116,7 @@ button.addEventListener('click', (e) => {
         </form>
         <button class="sign-account">Don't have an account</button>
         <button class="reg-close-btn">
-        <svg class="reg-close-icon">
+        <svg class="reg-close-icon2">
           <use href=${closeIcon}></use>
         </svg>
       </button>
@@ -160,7 +170,7 @@ button.addEventListener('click', (e) => {
       signModal.show();
     });
 
-    const closeBtn = document.querySelector('.reg-close-icon')
+    const closeBtn = document.querySelector('.reg-close-icon2')
     
     closeBtn.addEventListener('click', () => {
       signModal.close();
