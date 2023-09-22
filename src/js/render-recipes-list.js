@@ -79,3 +79,12 @@ function changeLimitByViewportWidth () {
     tempValues.limit = 6;
   }
 }
+
+export function getCurrentRecipeSetUp () {
+  return {
+    category: tempValues.category, 
+    page: tempValues.page, 
+    limit: tempValues.limit,
+    container: categoriesRefs.recipesContainer,
+  }
+}
