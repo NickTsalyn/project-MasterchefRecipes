@@ -80,12 +80,12 @@ button {
   align-items: center;
 }
 
-.fav-recipes-list.hidden {
+.fav-recipes-list.hide {
   display: none;
   overflow: hidden;
 }
 
-.hidden {
+.hide {
   display: none;
   overflow: hidden;
 }
@@ -184,7 +184,7 @@ button {
     gap: 32px;
   }
 
-  .empty-section-wrapper.hidden {
+  .empty-section-wrapper.hide {
     display: none;
     visibility: hidden;
   }

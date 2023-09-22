@@ -98,7 +98,7 @@ function createRecipeObject (id, category){
 function renderFavCategories(arr) {
   //CHECKS IF STORAGE ARR IS EMPTY
   if (arr.length > 0) {
-    refs.buttonList.classList.remove("hidden")
+    refs.buttonList.classList.remove("hide")
     // RENDERS CATEGORIES BTN LIST
     const categoriesArr = arr.map(({category}) => category).filter((el, i, arr) => arr.indexOf(el) === i).sort((a,b) => a.localeCompare(b))
     categoriesArr.map(el => {
@@ -116,8 +116,8 @@ function renderFavCategories(arr) {
 function renderFavCards(arr) {
   //CHECKS IF STORAGE ARR IS EMPTY
   if (arr.length > 0) {
-    refs.emptyPageSection.classList.add("hidden")
-    refs.favRecipesGallery.classList.remove("hidden")
+    refs.emptyPageSection.classList.add("hide")
+    refs.favRecipesGallery.classList.remove("hide")
     refs.favRecipesGallery.innerHTML = "";
     
     arr.map(({id}) => {

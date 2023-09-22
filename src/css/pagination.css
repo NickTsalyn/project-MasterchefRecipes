@@ -1,11 +1,4 @@
-/*
-@media only screen and (min-width: 768px) {
-    
-}
-@media only screen and (min-width: 1158px) {
-
-}*/
-
+@import url('./styles.css');
 
 div .tui-pagination {
     display: flex;
@@ -14,63 +7,53 @@ div .tui-pagination {
 }
 
 .tui-page-btn {
-  width: 44px !important;
-  height: 44px !important;
+  
   color: var(--primary-color) !important;
   font-family: Inter;
-  font-size: 18px !important;
+  
   font-weight: 600 !important;
   line-height: 1.22 !important;
   border-radius: 50%;
-  padding: 8px 0 6px !important;
-  margin-right: 15px !important;
   border: 1px solid var(--secondary-color) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
-
-
+.tui-pagination .tui-next {
+  margin-left: 0px !important;
+}
 .tui-is-selected {
   background-color: var(--green-color) !important;
   border: 1px solid var(--green-color) !important;
-  width: 44px;
-  height: 44px;
 }
 
 .tui-is-disabled {
-  width: 44px;
-  height: 44px;
   background-color: var(--primary-color) !important;
   border: 1px solid var(--primary-color) !important;
 }
-
-/* .tui-first, .tui-prev, .tui-next, .tui-last {
-  background-color: var(--green-color) !important;
-  border: 1px solid var(--green-color) !important;
-} */
-
-.tui-ico-ellip {
-  width: 44px;
-  height: 44px;
-}
-
-.tui-first-child {
-  width: 44px;
-  height: 44px;
-}
-
-.tui-last-child {
-  width: 44px;
-  height: 44px;
-}
-
-@media only screen and(max-width:767px){
-  
-    .tui-page-btn {width: 40px !important;height: 40px !important;}
-    .tui-is-selected {width: 40px;height: 40px;}
-    .tui-is-disabled {width: 40px;height: 40px;}
-    .tui-ico-ellip {width: 40px;height: 40px;}
-    .tui-first-child {width: 40px;height: 40px;}
-    .tui-last-child {width: 40px;height: 40px;}
+@media only screen and (max-width: 470px) {
+  .tui-page-btn {
+    width:  40px !important;
+    height:  40px !important;
+    padding: 8px 0 6px !important;
+    margin-right: 4px !important;
+    font-size: 12px !important;
   }
+  
+  .tui-ico-ellip {
+    height: 18px !important;
+  }
+}
+
+@media only screen and (min-width: 471px) {
+  .tui-page-btn {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 8px 0 6px !important;
+    margin-right: 15px !important;
+    font-size: 18px !important;
+  }
+  .tui-ico-ellip {
+    height: 18px !important;
+  }
+}
