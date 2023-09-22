@@ -40,6 +40,7 @@
   --swiper-pagination-bullet-opacity: 1;
   --swiper-pagination-bullet-horizontal-gap: 3px;
   --swiper-pagination-bullet-vertical-gap: 6px; */
+  --swiper-pagination-bottom: -4px;
 }
 
 * {

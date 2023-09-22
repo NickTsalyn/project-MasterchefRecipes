@@ -215,12 +215,7 @@ body.dark-theme {
 .dark-theme .hero-btn {
   color: #fff;
 }
-/* .dark-theme
-  .swiper-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
+/* .dark-theme .swiper-pagination-bullet {
   background: var(--swiper-pagination-bullet-inactive-color, white);
 } */
 /* ---------- HERO ----------- */
