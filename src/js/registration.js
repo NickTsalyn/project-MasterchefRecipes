@@ -25,7 +25,7 @@ button.addEventListener('click', (e) => {
         </label>
         <label for="password" class="label">Password
           <input type="password" class="input sign-password" name="password" />
-          <button class="show-password">Show/Hide password</button>
+          <p class="show-password">Show/Hide password</p>
         </label>
         <button type="submit" class="sign-button">Sign up</button>
       </form>
