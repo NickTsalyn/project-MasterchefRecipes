@@ -24,23 +24,6 @@
   --dark-theme-background: #161616;
   --transition-dur-timing-func: 300ms ease-out;
   --btn-light-color: rgba(255, 255, 255, 0.3);
-  /* Swiper */
-  /* --swiper-pagination-color: #9bb537;
-  --swiper-pagination-left: auto;
-  --swiper-pagination-right: 8px;
-  --swiper-pagination-bottom: 0;
-  --swiper-pagination-top: auto;
-  --swiper-pagination-fraction-color: inherit;
-  --swiper-pagination-progressbar-size: 4px;
-  --swiper-pagination-bullet-size: 4px;
-  --swiper-pagination-bullet-width: 4px;
-  --swiper-pagination-bullet-height: 4px;
-  --swiper-pagination-bullet-inactive-color: #050505;
-  --swiper-pagination-bullet-inactive-opacity: 1;
-  --swiper-pagination-bullet-opacity: 1;
-  --swiper-pagination-bullet-horizontal-gap: 3px;
-  --swiper-pagination-bullet-vertical-gap: 6px; */
-  --swiper-pagination-bottom: -4px;
 }
 
 * {
@@ -92,7 +75,7 @@ body {
   .container {
     width: 1280px;
     padding-left: 100px;
-    padding-right: 99px;
+    padding-right: 100px;
   }
 }
 
@@ -133,7 +116,7 @@ body {
 
 @media only screen and (min-width: 1280px) {
   .left-container {
-    width: 235px;
+    width: 234px;
   }
   .section-wrapper {
     gap: 64px;
