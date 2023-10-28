@@ -1,113 +1,67 @@
-# Vanilla App Template
+# Project: Masterchef Recipes
 
-Цей проект було створено за допомогою Vite. Для знайомства та налаштування
-додаткових можливостей [звернись до документації](https://vitejs.dev/).
+**Masterchef Recipes** is a web application that offers a delightful culinary experience for food enthusiasts and home chefs. This project, developed by a talented team of individuals, provides users with a platform to explore, discover, and interact with a vast collection of recipes from around the world. The website is designed with a modern and user-friendly interface, featuring various functionalities to enhance the user experience.
 
-## Створення репозиторію за шаблоном
+## Project Features
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проекту. Для цього натисни на кнопку `«Use this template»` і
-обери опцію `«Create a new repository»`, як показано на зображенні.
+1. **User Authentication**: Users can create accounts and log in to the website, allowing them to personalize their experience.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+2. **Recipe Exploration**: A comprehensive collection of recipes is available, categorized by various parameters such as cuisine, dietary preferences, and meal type. Users can conveniently filter recipes based on specific criteria to find the perfect dish for any occasion.
 
-На наступному етапі відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся, що репозиторій публічний, після чого натисни
-кнопку `«Create repository from template»`.
+3. **Favorites List**: Users can add recipes to their favorites list, making it easy to access and revisit their preferred dishes.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+4. **Rating and Feedback**: Users can rate and provide feedback on recipes, helping others make informed choices and enhancing the community aspect of the platform.
 
-Після того, як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
+5. **Share Feedback**: Users can share their culinary experiences and recipe reviews with other members of the community.
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+6. **Popular World Recipes**: The website features a curated list of popular recipes from around the world, allowing users to explore international cuisines.
 
-Проскроливши сторінку до самого кінця, в секції `«Workflow permissions»` обери
-опцію `«Read and write permissions»` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проекту.
+7. **Theme Switcher**: The website offers a theme switcher, enabling users to personalize the visual experience by choosing from different themes.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+## Team Members
 
-Тепер у тебе є особистий репозиторій проекту, зі структурою файлів та папок
-репозиторію-шаблону. Далі працюй з ним, як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби коміти та відправляй
-їх на GitHub.
+- **Nick Tsalyn** (Team Lead, GitHub: [NickTsalyn](https://github.com/NickTsalyn))
+   - Developed site logic and login form.
 
-## Підготовка до роботи
+- **Anna Scrum** (Scrum Master, GitHub: [Anna211291](https://github.com/Anna211291))
+   - Developed the Hero section of the website.
 
-1. Переконайся, що на комп'ютері встановлено LTS-версію Node.js.
-   [Скачай та встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проекту в терміналі командою `npm install`.
-3. Запусти режим розробки, виконавши в терміналі команду `npm run dev`.
-4. Перейдіть у браузері за адресою
-   [http://localhost:5173](http://localhost:5173). Ця сторінка буде автоматично
-   перезавантажуватись після збереження змін у файли проекту.
+- **Daryna Dvl** (Developer, GitHub: [DarynaDvl](https://github.com/DarynaDvl))
+   - Developed the website's header and theme switcher.
 
-## Файли і папки
+- **Oleh Panadii** (Developer, GitHub: [olehpanadii](https://github.com/olehpanadii))
+   - Responsible for the recipe modal.
 
-- Файли розмітки компонентів сторінки повинні лежати в папці `src/partials` та
-  імпортуватись до файлу `index.html`. Наприклад, файл з розміткою хедера
-  `header.html` створюємо у папці `partials` та імпортуємо в `index.html`.
-- Файли стилів повинні лежати в папці `src/css` та імпортуватись до HTML-файлів
-  сторінок. Наприклад, для `index.html` файл стилів називається `index.css`.
-- Зображення додавай до папки `src/img`. Збирач оптимізує їх, але тільки при
-  деплої продакшн версії проекту. Все це відбувається у хмарі, щоб не
-  навантажувати твій комп'ютер, тому що на слабких компʼютерах це може зайняти
-  багато часу.
+- **Oleksandr Tsybulskiy** (Developer, GitHub: [OleksandrTsybulskiy](https://github.com/OleksandrTsybulskiy))
+   - Developed the order modal and popular recipes section.
 
-## Деплой
+- **Dasha Musienko** (Developer, GitHub: [dasha-musienko](https://github.com/dasha-musienko))
+   - Responsible for categories filters, recipes gallery, and the favorites section logic.
 
-Продакшн версія проекту буде автоматично збиратися та деплоїтись на GitHub
-Pages, у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад,
-після прямого пуша або прийнятого пул-реквесту. Для цього необхідно у файлі
-`package.json` змінити значення прапора `--base=/<REPO>/`, для команди `build`,
-замінивши `<REPO>` на назву свого репозиторію, та відправити зміни на GitHub.
+- **Kateryna Sch** (Developer, GitHub: [KaterynaSch](https://github.com/KaterynaSch))
+   - Responsible for recipes filters and recipes gallery.
 
-```json
-"build": "vite build --base=/<REPO>/",
-```
+- **Fairy Saiki No Kysyo** (Developer, GitHub: [FairySaikiNoKysyo](https://github.com/FairySaikiNoKysyo))
+   - Responsible for the rating modal.
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) та
-виставити роздачу продакшн версії файлів з папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
+- **Roman Chuykov** (Developer, GitHub: [RomanChuykov](https://github.com/RomanChuykov))
+   - Responsible for recipes pagination and the favorites section.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+## Technologies Used
 
-### Статус деплою
+### Frontend
+- HTML/CSS
+- JavaScript (JS)
+- Libraries: `animate.css`, `lightbox`, `axios`, `notiflix`, `swiper.js`
 
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
+### Backend
+- GoIT Recipes Database
 
-- **Жовтий колір** - виконується збірка та деплой проекту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, збірки чи деплою сталася помилка.
-
-Більш детальну інформацію про статус можна переглянути натиснувши на іконку, і в
-вікні, що випадає, перейти за посиланням `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною на вкладці `Settings` > `Pages` в налаштуваннях репозиторію.
-Наприклад, ось посилання на живу версію для цього репозиторію
-
-[https://goitacademy.github.io/vanilla-app-template/](https://goitacademy.github.io/vanilla-app-template/).
-
-Якщо відкриється порожня сторінка, переконайся, що у вкладці `Console` немає
-помилок пов'язаних з неправильними шляхами до CSS та JS файлів проекту
-(**404**). Швидше за все у тебе неправильне значення прапора `--base` для
-команди `build` у файлі `package.json`.
-
-## Як це працює
-
-![How it works](./assets/how-it-works.png)
-
-1. Після кожного пуша у гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) із файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується та
-   проходить лінтинг та збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн версія файлів проекту
-   відправляється у гілку `gh-pages`. В іншому випадку, у лозі виконання скрипта
-   буде вказано в чому проблема.
+### Tools
+- Visual Studio Code (VSCode)
+- Vite
+- Trello (for project management)
+- Git (version control)
+- Figma (for design and prototyping)
+ 
+Masterchef Recipes is a collaborative effort that brings together a variety of skills and technologies to create a vibrant platform for culinary exploration and sharing. Whether you're a seasoned chef or a novice in the kitchen, this project is designed to inspire your culinary journey and connect you with a global community of food enthusiasts. Enjoy the experience, explore new flavors, and discover the joy of cooking with Masterchef Recipes!
