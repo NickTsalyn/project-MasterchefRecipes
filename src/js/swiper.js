@@ -4,27 +4,24 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css/pagination';
 
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    spaceBetween: 20,
-    slidesPerView: 'auto',
-  // If we need pagination
-    modules: [Pagination],
+
+  allowSlideNext: true,
+     modules: [Pagination],
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
       type: 'bullets',
   },
-  dynamicBullets: true,
-  allowSlideNext: true,
-  autoplay: {
+  spaceBetween: 20,
+   autoplay: {
         delay: 3000,
   },
+  slidesPerView: 'auto',
   slidesPerGroup: 1,
   speed: 800,
-      // loop: true,
+  loop: true,
   mousewheel: {
     invert: true,
   },
-
   });
   

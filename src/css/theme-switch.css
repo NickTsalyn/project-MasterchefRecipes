@@ -217,9 +217,16 @@ body.dark-theme {
 .dark-theme .hero-btn {
   color: #fff;
 }
-/* .dark-theme .swiper-pagination-bullet {
+.dark-theme
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   background: var(--swiper-pagination-bullet-inactive-color, white);
-} */
+}
+.dark-theme
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet-active {
+  background: var(--swiper-pagination-color, var(--green-color));
+}
 /* ---------- HERO ----------- */
 /* ----------- FAVORITES PAGE ----------- */
 
@@ -245,13 +252,13 @@ body.dark-theme {
 /* ----------- FOOTER ----------- */
 
 .dark-theme .tui-page-btn {
-    color: var(--white-color) !important;
-    border-color: var(--btn-light-color) !important;
-  }
+  color: var(--white-color) !important;
+  border-color: var(--btn-light-color) !important;
+}
 
 .dark-theme .tui-page-btn:hover {
-    color: var(--primary-color) !important;
-  }
+  color: var(--primary-color) !important;
+}
 
 .dark-theme .tui-page-btn.tui-first.tui-is-disabled,
 .dark-theme .tui-page-btn.tui-prev.tui-is-disabled,
